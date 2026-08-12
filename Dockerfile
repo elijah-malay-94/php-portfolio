@@ -8,11 +8,14 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
 WORKDIR /app
 
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-plugins 2>/dev/null || \
+    composer install --no-dev --optimize-autoloader --no-interaction
 RUN npm install && npm run build
 RUN touch database/database.sqlite
 RUN chmod -R 775 storage bootstrap/cache
