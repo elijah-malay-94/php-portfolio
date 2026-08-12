@@ -54,7 +54,7 @@
     </div>
 
     <div class="relative flex justify-center order-first md:order-last">
-        <div class="absolute w-48 h-48 md:w-72 md:h-72 bg-[#38BDF8]/15 rounded-full blur-3xl"></div>
+        <div class="absolute w-48 h-48 md:w-72 md:h-72 bg-[#38BDF8]/15 rounded-full blur-3xl glow-pulse"></div>
         <img src="{{ asset('malay_img.png') }}" alt="Elijah Malay Dovelee"
              class="relative w-48 sm:w-64 md:w-96 h-auto rounded-[50%] animate-float">
     </div>
@@ -66,19 +66,19 @@
     <div class="max-w-4xl mx-auto px-6 md:px-12 py-12 reveal">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8]">5+</p>
+                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8] stat-num" data-target="5" data-suffix="+">5+</p>
                 <p class="text-[#94A3B8] text-base mt-1">{{ app()->getLocale() === 'it' ? 'Anni di Esperienza' : 'Years Experience' }}</p>
             </div>
             <div>
-                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8]">15+</p>
+                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8] stat-num" data-target="15" data-suffix="+">15+</p>
                 <p class="text-[#94A3B8] text-base mt-1">{{ app()->getLocale() === 'it' ? 'Progetti GitHub' : 'GitHub Projects' }}</p>
             </div>
             <div>
-                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8]">6+</p>
+                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8] stat-num" data-target="6" data-suffix="+">6+</p>
                 <p class="text-[#94A3B8] text-base mt-1">{{ app()->getLocale() === 'it' ? 'Framework' : 'Frameworks' }}</p>
             </div>
             <div>
-                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8]">5</p>
+                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8] stat-num" data-target="5" data-suffix="">5</p>
                 <p class="text-[#94A3B8] text-base mt-1">{{ app()->getLocale() === 'it' ? 'Linguaggi' : 'Languages' }}</p>
             </div>
         </div>
@@ -110,9 +110,9 @@
 
         <h3 class="font-display font-bold text-xl md:text-2xl mb-6">{{ __('site.experience') }}</h3>
 
-        <div class="space-y-8 border-l border-white/10 pl-8">
+        <div class="space-y-8 border-l border-white/10 pl-8 stagger-container">
 
-            <div class="relative">
+            <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-[#38BDF8]"></span>
                 <p class="font-mono text-base text-[#38BDF8] mb-1">Sep 2025 – Aug 2026</p>
                 <h4 class="font-semibold text-base flex items-center gap-2">
@@ -123,7 +123,7 @@
                 <p class="text-[#94A3B8]">{{ __('site.job1_desc') }}</p>
             </div>
 
-            <div class="relative">
+            <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">Jan 2024 – Jan 2025</p>
                 <h4 class="font-semibold text-base flex items-center gap-2">
@@ -134,7 +134,7 @@
                 <p class="text-[#94A3B8]">{{ __('site.job2_desc') }}</p>
             </div>
 
-            <div class="relative">
+            <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">Dec 2022 – Jan 2024</p>
                 <h4 class="font-semibold text-base flex items-center gap-2">
@@ -145,7 +145,7 @@
                 <p class="text-[#94A3B8]">{{ __('site.job3_desc') }}</p>
             </div>
 
-            <div class="relative">
+            <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">2020 – 2022</p>
                 <h4 class="font-semibold text-base flex items-center gap-2">
@@ -156,7 +156,7 @@
                 <p class="text-[#94A3B8]">{{ __('site.job4_desc') }}</p>
             </div>
 
-            <div class="relative">
+            <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">2013 – 2017</p>
                 <h4 class="font-semibold text-base flex items-center gap-2">
@@ -179,9 +179,9 @@
 
         <h2 class="font-display font-bold text-3xl md:text-5xl mb-14">{{ __('site.education_title') }}</h2>
 
-        <div class="space-y-8 border-l border-white/10 pl-8">
+        <div class="space-y-8 border-l border-white/10 pl-8 stagger-container">
 
-            <div class="relative">
+            <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-[#38BDF8]"></span>
                 <p class="font-mono text-base text-[#38BDF8] mb-1">Apr 2026 – Apr 2028 · {{ __('site.in_progress') }}</p>
                 <h4 class="font-semibold text-base flex items-center gap-2">
@@ -191,7 +191,7 @@
                 <p class="text-[#94A3B8]">{{ __('site.edu1_desc') }}</p>
             </div>
 
-            <div class="relative">
+            <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-[#38BDF8]"></span>
                 <p class="font-mono text-base text-[#38BDF8] mb-1">Apr 2026 – Dec 2026 · {{ __('site.in_progress') }}</p>
                 <h4 class="font-semibold text-base flex items-center gap-2">
@@ -201,7 +201,7 @@
                 <p class="text-[#94A3B8]">{{ __('site.edu2_desc') }}</p>
             </div>
 
-            <div class="relative">
+            <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">2024 – Sep 2026 · {{ __('site.final_exam') }}</p>
                 <h4 class="font-semibold text-base flex items-center gap-2">
@@ -211,7 +211,7 @@
                 <p class="text-[#94A3B8]">{{ __('site.edu3_desc') }}</p>
             </div>
 
-            <div class="relative">
+            <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">2022 – 2023</p>
                 <h4 class="font-semibold text-base flex items-center gap-2">
@@ -221,7 +221,7 @@
                 <p class="text-[#94A3B8]">{{ __('site.edu4_desc') }}</p>
             </div>
 
-            <div class="relative">
+            <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">2010 – 2015</p>
                 <h4 class="font-semibold text-base flex items-center gap-2">
@@ -243,7 +243,7 @@
 
         <h2 class="font-display font-bold text-3xl md:text-5xl mb-14">{{ __('site.cert_title') }}</h2>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 stagger-container">
             @php
             $certs = [
                 [
@@ -306,7 +306,7 @@
             @endphp
 
             @foreach ($certs as $cert)
-            <div class="bg-[#0F172A] border border-white/10 rounded-xl p-5 hover:border-[#38BDF8]/40 transition flex flex-col">
+            <div class="bg-[#0F172A] border border-white/10 rounded-xl p-5 hover:border-[#38BDF8]/40 card-hover reveal-item flex flex-col">
                 <div class="text-[#38BDF8] mb-3">{!! $cert['icon'] !!}</div>
                 <h4 class="font-semibold text-sm leading-snug mb-2 flex-1">{{ $cert['title'] }}</h4>
                 <p class="font-mono text-xs text-[#38BDF8] mb-2">{{ $cert['issuer'] }}</p>
@@ -343,7 +343,7 @@
                             <span class="font-mono text-xs text-[#38BDF8]">{{ $pct }}%</span>
                         </div>
                         <div class="skill-bar-track h-1.5 rounded-full overflow-hidden" style="background:rgba(255,255,255,0.08)">
-                            <div class="h-full rounded-full bg-gradient-to-r from-[#38BDF8] to-[#0EA5E9]" style="width:{{ $pct }}%"></div>
+                            <div class="h-full rounded-full bg-gradient-to-r from-[#38BDF8] to-[#0EA5E9] skill-bar-fill" data-w="{{ $pct }}%"></div>
                         </div>
                     </div>
                     @endforeach
@@ -363,7 +363,7 @@
                             <span class="font-mono text-xs text-[#38BDF8]">{{ $pct }}%</span>
                         </div>
                         <div class="skill-bar-track h-1.5 rounded-full overflow-hidden" style="background:rgba(255,255,255,0.08)">
-                            <div class="h-full rounded-full bg-gradient-to-r from-[#38BDF8] to-[#0EA5E9]" style="width:{{ $pct }}%"></div>
+                            <div class="h-full rounded-full bg-gradient-to-r from-[#38BDF8] to-[#0EA5E9] skill-bar-fill" data-w="{{ $pct }}%"></div>
                         </div>
                     </div>
                     @endforeach
@@ -406,7 +406,7 @@
 
         <h2 class="font-display font-bold text-3xl md:text-5xl mb-14">{{ __('site.projects_title') }}</h2>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-container">
 
             @php
             $ghIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>';
@@ -421,7 +421,7 @@
             @endphp
 
             @foreach ($projects as $project)
-            <div class="bg-[#1E293B] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-[#38BDF8]/40 hover:-translate-y-1 transition-all duration-200">
+            <div class="bg-[#1E293B] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-[#38BDF8]/40 card-hover reveal-item">
                 <div class="h-44 overflow-hidden">
                     <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" loading="lazy">
                 </div>

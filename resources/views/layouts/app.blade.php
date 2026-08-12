@@ -64,6 +64,39 @@
             transform: translateY(0);
         }
 
+        /* Card hover lift + glow */
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(56,189,248,0.13), 0 6px 18px rgba(0,0,0,0.28);
+        }
+
+        /* Hero blob glow pulse */
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50%       { opacity: 0.30; transform: scale(1.14); }
+        }
+        .glow-pulse { animation: glowPulse 4s ease-in-out infinite; }
+
+        /* Individual card / item stagger-reveal */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .reveal-item.visible { opacity: 1; transform: translateY(0); }
+
+        /* Timeline slide-in from left */
+        .timeline-reveal {
+            opacity: 0;
+            transform: translateX(-18px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .timeline-reveal.visible { opacity: 1; transform: translateX(0); }
+
+        /* Skill bar fill */
+        .skill-bar-fill { width: 0; transition: width 1.1s cubic-bezier(0.4, 0, 0.2, 1); }
+
         /* ── Light mode ─────────────────────────────────────────────── */
         html[data-theme="light"] body    { background-color: #F8FAFC !important; color: #0F172A !important; }
         html[data-theme="light"] nav     { background-color: rgba(248,250,252,0.97) !important; }
@@ -346,6 +379,46 @@
             btt.style.pointerEvents = show ? 'auto' : 'none';
         });
         btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ── Skill bar fill ────────────────────────────────────────────
+        const skillSec = document.querySelector('#skills');
+        if (skillSec) {
+            new IntersectionObserver(([e], obs) => {
+                if (!e.isIntersecting) return;
+                skillSec.querySelectorAll('.skill-bar-fill').forEach((b, i) => {
+                    setTimeout(() => { b.style.width = b.dataset.w; }, i * 60);
+                });
+                obs.unobserve(skillSec);
+            }, { threshold: 0.2 }).observe(skillSec);
+        }
+
+        // ── Stats counter ─────────────────────────────────────────────
+        const statObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                const el = e.target, target = +el.dataset.target, suffix = el.dataset.suffix || '';
+                const start = performance.now(), dur = 1200;
+                (function tick(now) {
+                    const t = Math.min((now - start) / dur, 1);
+                    el.textContent = Math.round((1 - Math.pow(1 - t, 3)) * target) + suffix;
+                    if (t < 1) requestAnimationFrame(tick);
+                })(performance.now());
+                statObs.unobserve(el);
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.stat-num').forEach(el => statObs.observe(el));
+
+        // ── Stagger children (cards + timeline) ───────────────────────
+        const staggerObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                e.target.querySelectorAll('.reveal-item, .timeline-reveal').forEach((c, i) => {
+                    setTimeout(() => c.classList.add('visible'), i * 80);
+                });
+                staggerObs.unobserve(e.target);
+            });
+        }, { threshold: 0.06 });
+        document.querySelectorAll('.stagger-container').forEach(el => staggerObs.observe(el));
     </script>
 
 
