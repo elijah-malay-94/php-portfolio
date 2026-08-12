@@ -18,8 +18,9 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction --no-plugin
     composer install --no-dev --optimize-autoloader --no-interaction
 RUN npm install && npm run build
 RUN touch database/database.sqlite
-RUN chmod -R 775 storage bootstrap/cache
+RUN chmod -R 775 storage bootstrap/cache database
+RUN php artisan migrate --force
 
 EXPOSE 8000
 
-CMD sh -c "php artisan config:clear && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8000}"
+CMD sh -c "php artisan config:clear && php artisan serve --host=0.0.0.0 --port=${PORT:-8000}"
