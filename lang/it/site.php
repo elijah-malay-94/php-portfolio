@@ -21,9 +21,9 @@ return [
     // About
     'about_badge' => '$ cat about.md',
     'about_title' => 'Chi Sono',
-    'about_p1'    => 'Costruisco cose sul web — front-end, back-end, quello che il progetto richiede davvero. La sicurezza non è qualcosa che aggiungo alla fine; fa parte del modo in cui penso mentre scrivo il codice.',
-    'about_p2'    => 'Quello che mi piace di più è portare un progetto dall\'inizio alla fine: l\'interfaccia, la logica dietro, il database, la messa in produzione. Ultimamente divido il mio tempo tra questo e lo studio dell\'intelligenza artificiale e del machine learning, principalmente perché non voglio costruire app web nello stesso modo tra cinque anni.',
-    'about_p3'    => 'Il mio percorso non è stato lineare — ho iniziato nell\'ingegneria mineraria, ho lavorato nelle vendite, nella logistica e nei rilievi geotecnici prima di entrare completamente nel mondo del software. Quella varietà di esperienze influenza il modo in cui affronto i problemi.',
+    'about_p1'    => 'Sviluppatore full stack focalizzato sulla costruzione di applicazioni web sicure e complete — dall\'interfaccia al database fino al deployment.',
+    'about_p2'    => 'Sto espandendo le mie competenze nell\'AI e nel machine learning, per restare al passo con la direzione del settore.',
+    'about_p3'    => 'Il mio percorso passa da ingegneria mineraria, vendite e rilievi geotecnici prima di entrare nel software — quella varietà plasma il mio approccio ai problemi.',
     'experience'  => 'Esperienza',
 
     'job1_desc' => 'Lavoro firmware per far comunicare i terminali di acquisizione con l\'hardware, più la costruzione dell\'interfaccia software e degli strumenti per elaborare e visualizzare i dati in ingresso.',

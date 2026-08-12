@@ -21,9 +21,9 @@ return [
     // About
     'about_badge' => '$ cat about.md',
     'about_title' => 'About Me',
-    'about_p1'    => 'I build things on the web — front-end, back-end, whatever the project actually needs. Security isn\'t something I bolt on at the end; it\'s part of how I think while I\'m writing the code in the first place.',
-    'about_p2'    => 'What I like most is seeing a project through, start to finish: the interface, the logic behind it, the database, getting it live. Lately I\'ve been splitting my time between that and studying AI and machine learning, mostly because I don\'t want to be building web apps the same way five years from now.',
-    'about_p3'    => 'My path here hasn\'t been a straight line — I started in mining engineering, worked across sales, logistics, and geotechnical survey work before moving fully into software. That range shapes how I approach problems.',
+    'about_p1'    => 'Full-stack developer focused on building secure, complete web applications — from interface to database to deployment.',
+    'about_p2'    => 'I\'m currently expanding into AI and machine learning alongside my web work, because I want to stay ahead of where the industry is heading.',
+    'about_p3'    => 'My background spans mining engineering, sales, and geotechnical work before I moved fully into software — that range shapes how I approach problems.',
     'experience'  => 'Experience',
 
     'job1_desc' => 'Firmware work getting acquisition terminals to talk to hardware, plus building the software interface and tools used to process and view incoming data.',

@@ -10,11 +10,11 @@
     <div>
         <span class="font-mono text-base text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-4 py-1.5 inline-block mb-6">{{ __('site.hero_badge') }}</span>
 
-        <h1 class="font-display font-bold text-4xl sm:text-5xl md:text-7xl leading-tight mb-4">
+        <h1 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
             Elijah Malay<br>Dovelee
         </h1>
 
-        <h3 class="text-xl md:text-2xl text-[#94A3B8] mb-4">{{ __('site.hero_subtitle') }}</h3>
+        <h3 class="text-base md:text-lg text-[#94A3B8] mb-4">{{ __('site.hero_subtitle') }}</h3>
 
         <div class="flex items-center gap-2 mb-5">
             <span class="relative flex h-2.5 w-2.5">
@@ -66,19 +66,19 @@
     <div class="max-w-4xl mx-auto px-6 md:px-12 py-12 reveal">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-                <p class="font-display font-bold text-4xl md:text-5xl text-[#38BDF8]">5+</p>
+                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8]">5+</p>
                 <p class="text-[#94A3B8] text-base mt-1">{{ app()->getLocale() === 'it' ? 'Anni di Esperienza' : 'Years Experience' }}</p>
             </div>
             <div>
-                <p class="font-display font-bold text-4xl md:text-5xl text-[#38BDF8]">15+</p>
+                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8]">15+</p>
                 <p class="text-[#94A3B8] text-base mt-1">{{ app()->getLocale() === 'it' ? 'Progetti GitHub' : 'GitHub Projects' }}</p>
             </div>
             <div>
-                <p class="font-display font-bold text-4xl md:text-5xl text-[#38BDF8]">6+</p>
+                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8]">6+</p>
                 <p class="text-[#94A3B8] text-base mt-1">{{ app()->getLocale() === 'it' ? 'Framework' : 'Frameworks' }}</p>
             </div>
             <div>
-                <p class="font-display font-bold text-4xl md:text-5xl text-[#38BDF8]">5</p>
+                <p class="font-display font-bold text-3xl md:text-4xl text-[#38BDF8]">5</p>
                 <p class="text-[#94A3B8] text-base mt-1">{{ app()->getLocale() === 'it' ? 'Linguaggi' : 'Languages' }}</p>
             </div>
         </div>
@@ -99,23 +99,23 @@
             <div class="md:col-span-2 order-first md:order-last">
                 <span class="font-mono text-base text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-4 py-1.5 inline-block mb-6">{{ __('site.about_badge') }}</span>
 
-                <h2 class="font-display font-bold text-3xl md:text-5xl mb-8">{{ __('site.about_title') }}</h2>
+                <h2 class="font-display font-bold text-2xl md:text-4xl mb-6">{{ __('site.about_title') }}</h2>
 
-                <p class="text-[#E7E9F0] leading-relaxed text-base md:text-xl mb-6">{{ __('site.about_p1') }}</p>
-                <p class="text-[#94A3B8] leading-relaxed text-base md:text-xl mb-6">{{ __('site.about_p2') }}</p>
-                <p class="text-[#94A3B8] leading-relaxed text-base md:text-xl">{{ __('site.about_p3') }}</p>
+                <p class="text-[#E7E9F0] leading-relaxed text-sm md:text-base mb-4">{{ __('site.about_p1') }}</p>
+                <p class="text-[#94A3B8] leading-relaxed text-sm md:text-base mb-4">{{ __('site.about_p2') }}</p>
+                <p class="text-[#94A3B8] leading-relaxed text-sm md:text-base">{{ __('site.about_p3') }}</p>
             </div>
 
         </div>
 
-        <h3 class="font-display font-bold text-2xl md:text-3xl mb-8">{{ __('site.experience') }}</h3>
+        <h3 class="font-display font-bold text-xl md:text-2xl mb-6">{{ __('site.experience') }}</h3>
 
         <div class="space-y-8 border-l border-white/10 pl-8">
 
             <div class="relative">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-[#38BDF8]"></span>
                 <p class="font-mono text-base text-[#38BDF8] mb-1">Sep 2025 – Aug 2026</p>
-                <h4 class="font-semibold text-xl flex items-center gap-2">
+                <h4 class="font-semibold text-base flex items-center gap-2">
                     <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
                     Programmer Technician
                 </h4>
@@ -126,7 +126,7 @@
             <div class="relative">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">Jan 2024 – Jan 2025</p>
-                <h4 class="font-semibold text-xl flex items-center gap-2">
+                <h4 class="font-semibold text-base flex items-center gap-2">
                     <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
                     Software Analyst
                 </h4>
@@ -137,7 +137,7 @@
             <div class="relative">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">Dec 2022 – Jan 2024</p>
-                <h4 class="font-semibold text-xl flex items-center gap-2">
+                <h4 class="font-semibold text-base flex items-center gap-2">
                     <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
                     Geotechnical & Soil Investigations Technician
                 </h4>
@@ -148,7 +148,7 @@
             <div class="relative">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">2020 – 2022</p>
-                <h4 class="font-semibold text-xl flex items-center gap-2">
+                <h4 class="font-semibold text-base flex items-center gap-2">
                     <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
                     Management Assistant
                 </h4>
@@ -159,7 +159,7 @@
             <div class="relative">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">2013 – 2017</p>
-                <h4 class="font-semibold text-xl flex items-center gap-2">
+                <h4 class="font-semibold text-base flex items-center gap-2">
                     <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
                     Sales Supervisor
                 </h4>
@@ -184,7 +184,7 @@
             <div class="relative">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-[#38BDF8]"></span>
                 <p class="font-mono text-base text-[#38BDF8] mb-1">Apr 2026 – Apr 2028 · {{ __('site.in_progress') }}</p>
-                <h4 class="font-semibold text-xl flex items-center gap-2">
+                <h4 class="font-semibold text-base flex items-center gap-2">
                     <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
                     MSc Artificial Intelligence
                 </h4>
@@ -194,7 +194,7 @@
             <div class="relative">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-[#38BDF8]"></span>
                 <p class="font-mono text-base text-[#38BDF8] mb-1">Apr 2026 – Dec 2026 · {{ __('site.in_progress') }}</p>
-                <h4 class="font-semibold text-xl flex items-center gap-2">
+                <h4 class="font-semibold text-base flex items-center gap-2">
                     <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                     Post Graduate Program in AI & Machine Learning: Business Applications
                 </h4>
@@ -204,7 +204,7 @@
             <div class="relative">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">2024 – Sep 2026 · {{ __('site.final_exam') }}</p>
-                <h4 class="font-semibold text-xl flex items-center gap-2">
+                <h4 class="font-semibold text-base flex items-center gap-2">
                     <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                     Computer Science and Full Stack Developer
                 </h4>
@@ -214,7 +214,7 @@
             <div class="relative">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">2022 – 2023</p>
-                <h4 class="font-semibold text-xl flex items-center gap-2">
+                <h4 class="font-semibold text-base flex items-center gap-2">
                     <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     Master's in Cyber Security: Operations
                 </h4>
@@ -224,7 +224,7 @@
             <div class="relative">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
                 <p class="font-mono text-base text-[#94A3B8] mb-1">2010 – 2015</p>
-                <h4 class="font-semibold text-xl flex items-center gap-2">
+                <h4 class="font-semibold text-base flex items-center gap-2">
                     <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
                     BS in Mining Engineering
                 </h4>
