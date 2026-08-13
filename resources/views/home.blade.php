@@ -98,8 +98,8 @@
 
         <div class="grid md:grid-cols-3 gap-10 md:gap-16 mb-14" style="align-items:stretch">
 
-            <div class="md:col-span-1 order-last md:order-first" style="align-self:stretch;min-height:300px">
-                <div class="about-flip w-full" style="height:100%">
+            <div class="md:col-span-1 order-last md:order-first" style="align-self:stretch;display:flex;flex-direction:column">
+                <div class="about-flip w-full" style="flex:1;min-height:300px">
                     <div class="about-flip-inner">
                         {{-- Front: photo --}}
                         <div class="about-flip-front">
