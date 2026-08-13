@@ -190,22 +190,35 @@
 
             <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-[#38BDF8]"></span>
-                <p class="font-mono text-base text-[#38BDF8] mb-1">Apr 2026 – Apr 2028 · {{ __('site.in_progress') }}</p>
-                <h4 class="font-semibold text-base flex items-center gap-2">
-                    <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-                    MSc Artificial Intelligence
-                </h4>
-                <p class="text-[#94A3B8]">{{ __('site.edu1_desc') }}</p>
+                <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                        <p class="font-mono text-base text-[#38BDF8] mb-1">Apr 2026 – Apr 2028 · {{ __('site.in_progress') }}</p>
+                        <h4 class="font-semibold text-base flex items-center gap-2">
+                            <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                            MSc Artificial Intelligence
+                        </h4>
+                        <p class="text-[#94A3B8]">{{ __('site.edu1_desc') }}</p>
+                    </div>
+                    <img src="{{ asset('mbs.png') }}" alt="MBS School of Business" class="w-14 h-14 object-contain rounded-lg flex-shrink-0 mt-1 bg-white/5 p-1">
+                </div>
             </div>
 
             <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-[#38BDF8]"></span>
-                <p class="font-mono text-base text-[#38BDF8] mb-1">Apr 2026 – Dec 2026 · {{ __('site.in_progress') }}</p>
-                <h4 class="font-semibold text-base flex items-center gap-2">
-                    <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                    Post Graduate Program in AI & Machine Learning: Business Applications
-                </h4>
-                <p class="text-[#94A3B8]">{{ __('site.edu2_desc') }}</p>
+                <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                        <p class="font-mono text-base text-[#38BDF8] mb-1">Apr 2026 – Dec 2026 · {{ __('site.in_progress') }}</p>
+                        <h4 class="font-semibold text-base flex items-center gap-2">
+                            <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            Post Graduate Program in AI & Machine Learning: Business Applications
+                        </h4>
+                        <p class="text-[#94A3B8]">{{ __('site.edu2_desc') }}</p>
+                    </div>
+                    <div class="flex flex-col gap-1 flex-shrink-0 mt-1">
+                        <img src="{{ asset('texas-austin.png') }}" alt="UT Austin" class="w-14 h-14 object-contain rounded-lg bg-white/5 p-1">
+                        <img src="{{ asset('great-learing.png') }}" alt="Great Learning" class="w-14 h-14 object-contain rounded-lg bg-white/5 p-1">
+                    </div>
+                </div>
             </div>
 
             <div class="relative timeline-reveal">
@@ -230,12 +243,17 @@
 
             <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
-                <p class="font-mono text-base text-[#94A3B8] mb-1">2010 – 2015</p>
-                <h4 class="font-semibold text-base flex items-center gap-2">
-                    <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-                    BS in Mining Engineering
-                </h4>
-                <p class="text-[#94A3B8]">{{ __('site.edu5_desc') }}</p>
+                <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                        <p class="font-mono text-base text-[#94A3B8] mb-1">2010 – 2015</p>
+                        <h4 class="font-semibold text-base flex items-center gap-2">
+                            <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                            BS in Mining Engineering
+                        </h4>
+                        <p class="text-[#94A3B8]">{{ __('site.edu5_desc') }}</p>
+                    </div>
+                    <img src="{{ asset('ul-liberia.png') }}" alt="University of Liberia" class="w-14 h-14 object-contain rounded-lg flex-shrink-0 mt-1 bg-white/5 p-1">
+                </div>
             </div>
 
         </div>
