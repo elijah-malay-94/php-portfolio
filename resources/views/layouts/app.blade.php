@@ -377,6 +377,36 @@
             #contact .md\:col-span-2 > div { margin-bottom: 14pt !important; padding-bottom: 10pt !important; border-bottom: 0.5pt solid #eee !important; }
         }
 
+        /* ── Navbar animations ──────────────────────────────────────── */
+        nav { transition: box-shadow 0.4s ease, border-color 0.4s ease; }
+        nav.nav-scrolled {
+            box-shadow: 0 2px 40px rgba(56,189,248,0.12), 0 0 0 1px rgba(56,189,248,0.18);
+            border-bottom-color: rgba(56,189,248,0.28) !important;
+        }
+        .nav-link { position: relative; padding-bottom: 2px; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #38BDF8;
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after { transform: scaleX(1); }
+        .nav-link.active { color: #38BDF8 !important; }
+        html[data-theme="light"] nav.nav-scrolled {
+            box-shadow: 0 2px 40px rgba(3,105,161,0.10), 0 0 0 1px rgba(3,105,161,0.20);
+            border-bottom-color: rgba(3,105,161,0.28) !important;
+        }
+        html[data-theme="light"] .nav-link::after { background: #0369A1; }
+        html[data-theme="light"] .nav-link.active { color: #0369A1 !important; }
+
         /* ── Moving clouds ──────────────────────────────────────────── */
         .cloud-layer {
             position: absolute;
@@ -583,12 +613,31 @@
         }, { threshold: 0.06 });
         document.querySelectorAll('.stagger-container').forEach(el => staggerObs.observe(el));
 
-        // ── Scroll progress bar ──────────────────────────────────────
+        // ── Scroll progress bar + navbar glow ───────────────────────
         const progressBar = document.getElementById('scroll-progress');
+        const navbar = document.querySelector('nav');
         window.addEventListener('scroll', () => {
             const total = document.documentElement.scrollHeight - window.innerHeight;
             if (total > 0) progressBar.style.width = (window.scrollY / total * 100) + '%';
+            navbar.classList.toggle('nav-scrolled', window.scrollY > 80);
         }, { passive: true });
+
+        // ── Active section nav indicator ─────────────────────────────
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sectionIds = ['home','about','education','projects','skills','certifications','contact'];
+        const activeSectionObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                navLinks.forEach(link => {
+                    const isActive = link.dataset.section === e.target.id;
+                    link.classList.toggle('active', isActive);
+                });
+            });
+        }, { threshold: 0.25, rootMargin: '0px 0px -55% 0px' });
+        sectionIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) activeSectionObs.observe(el);
+        });
 
         // ── Cursor glow ───────────────────────────────────────────────
         const cursorGlow = document.getElementById('cursor-glow');
