@@ -5,12 +5,19 @@
 @section('content')
 
 {{-- ============ HERO / HOME ============ --}}
-<section id="home" class="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-32 grid md:grid-cols-2 gap-8 md:gap-16 items-center scroll-mt-20 reveal">
+<section id="home" class="relative overflow-hidden max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-32 grid md:grid-cols-2 gap-8 md:gap-16 items-center scroll-mt-20 reveal">
 
-    <div>
+    {{-- Particle canvas --}}
+    <canvas id="hero-particles" class="absolute inset-0 w-full h-full" style="pointer-events:none;z-index:0;opacity:0.7"></canvas>
+
+    {{-- Aurora blobs --}}
+    <div class="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full aurora-1" style="background:radial-gradient(circle,rgba(56,189,248,0.12) 0%,transparent 70%);pointer-events:none;z-index:0"></div>
+    <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full aurora-2" style="background:radial-gradient(circle,rgba(129,140,248,0.1) 0%,transparent 70%);pointer-events:none;z-index:0"></div>
+
+    <div class="relative" style="z-index:1">
         <span class="font-mono text-base text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-4 py-1.5 inline-block mb-6">{{ __('site.hero_badge') }}</span>
 
-        <h1 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+        <h1 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4 gradient-name">
             Elijah Malay<br>Dovelee
         </h1>
 
@@ -33,8 +40,8 @@
         </p>
 
         <div class="flex flex-wrap gap-4 mb-8">
-            <a href="#projects" class="bg-[#38BDF8] text-[#0F172A] font-medium px-6 py-3 rounded-lg hover:bg-[#5fcaf9] transition">{{ __('site.hero_view_projects') }}</a>
-            <a href="{{ asset('cv.' . app()->getLocale() . '.pdf') }}" download target="_blank" class="border border-white/20 px-6 py-3 rounded-lg hover:border-[#38BDF8] hover:text-[#38BDF8] transition">{{ __('site.hero_download_cv') }}</a>
+            <a href="#projects" class="magnetic bg-[#38BDF8] text-[#0F172A] font-medium px-6 py-3 rounded-lg hover:bg-[#5fcaf9] transition">{{ __('site.hero_view_projects') }}</a>
+            <a href="{{ asset('cv.' . app()->getLocale() . '.pdf') }}" download target="_blank" class="magnetic border border-white/20 px-6 py-3 rounded-lg hover:border-[#38BDF8] hover:text-[#38BDF8] transition">{{ __('site.hero_download_cv') }}</a>
         </div>
 
         <div class="flex gap-5">
@@ -53,10 +60,10 @@
         </div>
     </div>
 
-    <div class="relative flex justify-center order-first md:order-last">
+    <div class="relative flex justify-center order-first md:order-last" style="z-index:1">
         <div class="absolute w-48 h-48 md:w-72 md:h-72 bg-[#38BDF8]/15 rounded-full blur-3xl glow-pulse"></div>
         <img src="{{ asset('malay_img.png') }}" alt="Elijah Malay Dovelee"
-             class="relative w-48 sm:w-64 md:w-96 h-auto rounded-[50%] animate-float">
+             class="relative w-48 sm:w-64 md:w-96 h-auto rounded-[50%] animate-float avatar-glow">
     </div>
 
 </section>
@@ -437,7 +444,7 @@
             @endphp
 
             @foreach ($projects as $project)
-            <div class="bg-[#1E293B] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-[#38BDF8]/40 card-hover reveal-item">
+            <div class="bg-[#1E293B] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-[#38BDF8]/40 reveal-item tilt-card shimmer relative">
                 <div class="h-44 overflow-hidden">
                     @if ($project['img'])
                         <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" loading="lazy">
@@ -535,7 +542,7 @@
                     </div>
 
                     <button type="submit"
-                            class="bg-[#38BDF8] text-[#0F172A] font-medium px-8 py-3 rounded-lg hover:bg-[#5fcaf9] transition w-full sm:w-auto">
+                            class="magnetic bg-[#38BDF8] text-[#0F172A] font-medium px-8 py-3 rounded-lg hover:bg-[#5fcaf9] transition w-full sm:w-auto">
                         {{ __('site.contact_send') }}
                     </button>
 

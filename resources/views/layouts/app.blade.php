@@ -97,6 +97,94 @@
         }
         .cert-flip-back { transform: rotateY(180deg); }
 
+        /* ── Scroll progress bar ──────────────────────────────────── */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, #38BDF8, #818CF8, #EC4899, #38BDF8);
+            background-size: 200%;
+            z-index: 10000; width: 0%;
+            animation: progressShimmer 3s linear infinite;
+        }
+        @keyframes progressShimmer { 0%{background-position:0%} 100%{background-position:200%} }
+
+        /* ── Cursor glow ───────────────────────────────────────────── */
+        #cursor-glow {
+            position: fixed; width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(56,189,248,0.07) 0%, transparent 70%);
+            pointer-events: none; z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: left 0.08s ease, top 0.08s ease;
+        }
+
+        /* ── Gradient name ─────────────────────────────────────────── */
+        @keyframes gradientShift {
+            0%,100% { background-position: 0% 50%; }
+            50%      { background-position: 100% 50%; }
+        }
+        .gradient-name {
+            background: linear-gradient(90deg, #ffffff, #38BDF8, #818CF8, #EC4899, #38BDF8, #ffffff);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease infinite;
+        }
+        html[data-theme="light"] .gradient-name {
+            background: linear-gradient(90deg, #0F172A, #0284C7, #4F46E5, #0F172A);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── Aurora hero blobs ─────────────────────────────────────── */
+        @keyframes aurora1 {
+            0%,100% { transform: translate(0,0) scale(1); }
+            50%      { transform: translate(60px,-50px) scale(1.3); }
+        }
+        @keyframes aurora2 {
+            0%,100% { transform: translate(0,0) scale(1); }
+            50%      { transform: translate(-70px,40px) scale(1.4); }
+        }
+        .aurora-1 { animation: aurora1 12s ease-in-out infinite; }
+        .aurora-2 { animation: aurora2 16s ease-in-out infinite; }
+
+        /* ── Shimmer sweep on hover ─────────────────────────────────── */
+        @keyframes shimmerSweep {
+            from { transform: skewX(-20deg) translateX(-200%); }
+            to   { transform: skewX(-20deg) translateX(400%); }
+        }
+        .shimmer { overflow: hidden; }
+        .shimmer::after {
+            content: '';
+            position: absolute; top: 0; left: 0;
+            width: 40%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+            transform: skewX(-20deg) translateX(-200%);
+        }
+        .shimmer:hover::after { animation: shimmerSweep 0.8s ease forwards; }
+
+        /* ── Neon glow on skill bars ────────────────────────────────── */
+        @keyframes neonPulse {
+            0%,100% { box-shadow: 0 0 5px rgba(56,189,248,0.5), 0 0 10px rgba(56,189,248,0.3); }
+            50%      { box-shadow: 0 0 12px rgba(56,189,248,1), 0 0 30px rgba(56,189,248,0.6), 0 0 60px rgba(56,189,248,0.2); }
+        }
+        .skill-bar-glow { animation: neonPulse 2.5s ease-in-out infinite; }
+
+        /* ── Avatar glowing ring ────────────────────────────────────── */
+        @keyframes avatarGlow {
+            0%,100% { box-shadow: 0 0 0 3px #38BDF8, 0 0 30px rgba(56,189,248,0.6), 0 0 60px rgba(56,189,248,0.2); }
+            33%      { box-shadow: 0 0 0 3px #818CF8, 0 0 30px rgba(129,140,248,0.6), 0 0 60px rgba(129,140,248,0.2); }
+            66%      { box-shadow: 0 0 0 3px #EC4899, 0 0 30px rgba(236,72,153,0.6), 0 0 60px rgba(236,72,153,0.2); }
+        }
+        .avatar-glow { animation: avatarGlow 4s ease-in-out infinite; }
+
+        /* ── Tilt card ─────────────────────────────────────────────── */
+        .tilt-card { transform-style: preserve-3d; will-change: transform; }
+
+        /* ── Magnetic button ───────────────────────────────────────── */
+        .magnetic { will-change: transform; display: inline-block; }
+
         /* Float animation */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -292,6 +380,9 @@
 </head>
 <body class="bg-[#0F172A] text-[#E7E9F0] overflow-x-hidden">
 
+    <div id="scroll-progress"></div>
+    <div id="cursor-glow"></div>
+
     <nav class="sticky top-0 bg-[#0F172A]/90 backdrop-blur z-50 border-b border-white/10">
         <div class="flex justify-between items-center px-6 md:px-12 py-5">
             <a href="#home" class="font-display font-bold text-xl">Elijah <span class="text-[#38BDF8]">M.</span> Dovelee</a>
@@ -470,6 +561,123 @@
             });
         }, { threshold: 0.06 });
         document.querySelectorAll('.stagger-container').forEach(el => staggerObs.observe(el));
+
+        // ── Scroll progress bar ──────────────────────────────────────
+        const progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            if (total > 0) progressBar.style.width = (window.scrollY / total * 100) + '%';
+        }, { passive: true });
+
+        // ── Cursor glow ───────────────────────────────────────────────
+        const cursorGlow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top  = e.clientY + 'px';
+        }, { passive: true });
+
+        // ── Neon glow on skill bars ───────────────────────────────────
+        const skillSec2 = document.querySelector('#skills');
+        if (skillSec2) {
+            new IntersectionObserver(([e], obs) => {
+                if (!e.isIntersecting) return;
+                skillSec2.querySelectorAll('.skill-bar-fill').forEach(b => b.classList.add('skill-bar-glow'));
+                obs.unobserve(skillSec2);
+            }, { threshold: 0.3 }).observe(skillSec2);
+        }
+
+        // ── Tilt effect on project cards ──────────────────────────────
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const rotX = ((e.clientY - rect.top  - rect.height / 2) / (rect.height / 2)) * -8;
+                const rotY = ((e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2)) *  8;
+                card.style.transform  = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(10px)`;
+                card.style.transition = 'transform 0.1s ease';
+                card.style.boxShadow  = '0 28px 56px rgba(56,189,248,0.18), 0 8px 20px rgba(0,0,0,0.35)';
+            }, { passive: true });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform  = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                card.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
+                card.style.boxShadow  = '';
+            });
+        });
+
+        // ── Magnetic buttons ──────────────────────────────────────────
+        document.querySelectorAll('.magnetic').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = (e.clientX - rect.left - rect.width  / 2) * 0.28;
+                const y = (e.clientY - rect.top  - rect.height / 2) * 0.28;
+                btn.style.transform  = `translate(${x}px, ${y}px)`;
+                btn.style.transition = 'transform 0.1s ease';
+            }, { passive: true });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform  = 'translate(0, 0)';
+                btn.style.transition = 'transform 0.5s ease';
+            });
+        });
+
+        // ── Particle canvas ───────────────────────────────────────────
+        const canvas = document.getElementById('hero-particles');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let mouse = { x: null, y: null };
+            function resizeCanvas() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas, { passive: true });
+            canvas.parentElement.addEventListener('mousemove', (e) => {
+                const r = canvas.getBoundingClientRect();
+                mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+            }, { passive: true });
+            canvas.parentElement.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+
+            class Particle {
+                constructor() { this.reset(true); }
+                reset(init) {
+                    this.x  = init ? Math.random() * canvas.width  : (Math.random() < 0.5 ? 0 : canvas.width);
+                    this.y  = init ? Math.random() * canvas.height : Math.random() * canvas.height;
+                    this.sz = Math.random() * 1.8 + 0.4;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                    this.op = Math.random() * 0.5 + 0.2;
+                }
+                update() {
+                    if (mouse.x !== null) {
+                        const dx = mouse.x - this.x, dy = mouse.y - this.y;
+                        const d  = Math.sqrt(dx*dx + dy*dy);
+                        if (d < 130) { this.vx += dx/d*0.18; this.vy += dy/d*0.18; }
+                    }
+                    this.vx *= 0.96; this.vy *= 0.96;
+                    this.x  += this.vx; this.y  += this.vy;
+                    if (this.x<0||this.x>canvas.width||this.y<0||this.y>canvas.height) this.reset(false);
+                }
+                draw() {
+                    ctx.beginPath(); ctx.arc(this.x, this.y, this.sz, 0, Math.PI*2);
+                    ctx.fillStyle = `rgba(56,189,248,${this.op})`; ctx.fill();
+                }
+            }
+            const particles = Array.from({length: 90}, () => new Particle());
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update(); particles[i].draw();
+                    for (let j = i+1; j < particles.length; j++) {
+                        const dx = particles[i].x-particles[j].x, dy = particles[i].y-particles[j].y;
+                        const d  = Math.sqrt(dx*dx+dy*dy);
+                        if (d < 110) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(56,189,248,${0.12*(1-d/110)})`;
+                            ctx.lineWidth = 0.5; ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
     </script>
 
 
