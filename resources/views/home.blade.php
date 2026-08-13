@@ -106,19 +106,10 @@
                             <img src="{{ asset('elijah.png') }}" alt="Elijah Malay Dovelee"
                                  class="w-full h-full object-cover object-top" loading="lazy">
                         </div>
-                        {{-- Back: quick facts --}}
-                        <div class="about-flip-back bg-[#0B1120] border border-[#38BDF8]/30 flex flex-col justify-center items-center p-6 text-center gap-3">
-                            <span class="font-mono text-xs text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-3 py-1">$ whoami</span>
-                            <h3 class="font-display font-bold text-lg">Elijah Malay Dovelee</h3>
-                            <p class="font-mono text-sm text-[#38BDF8]">Software Engineer</p>
-                            <ul class="text-sm space-y-2 text-left w-full mt-1">
-                                <li class="flex items-center gap-2 text-[#94A3B8]"><span class="text-[#38BDF8] font-bold">▸</span> Full Stack Development</li>
-                                <li class="flex items-center gap-2 text-[#94A3B8]"><span class="text-[#818CF8] font-bold">▸</span> AI & Machine Learning</li>
-                                <li class="flex items-center gap-2 text-[#94A3B8]"><span class="text-[#34D399] font-bold">▸</span> Cyber Security</li>
-                                <li class="flex items-center gap-2 text-[#94A3B8]"><span class="text-[#F472B6] font-bold">▸</span> IoT & Firmware</li>
-                                <li class="flex items-center gap-2 text-[#94A3B8]"><span class="text-[#FBBF24] font-bold">▸</span> Mobile Apps</li>
-                            </ul>
-                            <p class="text-[#94A3B8] text-xs mt-1">📍 Campobasso, Italy</p>
+                        {{-- Back: second photo --}}
+                        <div class="about-flip-back">
+                            <img src="{{ asset('elia-img.PNG') }}" alt="Elijah Malay Dovelee"
+                                 class="w-full h-full object-cover object-top" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -129,9 +120,20 @@
 
                 <h2 class="font-display font-bold text-2xl md:text-4xl mb-6">{{ __('site.about_title') }}</h2>
 
-                <p class="text-[#E7E9F0] leading-relaxed text-sm md:text-base mb-4">{{ __('site.about_p1') }}</p>
-                <p class="text-[#94A3B8] leading-relaxed text-sm md:text-base mb-4">{{ __('site.about_p2') }}</p>
-                <p class="text-[#94A3B8] leading-relaxed text-sm md:text-base">{{ __('site.about_p3') }}</p>
+                <div class="relative">
+                    {{-- Default text (shown when not hovering image) --}}
+                    <div id="about-text-a" style="transition:opacity 0.5s ease">
+                        <p class="text-[#E7E9F0] leading-relaxed text-sm md:text-base mb-4">{{ __('site.about_p1') }}</p>
+                        <p class="text-[#94A3B8] leading-relaxed text-sm md:text-base mb-4">{{ __('site.about_p2') }}</p>
+                        <p class="text-[#94A3B8] leading-relaxed text-sm md:text-base">{{ __('site.about_p3') }}</p>
+                    </div>
+                    {{-- Alternate text (shown when hovering the image) --}}
+                    <div id="about-text-b" style="position:absolute;top:0;left:0;width:100%;opacity:0;transition:opacity 0.5s ease;pointer-events:none">
+                        <p class="text-[#E7E9F0] leading-relaxed text-sm md:text-base mb-4">{{ __('site.about_alt_p1') }}</p>
+                        <p class="text-[#94A3B8] leading-relaxed text-sm md:text-base mb-4">{{ __('site.about_alt_p2') }}</p>
+                        <p class="text-[#94A3B8] leading-relaxed text-sm md:text-base">{{ __('site.about_alt_p3') }}</p>
+                    </div>
+                </div>
             </div>
 
         </div>

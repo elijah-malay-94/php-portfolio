@@ -701,6 +701,21 @@
             }, { threshold: 0.3 }).observe(skillSec2);
         }
 
+        // ── About image hover — swap text ────────────────────────────
+        const aboutFlip  = document.querySelector('.about-flip');
+        const aboutTextA = document.getElementById('about-text-a');
+        const aboutTextB = document.getElementById('about-text-b');
+        if (aboutFlip && aboutTextA && aboutTextB) {
+            aboutFlip.addEventListener('mouseenter', () => {
+                aboutTextA.style.opacity = '0';
+                aboutTextB.style.opacity = '1';
+            });
+            aboutFlip.addEventListener('mouseleave', () => {
+                aboutTextA.style.opacity = '1';
+                aboutTextB.style.opacity = '0';
+            });
+        }
+
         // ── Tilt effect on project cards ──────────────────────────────
         document.querySelectorAll('.tilt-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {

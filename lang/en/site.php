@@ -24,6 +24,11 @@ return [
     'about_p1'    => 'Software Engineer and full-stack developer focused on building secure, complete web applications — from interface to database to deployment.',
     'about_p2'    => 'I\'m currently expanding into AI and machine learning alongside my web work, because I want to stay ahead of where the industry is heading.',
     'about_p3'    => 'My background spans mining engineering, sales, and geotechnical work before I moved fully into software — that range shapes how I approach problems.',
+
+    'about_alt_p1' => 'Creator of FamilyNest — a global family platform built to keep loved ones close across any distance. Every feature, every design decision, every line of code: conceived, designed, and shipped by me.',
+    'about_alt_p2' => 'I believe technology should solve real problems for real people. Whether it\'s IoT hardware, a web platform, or a mobile app — my focus is always on what the end user actually needs.',
+    'about_alt_p3' => 'Born in Liberia, building in Italy — my cross-cultural background gives me a perspective most developers don\'t have. I\'ve seen how technology can transform communities, and that drives everything I build.',
+
     'experience'  => 'Experience',
 
     'job1_desc' => 'Firmware work getting acquisition terminals to talk to hardware, plus building the software interface and tools used to process and view incoming data.',

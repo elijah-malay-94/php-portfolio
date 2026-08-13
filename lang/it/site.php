@@ -24,6 +24,11 @@ return [
     'about_p1'    => 'Ingegnere del software e sviluppatore full stack focalizzato sulla costruzione di applicazioni web sicure e complete — dall\'interfaccia al database fino al deployment.',
     'about_p2'    => 'Sto espandendo le mie competenze nell\'AI e nel machine learning, per restare al passo con la direzione del settore.',
     'about_p3'    => 'Il mio percorso passa da ingegneria mineraria, vendite e rilievi geotecnici prima di entrare nel software — quella varietà plasma il mio approccio ai problemi.',
+
+    'about_alt_p1' => 'Creatore di FamilyNest — una piattaforma globale per famiglie pensata per tenere vicini i propri cari ovunque si trovino. Ogni funzione, ogni scelta di design, ogni riga di codice: ideata, progettata e rilasciata da me.',
+    'about_alt_p2' => 'Credo che la tecnologia debba risolvere problemi reali per persone reali. Che si tratti di hardware IoT, una piattaforma web o un\'app mobile — mi concentro sempre su ciò di cui l\'utente finale ha davvero bisogno.',
+    'about_alt_p3' => 'Nato in Liberia, costruisco in Italia — il mio background interculturale mi dà una prospettiva che la maggior parte degli sviluppatori non ha. Ho visto come la tecnologia può trasformare le comunità, e questo guida tutto ciò che realizzo.',
+
     'experience'  => 'Esperienza',
 
     'job1_desc' => 'Lavoro firmware per far comunicare i terminali di acquisizione con l\'hardware, più la costruzione dell\'interfaccia software e degli strumenti per elaborare e visualizzare i dati in ingresso.',
