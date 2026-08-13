@@ -711,7 +711,7 @@
                 'rgba(236,72,153,0.03)',
             ];
             const targets = [
-                ...document.querySelectorAll('section:not(#hero)'),
+                ...document.querySelectorAll('section:not(#home)'),
                 document.querySelector('footer'),
             ].filter(Boolean);
 
@@ -722,7 +722,7 @@
                 const layer = document.createElement('div');
                 layer.className = 'cloud-layer';
 
-                const count = 4 + Math.floor(Math.random() * 3); // 4-6 puffs per section
+                const count = 4 + Math.floor(Math.random() * 3);
                 for (let i = 0; i < count; i++) {
                     const puff = document.createElement('div');
                     puff.className = 'cloud-puff';
@@ -740,16 +740,6 @@
                 }
 
                 section.insertBefore(layer, section.firstChild);
-            });
-
-            // Lift inner containers above the cloud layer
-            targets.forEach(section => {
-                Array.from(section.children).forEach(child => {
-                    if (!child.classList.contains('cloud-layer')) {
-                        child.style.position = 'relative';
-                        child.style.zIndex   = '1';
-                    }
-                });
             });
         })();
     </script>
