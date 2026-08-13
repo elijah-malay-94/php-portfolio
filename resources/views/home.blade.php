@@ -560,6 +560,11 @@
                 </div>
 
                 <div>
+                    <p class="font-mono text-sm text-[#38BDF8] uppercase tracking-wide mb-3">Website</p>
+                    <a href="https://eliamalay.com" target="_blank" class="text-[#E7E9F0] hover:text-[#38BDF8] transition">eliamalay.com</a>
+                </div>
+
+                <div>
                     <p class="font-mono text-sm text-[#38BDF8] uppercase tracking-wide mb-3">{{ __('site.contact_loc_label') }}</p>
                     <p class="text-[#94A3B8]">{{ __('site.contact_loc_value') }}</p>
                 </div>
