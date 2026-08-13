@@ -250,7 +250,7 @@
                         </h4>
                         <p class="text-[#94A3B8]">{{ __('site.edu4_desc') }}</p>
                     </div>
-                    <img src="{{ asset('rapido.png') }}" alt="Academy Rapido" class="w-14 h-14 object-contain rounded-lg flex-shrink-0 mt-1 bg-white/5 p-1" onerror="this.style.display='none'">
+                    <img src="{{ asset('repido.png') }}" alt="Academy Rapido" class="w-14 h-14 object-contain rounded-lg flex-shrink-0 mt-1 bg-white/5 p-1" onerror="this.style.display='none'">
                 </div>
             </div>
 
