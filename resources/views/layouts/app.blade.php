@@ -607,19 +607,7 @@
         }, { threshold: 0.12 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // ── Active nav highlighting ──────────────────────────────────
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('section[id]');
-        const navObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    navLinks.forEach(l => l.classList.remove('text-[#38BDF8]'));
-                    const active = document.querySelector(`.nav-link[data-section="${e.target.id}"]`);
-                    if (active) active.classList.add('text-[#38BDF8]');
-                }
-            });
-        }, { rootMargin: '-40% 0px -55% 0px' });
-        sections.forEach(s => navObserver.observe(s));
+        // ── Active nav highlighting — handled by activeSectionObs below ──
 
         // ── Back to top ──────────────────────────────────────────────
         const btt = document.getElementById('back-to-top');
