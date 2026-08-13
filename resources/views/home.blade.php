@@ -474,18 +474,6 @@
             {{-- Form --}}
             <div class="md:col-span-3">
 
-                @if (session('success'))
-                    <div class="bg-[#38BDF8]/10 border border-[#38BDF8]/30 text-[#38BDF8] px-5 py-4 rounded-xl text-sm mb-6">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                @if (session('mail_error'))
-                    <div class="bg-red-500/10 border border-red-500/30 text-red-400 px-5 py-4 rounded-xl text-sm mb-6">
-                        {{ session('mail_error') }}
-                    </div>
-                @endif
-
                 <form action="/contact" method="POST" class="space-y-5">
                     @csrf
 
@@ -515,9 +503,24 @@
                     </div>
 
                     <button type="submit"
-                            class="bg-[#38BDF8] text-[#0F172A] font-medium px-8 py-3 rounded-lg hover:bg-[#5fcaf9] transition">
+                            class="bg-[#38BDF8] text-[#0F172A] font-medium px-8 py-3 rounded-lg hover:bg-[#5fcaf9] transition w-full sm:w-auto">
                         {{ __('site.contact_send') }}
                     </button>
+
+                    @if (session('success'))
+                        <div id="form-feedback" class="flex items-center gap-3 bg-green-500/10 border border-green-500/30 text-green-400 px-5 py-4 rounded-xl text-sm">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if (session('mail_error'))
+                        <div id="form-feedback" class="flex items-center gap-3 bg-red-500/10 border border-red-500/30 text-red-400 px-5 py-4 rounded-xl text-sm">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                            {{ session('mail_error') }}
+                        </div>
+                    @endif
+
                 </form>
             </div>
 
@@ -550,6 +553,10 @@
 </section>
 
 <script>
+    // Scroll to feedback message after form submit
+    const feedback = document.getElementById('form-feedback');
+    if (feedback) feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
     const phrases = @json(__('site.hero_typing'));
     let phraseIndex = 0, charIndex = 0, deleting = false;
     const el = document.getElementById('typed-text');
