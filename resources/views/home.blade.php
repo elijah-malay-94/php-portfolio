@@ -199,7 +199,10 @@
                         </h4>
                         <p class="text-[#94A3B8]">{{ __('site.edu1_desc') }}</p>
                     </div>
-                    <img src="{{ asset('mbs.png') }}" alt="MBS School of Business" class="w-14 h-14 object-contain rounded-lg flex-shrink-0 mt-1 bg-white/5 p-1">
+                    <div class="flex flex-col gap-1 flex-shrink-0 mt-1">
+                        <img src="{{ asset('mbs.png') }}" alt="MBS School of Business" class="w-14 h-14 object-contain rounded-lg bg-white/5 p-1">
+                        <img src="{{ asset('great-learing.png') }}" alt="Great Learning" class="w-14 h-14 object-contain rounded-lg bg-white/5 p-1">
+                    </div>
                 </div>
             </div>
 
