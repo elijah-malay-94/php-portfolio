@@ -376,6 +376,28 @@
             #contact .md\:col-span-2 { display: block !important; width: 100% !important; }
             #contact .md\:col-span-2 > div { margin-bottom: 14pt !important; padding-bottom: 10pt !important; border-bottom: 0.5pt solid #eee !important; }
         }
+
+        /* ── Moving clouds ──────────────────────────────────────────── */
+        .cloud-layer {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .cloud-puff {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: cloudDrift linear infinite;
+            opacity: 0;
+        }
+        @keyframes cloudDrift {
+            0%   { transform: translateX(-350px); opacity: 0; }
+            8%   { opacity: 1; }
+            92%  { opacity: 1; }
+            100% { transform: translateX(calc(100vw + 350px)); opacity: 0; }
+        }
     </style>
 </head>
 <body class="bg-[#0F172A] text-[#E7E9F0] overflow-x-hidden">
@@ -678,6 +700,58 @@
             }
             animate();
         }
+
+        /* ── Moving clouds (all sections except hero) ─────────────── */
+        (function() {
+            const CLOUD_COLORS = [
+                'rgba(56,189,248,0.055)',
+                'rgba(129,140,248,0.045)',
+                'rgba(255,255,255,0.035)',
+                'rgba(56,189,248,0.04)',
+                'rgba(236,72,153,0.03)',
+            ];
+            const targets = [
+                ...document.querySelectorAll('section:not(#hero)'),
+                document.querySelector('footer'),
+            ].filter(Boolean);
+
+            targets.forEach(section => {
+                if (window.getComputedStyle(section).position === 'static') {
+                    section.style.position = 'relative';
+                }
+                const layer = document.createElement('div');
+                layer.className = 'cloud-layer';
+
+                const count = 4 + Math.floor(Math.random() * 3); // 4-6 puffs per section
+                for (let i = 0; i < count; i++) {
+                    const puff = document.createElement('div');
+                    puff.className = 'cloud-puff';
+                    const w = 180 + Math.random() * 280;
+                    const h = w * (0.35 + Math.random() * 0.3);
+                    puff.style.width  = w + 'px';
+                    puff.style.height = h + 'px';
+                    puff.style.top    = (5 + Math.random() * 88) + '%';
+                    puff.style.left   = '0';
+                    puff.style.background = CLOUD_COLORS[Math.floor(Math.random() * CLOUD_COLORS.length)];
+                    const dur = 55 + Math.random() * 55;
+                    puff.style.animationDuration  = dur + 's';
+                    puff.style.animationDelay     = (-Math.random() * dur) + 's';
+                    layer.appendChild(puff);
+                }
+
+                section.insertBefore(layer, section.firstChild);
+            });
+
+            // Lift inner containers above the cloud layer
+            targets.forEach(section => {
+                Array.from(section.children).forEach(child => {
+                    if (!child.classList.contains('cloud-layer')) {
+                        child.style.position = 'relative';
+                        child.style.zIndex   = '1';
+                    }
+                });
+            });
+        })();
     </script>
 
 

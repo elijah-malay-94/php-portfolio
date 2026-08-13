@@ -226,22 +226,32 @@
 
             <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
-                <p class="font-mono text-base text-[#94A3B8] mb-1">2024 – Sep 2026 · {{ __('site.final_exam') }}</p>
-                <h4 class="font-semibold text-base flex items-center gap-2">
-                    <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                    Computer Science and Full Stack Developer
-                </h4>
-                <p class="text-[#94A3B8]">{{ __('site.edu3_desc') }}</p>
+                <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                        <p class="font-mono text-base text-[#94A3B8] mb-1">2024 – Sep 2026 · {{ __('site.final_exam') }}</p>
+                        <h4 class="font-semibold text-base flex items-center gap-2">
+                            <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            Computer Science and Full Stack Developer
+                        </h4>
+                        <p class="text-[#94A3B8]">{{ __('site.edu3_desc') }}</p>
+                    </div>
+                    <img src="{{ asset('demos.png') }}" alt="ITS DEMOS Academy" class="w-14 h-14 object-contain rounded-lg flex-shrink-0 mt-1 bg-white/5 p-1">
+                </div>
             </div>
 
             <div class="relative timeline-reveal">
                 <span class="absolute -left-[35px] top-1.5 w-3 h-3 rounded-full bg-white/20"></span>
-                <p class="font-mono text-base text-[#94A3B8] mb-1">2022 – 2023</p>
-                <h4 class="font-semibold text-base flex items-center gap-2">
-                    <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    Master's in Cyber Security: Operations
-                </h4>
-                <p class="text-[#94A3B8]">{{ __('site.edu4_desc') }}</p>
+                <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                        <p class="font-mono text-base text-[#94A3B8] mb-1">2022 – 2023</p>
+                        <h4 class="font-semibold text-base flex items-center gap-2">
+                            <svg class="text-[#38BDF8] flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Master's in Cyber Security: Operations
+                        </h4>
+                        <p class="text-[#94A3B8]">{{ __('site.edu4_desc') }}</p>
+                    </div>
+                    <img src="{{ asset('rapido.png') }}" alt="Academy Rapido" class="w-14 h-14 object-contain rounded-lg flex-shrink-0 mt-1 bg-white/5 p-1">
+                </div>
             </div>
 
             <div class="relative timeline-reveal">
