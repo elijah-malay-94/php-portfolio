@@ -336,7 +336,7 @@
                     {{ __('site.skills_languages') }}
                 </h4>
                 <div class="space-y-4">
-                    @foreach ([['JavaScript',85],['PHP',85],['Python',70],['Java',65],['C#',65]] as [$skill,$pct])
+                    @foreach ([['HTML',95],['CSS',90],['JavaScript',85],['PHP',85],['Python',70],['Java',65],['C#',65]] as [$skill,$pct])
                     <div>
                         <div class="flex justify-between mb-1.5">
                             <span class="text-sm text-[#E7E9F0]">{{ $skill }}</span>
