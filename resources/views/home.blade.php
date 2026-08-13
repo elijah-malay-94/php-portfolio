@@ -417,18 +417,29 @@
                 ['img' => 'betting.png',          'title' => 'Betting Management System',  'url' => 'https://github.com/elijah-malay-94/betting-managment-system-app','demo' => 'https://betting-managment-system.netlify.app/',                   'desc' => __('site.proj4_desc'), 'tags' => ['Angular','TypeScript','Unit Testing']],
                 ['img' => 'hotel.png',            'title' => 'Hotel Management App',       'url' => 'https://github.com/elijah-malay-94/edmalay-hotel-project',       'demo' => 'https://edmalay-hotel-management-app.netlify.app/',               'desc' => __('site.proj5_desc'), 'tags' => ['React','Vite','JavaScript']],
                 ['img' => 'clinic-management.png','title' => 'Clinic Management App',      'url' => 'https://github.com/elijah-malay-94/edmalay-clinic-app',          'demo' => 'https://malay-medical-website.netlify.app/',                      'desc' => __('site.proj6_desc'), 'tags' => ['React','Vite','JavaScript']],
+                ['img' => null,                  'title' => 'FamilyNest',                 'url' => null,                                                             'demo' => null,                                                              'desc' => __('site.proj7_desc'), 'tags' => ['React Native','Mobile','AI','Real-time','Firebase']],
             ];
             @endphp
 
             @foreach ($projects as $project)
             <div class="bg-[#1E293B] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-[#38BDF8]/40 card-hover reveal-item">
                 <div class="h-44 overflow-hidden">
-                    <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" loading="lazy">
+                    @if ($project['img'])
+                        <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" loading="lazy">
+                    @else
+                        <div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg,#0f2744 0%,#0e3a5c 40%,#0a2a45 100%)">
+                            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
+                    @endif
                 </div>
                 <div class="p-6 flex flex-col flex-1">
                     <div class="flex items-start justify-between mb-3">
                         <h3 class="font-display font-bold text-xl">{{ $project['title'] }}</h3>
-                        <a href="{{ $project['url'] }}" target="_blank" class="text-[#94A3B8] hover:text-[#38BDF8] transition flex-shrink-0 ml-3" aria-label="GitHub">{!! $ghIcon !!}</a>
+                        @if ($project['url'])
+                            <a href="{{ $project['url'] }}" target="_blank" class="text-[#94A3B8] hover:text-[#38BDF8] transition flex-shrink-0 ml-3" aria-label="GitHub">{!! $ghIcon !!}</a>
+                        @else
+                            <span class="font-mono text-xs border border-[#38BDF8]/30 text-[#38BDF8] rounded-full px-2 py-0.5 flex-shrink-0 ml-3">Owner</span>
+                        @endif
                     </div>
                     <p class="text-[#94A3B8] text-base leading-relaxed flex-1 mb-5">{{ $project['desc'] }}</p>
                     <div class="flex flex-wrap gap-2 mb-4">
