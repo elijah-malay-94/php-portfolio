@@ -12,7 +12,7 @@ return [
 
     // Hero
     'hero_badge'         => '$ whoami',
-    'hero_subtitle'      => 'Computer Engineer & Full Stack Developer',
+    'hero_subtitle'      => 'Software Engineer & Full Stack Developer',
     'hero_typing'        => ['Building secure web apps', 'Full stack, start to finish', 'Learning AI & Machine Learning', 'Laravel & PHP developer'],
     'hero_bio'           => 'I build things on the web — front-end, back-end, whatever the project actually needs. Security isn\'t something I bolt on at the end; it\'s part of how I think while I\'m writing the code.',
     'hero_view_projects' => 'View my projects',
@@ -21,7 +21,7 @@ return [
     // About
     'about_badge' => '$ cat about.md',
     'about_title' => 'About Me',
-    'about_p1'    => 'Computer Engineer and full-stack developer focused on building secure, complete web applications — from interface to database to deployment.',
+    'about_p1'    => 'Software Engineer and full-stack developer focused on building secure, complete web applications — from interface to database to deployment.',
     'about_p2'    => 'I\'m currently expanding into AI and machine learning alongside my web work, because I want to stay ahead of where the industry is heading.',
     'about_p3'    => 'My background spans mining engineering, sales, and geotechnical work before I moved fully into software — that range shapes how I approach problems.',
     'experience'  => 'Experience',

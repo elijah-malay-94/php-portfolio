@@ -7,22 +7,22 @@
     <title>@yield('title', 'Elijah Malay Dovelee — Full Stack Web Developer')</title>
 
     {{-- SEO --}}
-    <meta name="description" content="Elijah Malay Dovelee — Computer Engineer & Full Stack Developer based in Campobasso, Italy. Building secure web applications with React, .NET, Laravel, Node.js and more.">
+    <meta name="description" content="Elijah Malay Dovelee — Software Engineer & Full Stack Developer based in Campobasso, Italy. Building secure web applications with React, .NET, Laravel, Node.js and more.">
     <meta name="author" content="Elijah Malay Dovelee">
     <meta name="robots" content="index, follow">
 
     {{-- Open Graph --}}
     <meta property="og:type"        content="website">
-    <meta property="og:title"       content="Elijah Malay Dovelee — Computer Engineer & Full Stack Developer">
-    <meta property="og:description" content="Computer Engineer & Full Stack Developer based in Campobasso, Italy. Building secure web applications with React, .NET, Laravel, Node.js and more.">
+    <meta property="og:title"       content="Elijah Malay Dovelee — Software Engineer & Full Stack Developer">
+    <meta property="og:description" content="Software Engineer & Full Stack Developer based in Campobasso, Italy. Building secure web applications with React, .NET, Laravel, Node.js and more.">
     <meta property="og:image"       content="{{ asset('malay_img.png') }}">
     <meta property="og:url"         content="{{ url('/') }}">
     <meta property="og:locale"      content="{{ app()->getLocale() === 'it' ? 'it_IT' : 'en_US' }}">
 
     {{-- Twitter Card --}}
     <meta name="twitter:card"        content="summary_large_image">
-    <meta name="twitter:title"       content="Elijah Malay Dovelee — Computer Engineer & Full Stack Developer">
-    <meta name="twitter:description" content="Computer Engineer & Full Stack Developer based in Campobasso, Italy.">
+    <meta name="twitter:title"       content="Elijah Malay Dovelee — Software Engineer & Full Stack Developer">
+    <meta name="twitter:description" content="Software Engineer & Full Stack Developer based in Campobasso, Italy.">
     <meta name="twitter:image"       content="{{ asset('malay_img.png') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
