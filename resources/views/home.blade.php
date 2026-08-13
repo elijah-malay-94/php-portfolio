@@ -96,10 +96,10 @@
 <section id="about" class="bg-[#1E293B] border-t border-white/10 scroll-mt-20">
     <div class="max-w-6xl mx-auto px-6 md:px-12 py-20 md:py-28 reveal">
 
-        <div class="grid md:grid-cols-3 gap-10 md:gap-16 items-stretch mb-14">
+        <div class="grid md:grid-cols-3 gap-10 md:gap-16 mb-14" style="align-items:stretch">
 
-            <div class="md:col-span-1 flex justify-center md:justify-start order-last md:order-first h-full">
-                <div class="about-flip w-full h-full">
+            <div class="md:col-span-1 order-last md:order-first" style="align-self:stretch;min-height:300px">
+                <div class="about-flip w-full" style="height:100%">
                     <div class="about-flip-inner">
                         {{-- Front: photo --}}
                         <div class="about-flip-front">
