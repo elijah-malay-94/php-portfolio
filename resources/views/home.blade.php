@@ -498,54 +498,47 @@
             @endphp
 
             @foreach ($projects as $project)
-            <div class="reveal-item proj-flip proj-glow-{{ $project['glow'] }} relative" style="height:430px">
+            <div class="reveal-item proj-flip proj-glow-{{ $project['glow'] }} relative" style="height:360px">
                 <div class="proj-flip-inner">
 
-                    {{-- FRONT --}}
-                    <div class="proj-flip-front bg-[#1E293B] border border-white/10 flex flex-col shimmer">
-                        <div class="h-48 overflow-hidden flex-shrink-0">
-                            @if ($project['img'])
-                                <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" loading="lazy">
-                            @else
-                                <div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg,#0f2744 0%,#0e3a5c 40%,#0a2a45 100%)">
-                                    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                                </div>
-                            @endif
-                        </div>
-                        <div class="p-5 flex flex-col flex-1">
-                            <div class="flex items-start justify-between mb-3">
-                                <h3 class="font-display font-bold text-lg leading-snug">{{ $project['title'] }}</h3>
+                    {{-- FRONT: full image + title/tags overlaid at bottom --}}
+                    <div class="proj-flip-front relative">
+                        <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-end p-5" style="background:linear-gradient(to top,rgba(8,14,26,0.96) 0%,rgba(8,14,26,0.55) 55%,transparent 100%)">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-display font-bold text-lg text-white leading-snug">{{ $project['title'] }}</h3>
                                 @if ($project['url'])
-                                    <a href="{{ $project['url'] }}" target="_blank" class="text-[#94A3B8] hover:text-[#38BDF8] transition flex-shrink-0 ml-3" aria-label="GitHub">{!! $ghIcon !!}</a>
+                                    <a href="{{ $project['url'] }}" target="_blank" class="text-white/60 hover:text-white transition flex-shrink-0 ml-3" aria-label="GitHub">{!! $ghIcon !!}</a>
                                 @else
-                                    <span class="font-mono text-xs border border-[#38BDF8]/30 text-[#38BDF8] rounded-full px-2 py-0.5 flex-shrink-0 ml-3">Owner</span>
+                                    <span class="font-mono text-xs border border-[#38BDF8]/50 text-[#38BDF8] rounded-full px-2 py-0.5 flex-shrink-0 ml-3">Owner</span>
                                 @endif
                             </div>
-                            <div class="flex flex-wrap gap-1.5 mt-auto">
+                            <div class="flex flex-wrap gap-1.5 mb-2">
                                 @foreach (array_slice($project['tags'], 0, 4) as $tag)
-                                    <span class="font-mono text-xs border border-white/20 rounded-full px-2.5 py-0.5 text-[#94A3B8]">{{ $tag }}</span>
+                                    <span class="font-mono text-xs rounded-full px-2.5 py-0.5 text-white/70 border border-white/20">{{ $tag }}</span>
                                 @endforeach
                             </div>
-                            <p class="font-mono text-xs mt-4 text-center" style="color:rgba({{ $project['glowRgb'] }},0.5)">hover to flip ↺</p>
+                            <p class="font-mono text-xs" style="color:rgba({{ $project['glowRgb'] }},0.7)">hover to flip ↺</p>
                         </div>
                     </div>
 
-                    {{-- BACK --}}
-                    <div class="proj-flip-back bg-[#080E1A] flex flex-col border" style="border-color:rgba({{ $project['glowRgb'] }},0.4)">
-                        <div class="h-1.5 flex-shrink-0" style="background:linear-gradient(90deg,rgba({{ $project['glowRgb'] }},0.9),transparent)"></div>
-                        <div class="p-5 flex flex-col flex-1 overflow-hidden">
+                    {{-- BACK: same image darkened + description overlaid --}}
+                    <div class="proj-flip-back relative">
+                        <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" style="filter:brightness(0.25) saturate(0.6)">
+                        <div class="absolute inset-0 flex flex-col p-5" style="background:rgba(8,14,26,0.72)">
+                            <div class="h-1 w-16 rounded-full mb-4 flex-shrink-0" style="background:rgb({{ $project['glowRgb'] }})"></div>
                             <h3 class="font-display font-bold text-lg mb-3 flex-shrink-0" style="color:rgb({{ $project['glowRgb'] }})">{{ $project['title'] }}</h3>
-                            <p class="text-[#94A3B8] text-sm leading-relaxed flex-1 overflow-y-auto mb-3 pr-1">{{ $project['desc'] }}</p>
+                            <p class="text-white/80 text-sm leading-relaxed flex-1 overflow-y-auto mb-3 pr-1">{{ $project['desc'] }}</p>
                             <div class="flex flex-wrap gap-1.5 mb-3 flex-shrink-0">
                                 @foreach ($project['tags'] as $tag)
-                                    <span class="font-mono text-xs rounded-full px-2.5 py-0.5 text-[#94A3B8]"
-                                          style="border:1px solid rgba({{ $project['glowRgb'] }},0.3);background:rgba({{ $project['glowRgb'] }},0.08)">{{ $tag }}</span>
+                                    <span class="font-mono text-xs rounded-full px-2.5 py-0.5 text-white/70"
+                                          style="border:1px solid rgba({{ $project['glowRgb'] }},0.4);background:rgba({{ $project['glowRgb'] }},0.12)">{{ $tag }}</span>
                                 @endforeach
                             </div>
                             @if (!empty($project['demo']))
                                 <a href="{{ $project['demo'] }}" target="_blank"
-                                   class="inline-flex items-center gap-1.5 text-sm font-medium rounded-lg px-3 py-1.5 transition w-fit flex-shrink-0"
-                                   style="color:rgb({{ $project['glowRgb'] }});border:1px solid rgba({{ $project['glowRgb'] }},0.4);background:rgba({{ $project['glowRgb'] }},0.1)">
+                                   class="inline-flex items-center gap-1.5 text-sm font-medium rounded-lg px-3 py-1.5 w-fit flex-shrink-0"
+                                   style="color:rgb({{ $project['glowRgb'] }});border:1px solid rgba({{ $project['glowRgb'] }},0.5);background:rgba({{ $project['glowRgb'] }},0.15)">
                                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                     Live Demo
                                 </a>
