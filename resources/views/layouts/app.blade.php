@@ -97,6 +97,63 @@
         }
         .cert-flip-back { transform: rotateY(180deg); }
 
+        /* ── Project flip cards ──────────────────────────────────── */
+        .proj-flip {
+            perspective: 1200px;
+            border-radius: 1rem;
+            transition: box-shadow 0.4s ease;
+        }
+        .proj-flip-inner {
+            position: relative;
+            width: 100%; height: 100%;
+            transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+            transform-style: preserve-3d;
+        }
+        .proj-flip:hover .proj-flip-inner { transform: rotateY(180deg); }
+        .proj-flip-front, .proj-flip-back {
+            position: absolute;
+            inset: 0;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .proj-flip-back { transform: rotateY(180deg); }
+        /* Per-project glow colours */
+        .proj-glow-blue:hover   { box-shadow: 0 0 22px rgba(56,189,248,0.65),  0 0 70px rgba(56,189,248,0.25); }
+        .proj-glow-purple:hover { box-shadow: 0 0 22px rgba(129,140,248,0.65), 0 0 70px rgba(129,140,248,0.25); }
+        .proj-glow-green:hover  { box-shadow: 0 0 22px rgba(52,211,153,0.65),  0 0 70px rgba(52,211,153,0.25); }
+        .proj-glow-orange:hover { box-shadow: 0 0 22px rgba(251,146,60,0.65),  0 0 70px rgba(251,146,60,0.25); }
+        .proj-glow-pink:hover   { box-shadow: 0 0 22px rgba(244,114,182,0.65), 0 0 70px rgba(244,114,182,0.25); }
+        .proj-glow-teal:hover   { box-shadow: 0 0 22px rgba(45,212,191,0.65),  0 0 70px rgba(45,212,191,0.25); }
+        .proj-glow-amber:hover  { box-shadow: 0 0 22px rgba(251,191,36,0.65),  0 0 70px rgba(251,191,36,0.25); }
+
+        /* ── About image flip ────────────────────────────────────── */
+        .about-flip {
+            perspective: 1000px;
+            border-radius: 1.25rem;
+            transition: box-shadow 0.4s ease;
+        }
+        .about-flip:hover {
+            box-shadow: 0 0 28px rgba(56,189,248,0.55), 0 0 80px rgba(56,189,248,0.2);
+        }
+        .about-flip-inner {
+            position: relative;
+            width: 100%; height: 100%;
+            transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+            transform-style: preserve-3d;
+        }
+        .about-flip:hover .about-flip-inner { transform: rotateY(180deg); }
+        .about-flip-front, .about-flip-back {
+            position: absolute;
+            inset: 0;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 1.25rem;
+            overflow: hidden;
+        }
+        .about-flip-back { transform: rotateY(180deg); }
+
         /* ── Scroll progress bar ──────────────────────────────────── */
         #scroll-progress {
             position: fixed; top: 0; left: 0; right: 0; height: 3px;

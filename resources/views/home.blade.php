@@ -99,8 +99,29 @@
         <div class="grid md:grid-cols-3 gap-10 md:gap-16 items-start mb-14">
 
             <div class="md:col-span-1 flex justify-center md:justify-start order-last md:order-first">
-                <img src="{{ asset('elia-img.PNG') }}" alt="Elijah Malay Dovelee"
-                     class="w-full max-w-[280px] md:max-w-xs h-auto rounded-[20px]" loading="lazy">
+                <div class="about-flip w-full max-w-[280px] md:max-w-xs" style="height:360px">
+                    <div class="about-flip-inner">
+                        {{-- Front: photo --}}
+                        <div class="about-flip-front">
+                            <img src="{{ asset('elijah.png') }}" alt="Elijah Malay Dovelee"
+                                 class="w-full h-full object-cover object-top" loading="lazy">
+                        </div>
+                        {{-- Back: quick facts --}}
+                        <div class="about-flip-back bg-[#0B1120] border border-[#38BDF8]/30 flex flex-col justify-center items-center p-6 text-center gap-3">
+                            <span class="font-mono text-xs text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-3 py-1">$ whoami</span>
+                            <h3 class="font-display font-bold text-lg">Elijah Malay Dovelee</h3>
+                            <p class="font-mono text-sm text-[#38BDF8]">Software Engineer</p>
+                            <ul class="text-sm space-y-2 text-left w-full mt-1">
+                                <li class="flex items-center gap-2 text-[#94A3B8]"><span class="text-[#38BDF8] font-bold">▸</span> Full Stack Development</li>
+                                <li class="flex items-center gap-2 text-[#94A3B8]"><span class="text-[#818CF8] font-bold">▸</span> AI & Machine Learning</li>
+                                <li class="flex items-center gap-2 text-[#94A3B8]"><span class="text-[#34D399] font-bold">▸</span> Cyber Security</li>
+                                <li class="flex items-center gap-2 text-[#94A3B8]"><span class="text-[#F472B6] font-bold">▸</span> IoT & Firmware</li>
+                                <li class="flex items-center gap-2 text-[#94A3B8]"><span class="text-[#FBBF24] font-bold">▸</span> Mobile Apps</li>
+                            </ul>
+                            <p class="text-[#94A3B8] text-xs mt-1">📍 Campobasso, Italy</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="md:col-span-2 order-first md:order-last">
@@ -462,57 +483,80 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-container">
 
             @php
-            $ghIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>';
+            $ghIcon = '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>';
             $projects = [
-                ['img' => 'mqtt-maeservace.png',  'title' => 'MAEservice App',             'url' => 'https://github.com/elijah-malay-94/MAEservice-App',              'demo' => 'https://maeservice-app.netlify.app/',                              'desc' => __('site.proj1_desc'), 'tags' => ['React','.NET','SQL Server','Docker','MQTT','JWT']],
-                ['img' => 'live-dashboard.png',   'title' => 'MAE Live Dashboard',         'url' => 'https://github.com/elijah-malay-94/MAE-Live-Dashboard-v3-main',  'demo' => 'https://www.maeservice.it/alfa/index.html?page=works',            'desc' => __('site.proj2_desc'), 'tags' => ['JavaScript','Node.js','Real-time']],
-                ['img' => 'eevt002_img.png',      'title' => 'EEVT002 Instrument Control', 'url' => 'https://github.com/elijah-malay-94/EEVT002-INSTRUMENT-CONTROL',  'demo' => null,                                                              'desc' => __('site.proj3_desc'), 'tags' => ['JavaScript','Node.js','Hardware','Firmware']],
-                ['img' => 'betting.png',          'title' => 'Betting Management System',  'url' => 'https://github.com/elijah-malay-94/betting-managment-system-app','demo' => 'https://betting-managment-system.netlify.app/',                   'desc' => __('site.proj4_desc'), 'tags' => ['Angular','TypeScript','Unit Testing']],
-                ['img' => 'hotel.png',            'title' => 'Hotel Management App',       'url' => 'https://github.com/elijah-malay-94/edmalay-hotel-project',       'demo' => 'https://edmalay-hotel-management-app.netlify.app/',               'desc' => __('site.proj5_desc'), 'tags' => ['React','Vite','JavaScript']],
-                ['img' => 'clinic-management.png','title' => 'Clinic Management App',      'url' => 'https://github.com/elijah-malay-94/edmalay-clinic-app',          'demo' => 'https://malay-medical-website.netlify.app/',                      'desc' => __('site.proj6_desc'), 'tags' => ['React','Vite','JavaScript']],
-                ['img' => 'familynext2.png',     'title' => 'FamilyNest',                 'url' => null,                                                             'demo' => null,                                                              'desc' => __('site.proj7_desc'), 'tags' => ['React Native','Mobile','AI','Real-time','Firebase'], 'badge' => 'Coming soon on App Store &amp; Google Play'],
+                ['glow'=>'blue',   'glowRgb'=>'56,189,248',  'img'=>'mqtt-maeservace.png',   'title'=>'MAEservice App',             'url'=>'https://github.com/elijah-malay-94/MAEservice-App',               'demo'=>'https://maeservice-app.netlify.app/',                           'desc'=>__('site.proj1_desc'), 'tags'=>['React','.NET','SQL Server','Docker','MQTT','JWT']],
+                ['glow'=>'purple', 'glowRgb'=>'129,140,248', 'img'=>'live-dashboard.png',    'title'=>'MAE Live Dashboard',         'url'=>'https://github.com/elijah-malay-94/MAE-Live-Dashboard-v3-main',  'demo'=>'https://www.maeservice.it/alfa/index.html?page=works',          'desc'=>__('site.proj2_desc'), 'tags'=>['JavaScript','Node.js','Real-time']],
+                ['glow'=>'green',  'glowRgb'=>'52,211,153',  'img'=>'eevt002_img.png',       'title'=>'EEVT002 Instrument Control', 'url'=>'https://github.com/elijah-malay-94/EEVT002-INSTRUMENT-CONTROL',  'demo'=>null,                                                            'desc'=>__('site.proj3_desc'), 'tags'=>['JavaScript','Node.js','Hardware','Firmware']],
+                ['glow'=>'orange', 'glowRgb'=>'251,146,60',  'img'=>'betting.png',           'title'=>'Betting Management System',  'url'=>'https://github.com/elijah-malay-94/betting-managment-system-app','demo'=>'https://betting-managment-system.netlify.app/',                 'desc'=>__('site.proj4_desc'), 'tags'=>['Angular','TypeScript','Unit Testing']],
+                ['glow'=>'pink',   'glowRgb'=>'244,114,182', 'img'=>'hotel.png',             'title'=>'Hotel Management App',       'url'=>'https://github.com/elijah-malay-94/edmalay-hotel-project',        'demo'=>'https://edmalay-hotel-management-app.netlify.app/',             'desc'=>__('site.proj5_desc'), 'tags'=>['React','Vite','JavaScript']],
+                ['glow'=>'teal',   'glowRgb'=>'45,212,191',  'img'=>'clinic-management.png', 'title'=>'Clinic Management App',      'url'=>'https://github.com/elijah-malay-94/edmalay-clinic-app',           'demo'=>'https://malay-medical-website.netlify.app/',                    'desc'=>__('site.proj6_desc'), 'tags'=>['React','Vite','JavaScript']],
+                ['glow'=>'amber',  'glowRgb'=>'251,191,36',  'img'=>'familynext2.png',       'title'=>'FamilyNest',                 'url'=>null,                                                              'demo'=>null,                                                            'desc'=>__('site.proj7_desc'), 'tags'=>['React Native','Mobile','AI','Real-time','Firebase'], 'badge'=>'Coming soon on App Store &amp; Google Play'],
             ];
             @endphp
 
             @foreach ($projects as $project)
-            <div class="bg-[#1E293B] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-[#38BDF8]/40 reveal-item tilt-card shimmer relative">
-                <div class="h-44 overflow-hidden">
-                    @if ($project['img'])
-                        <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" loading="lazy">
-                    @else
-                        <div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg,#0f2744 0%,#0e3a5c 40%,#0a2a45 100%)">
-                            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <div class="reveal-item proj-flip proj-glow-{{ $project['glow'] }} relative" style="height:430px">
+                <div class="proj-flip-inner">
+
+                    {{-- FRONT --}}
+                    <div class="proj-flip-front bg-[#1E293B] border border-white/10 flex flex-col shimmer">
+                        <div class="h-48 overflow-hidden flex-shrink-0">
+                            @if ($project['img'])
+                                <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" loading="lazy">
+                            @else
+                                <div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg,#0f2744 0%,#0e3a5c 40%,#0a2a45 100%)">
+                                    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                </div>
+                            @endif
                         </div>
-                    @endif
-                </div>
-                <div class="p-6 flex flex-col flex-1">
-                    <div class="flex items-start justify-between mb-3">
-                        <h3 class="font-display font-bold text-xl">{{ $project['title'] }}</h3>
-                        @if ($project['url'])
-                            <a href="{{ $project['url'] }}" target="_blank" class="text-[#94A3B8] hover:text-[#38BDF8] transition flex-shrink-0 ml-3" aria-label="GitHub">{!! $ghIcon !!}</a>
-                        @else
-                            <span class="font-mono text-xs border border-[#38BDF8]/30 text-[#38BDF8] rounded-full px-2 py-0.5 flex-shrink-0 ml-3">Owner</span>
-                        @endif
+                        <div class="p-5 flex flex-col flex-1">
+                            <div class="flex items-start justify-between mb-3">
+                                <h3 class="font-display font-bold text-lg leading-snug">{{ $project['title'] }}</h3>
+                                @if ($project['url'])
+                                    <a href="{{ $project['url'] }}" target="_blank" class="text-[#94A3B8] hover:text-[#38BDF8] transition flex-shrink-0 ml-3" aria-label="GitHub">{!! $ghIcon !!}</a>
+                                @else
+                                    <span class="font-mono text-xs border border-[#38BDF8]/30 text-[#38BDF8] rounded-full px-2 py-0.5 flex-shrink-0 ml-3">Owner</span>
+                                @endif
+                            </div>
+                            <div class="flex flex-wrap gap-1.5 mt-auto">
+                                @foreach (array_slice($project['tags'], 0, 4) as $tag)
+                                    <span class="font-mono text-xs border border-white/20 rounded-full px-2.5 py-0.5 text-[#94A3B8]">{{ $tag }}</span>
+                                @endforeach
+                            </div>
+                            <p class="font-mono text-xs mt-4 text-center" style="color:rgba({{ $project['glowRgb'] }},0.5)">hover to flip ↺</p>
+                        </div>
                     </div>
-                    <p class="text-[#94A3B8] text-base leading-relaxed flex-1 mb-5">{{ $project['desc'] }}</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        @foreach ($project['tags'] as $tag)
-                            <span class="font-mono text-sm border border-white/30 rounded-full px-3 py-1 text-[#94A3B8]">{{ $tag }}</span>
-                        @endforeach
+
+                    {{-- BACK --}}
+                    <div class="proj-flip-back bg-[#080E1A] flex flex-col border" style="border-color:rgba({{ $project['glowRgb'] }},0.4)">
+                        <div class="h-1.5 flex-shrink-0" style="background:linear-gradient(90deg,rgba({{ $project['glowRgb'] }},0.9),transparent)"></div>
+                        <div class="p-5 flex flex-col flex-1 overflow-hidden">
+                            <h3 class="font-display font-bold text-lg mb-3 flex-shrink-0" style="color:rgb({{ $project['glowRgb'] }})">{{ $project['title'] }}</h3>
+                            <p class="text-[#94A3B8] text-sm leading-relaxed flex-1 overflow-y-auto mb-3 pr-1">{{ $project['desc'] }}</p>
+                            <div class="flex flex-wrap gap-1.5 mb-3 flex-shrink-0">
+                                @foreach ($project['tags'] as $tag)
+                                    <span class="font-mono text-xs rounded-full px-2.5 py-0.5 text-[#94A3B8]"
+                                          style="border:1px solid rgba({{ $project['glowRgb'] }},0.3);background:rgba({{ $project['glowRgb'] }},0.08)">{{ $tag }}</span>
+                                @endforeach
+                            </div>
+                            @if (!empty($project['demo']))
+                                <a href="{{ $project['demo'] }}" target="_blank"
+                                   class="inline-flex items-center gap-1.5 text-sm font-medium rounded-lg px-3 py-1.5 transition w-fit flex-shrink-0"
+                                   style="color:rgb({{ $project['glowRgb'] }});border:1px solid rgba({{ $project['glowRgb'] }},0.4);background:rgba({{ $project['glowRgb'] }},0.1)">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    Live Demo
+                                </a>
+                            @endif
+                            @if (!empty($project['badge']))
+                                <p class="inline-flex items-center gap-1.5 text-xs font-mono text-amber-400 border border-amber-400/30 rounded-lg px-3 py-1.5 w-fit mt-2 flex-shrink-0">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    {!! $project['badge'] !!}
+                                </p>
+                            @endif
+                        </div>
                     </div>
-                    @if (!empty($project['demo']))
-                        <a href="{{ $project['demo'] }}" target="_blank"
-                           class="inline-flex items-center gap-1.5 text-sm font-medium text-[#38BDF8] hover:text-white border border-[#38BDF8]/30 hover:border-[#38BDF8] rounded-lg px-3 py-1.5 transition w-fit">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                            Live Demo
-                        </a>
-                    @endif
-                    @if (!empty($project['badge']))
-                        <p class="inline-flex items-center gap-1.5 text-xs font-mono text-amber-400 border border-amber-400/30 rounded-lg px-3 py-1.5 w-fit">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            {!! $project['badge'] !!}
-                        </p>
-                    @endif
+
                 </div>
             </div>
             @endforeach
