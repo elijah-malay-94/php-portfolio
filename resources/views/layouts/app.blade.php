@@ -46,8 +46,14 @@
         .font-mono    { font-family: 'JetBrains Mono', monospace; }
         body          { font-family: 'Inter', sans-serif; }
 
-        /* Hide Porkbun live chat widget */
-        #porkbun-chat-widget, [id*="porkbun"], [class*="porkbun-chat"] { display: none !important; }
+        /* Move Porkbun chat widget to top right */
+        #porkbun-chat-widget, [id*="porkbun"], [class*="porkbun-chat"] {
+            position: fixed !important;
+            top: 100px !important;
+            right: 24px !important;
+            bottom: auto !important;
+            left: auto !important;
+        }
 
         /* Float animation */
         @keyframes float {
