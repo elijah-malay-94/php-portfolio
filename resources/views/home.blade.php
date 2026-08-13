@@ -515,13 +515,12 @@
                         </div>
                     </div>
 
-                    {{-- BACK: same image darkened + description & links only --}}
+                    {{-- BACK: same image + description & links at bottom --}}
                     <div class="proj-flip-back relative">
-                        <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" style="filter:brightness(0.22) saturate(0.5)">
-                        <div class="absolute inset-0 flex flex-col p-5" style="background:rgba(8,14,26,0.70)">
-                            <div class="h-1 w-14 rounded-full mb-4 flex-shrink-0" style="background:rgb({{ $project['glowRgb'] }})"></div>
-                            <p class="text-white/85 text-sm leading-relaxed flex-1 overflow-y-auto mb-4 pr-1">{{ $project['desc'] }}</p>
-                            <div class="flex flex-wrap items-center gap-3 flex-shrink-0">
+                        <img src="{{ asset($project['img']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-0 flex flex-col justify-end p-5" style="background:linear-gradient(to top,rgba(8,14,26,0.97) 0%,rgba(8,14,26,0.6) 60%,transparent 100%)">
+                            <p class="text-white/85 text-sm leading-relaxed mb-3 overflow-y-auto" style="max-height:140px">{{ $project['desc'] }}</p>
+                            <div class="flex flex-wrap items-center gap-3">
                                 @if ($project['url'])
                                     <a href="{{ $project['url'] }}" target="_blank" class="text-white/60 hover:text-white transition" aria-label="GitHub">{!! $ghIcon !!}</a>
                                 @else
@@ -530,7 +529,7 @@
                                 @if (!empty($project['demo']))
                                     <a href="{{ $project['demo'] }}" target="_blank"
                                        class="inline-flex items-center gap-1.5 text-sm font-medium rounded-lg px-3 py-1.5"
-                                       style="color:rgb({{ $project['glowRgb'] }});border:1px solid rgba({{ $project['glowRgb'] }},0.5);background:rgba({{ $project['glowRgb'] }},0.15)">
+                                       style="color:rgb({{ $project['glowRgb'] }});border:1px solid rgba({{ $project['glowRgb'] }},0.6);background:rgba({{ $project['glowRgb'] }},0.18)">
                                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                         Live Demo
                                     </a>
