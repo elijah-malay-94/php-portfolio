@@ -85,7 +85,8 @@
             transition: transform 0.65s cubic-bezier(0.4,0,0.2,1);
             transform-style: preserve-3d;
         }
-        .cert-flip:hover .cert-flip-inner { transform: rotateY(180deg); }
+        .cert-flip:hover .cert-flip-inner,
+        .cert-flip.flipped .cert-flip-inner { transform: rotateY(180deg); }
         .cert-flip-front, .cert-flip-back {
             position: absolute;
             top: 0; left: 0;
@@ -109,7 +110,8 @@
             transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
             transform-style: preserve-3d;
         }
-        .proj-flip:hover .proj-flip-inner { transform: rotateY(180deg); }
+        .proj-flip:hover .proj-flip-inner,
+        .proj-flip.flipped .proj-flip-inner { transform: rotateY(180deg); }
         .proj-flip-front, .proj-flip-back {
             position: absolute;
             inset: 0;
@@ -146,7 +148,8 @@
             transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
             transform-style: preserve-3d;
         }
-        .about-flip:hover .about-flip-inner { transform: rotateY(180deg); }
+        .about-flip:hover .about-flip-inner,
+        .about-flip.flipped .about-flip-inner { transform: rotateY(180deg); }
         .about-flip-front, .about-flip-back {
             position: absolute;
             inset: 0;
@@ -716,6 +719,28 @@
             aboutFlip.addEventListener('mouseleave', () => {
                 aboutTextA.style.opacity = '1';
                 aboutTextB.style.opacity = '0';
+            });
+        }
+
+        // ── Touch / tap flip for mobile ──────────────────────────────
+        if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+            // Project & cert cards: tap to flip, tap again to unflip
+            document.querySelectorAll('.proj-flip, .cert-flip').forEach(card => {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', () => card.classList.toggle('flipped'));
+            });
+            // About image: tap to flip + swap text
+            if (aboutFlip && aboutTextA && aboutTextB) {
+                aboutFlip.style.cursor = 'pointer';
+                aboutFlip.addEventListener('click', () => {
+                    const isFlipped = aboutFlip.classList.toggle('flipped');
+                    aboutTextA.style.opacity = isFlipped ? '0' : '1';
+                    aboutTextB.style.opacity = isFlipped ? '1' : '0';
+                });
+            }
+            // Change "hover for details" hint to "tap" on mobile
+            document.querySelectorAll('.flip-hint').forEach(el => {
+                el.textContent = el.textContent.replace('hover', 'tap');
             });
         }
 

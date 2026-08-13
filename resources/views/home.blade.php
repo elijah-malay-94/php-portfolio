@@ -511,7 +511,7 @@
                                     <span class="font-mono text-xs rounded-full px-2.5 py-0.5 text-white/80 border border-white/25">{{ $tag }}</span>
                                 @endforeach
                             </div>
-                            <p class="font-mono text-xs" style="color:rgba({{ $project['glowRgb'] }},0.8)">hover for details ↺</p>
+                            <p class="flip-hint font-mono text-xs" style="color:rgba({{ $project['glowRgb'] }},0.8)">hover for details ↺</p>
                         </div>
                     </div>
 
