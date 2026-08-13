@@ -15,15 +15,18 @@ class ContactController extends Controller
             'message' => 'required|max:2000',
         ]);
 
-        Mail::raw(
-            "New portfolio contact from {$validated['name']} ({$validated['email']}):\n\n{$validated['message']}",
-            function ($mail) use ($validated) {
-                $mail->to('malaydovelee94@gmail.com')
-                     ->replyTo($validated['email'], $validated['name'])
-                     ->subject("Portfolio contact from {$validated['name']}");
-            }
-        );
-
-        return back()->with('success', "Message sent — I'll get back to you soon.");
+        try {
+            Mail::raw(
+                "New portfolio contact from {$validated['name']} ({$validated['email']}):\n\n{$validated['message']}",
+                function ($mail) use ($validated) {
+                    $mail->to('malaydovelee94@gmail.com')
+                         ->replyTo($validated['email'], $validated['name'])
+                         ->subject("Portfolio contact from {$validated['name']}");
+                }
+            );
+            return back()->with('success', __('site.contact_success'));
+        } catch (\Exception $e) {
+            return back()->with('mail_error', 'Could not send your message — please email me directly at malaydovelee94@gmail.com.')->withInput();
+        }
     }
 }

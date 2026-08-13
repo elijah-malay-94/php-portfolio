@@ -480,6 +480,12 @@
                     </div>
                 @endif
 
+                @if (session('mail_error'))
+                    <div class="bg-red-500/10 border border-red-500/30 text-red-400 px-5 py-4 rounded-xl text-sm mb-6">
+                        {{ session('mail_error') }}
+                    </div>
+                @endif
+
                 <form action="/contact" method="POST" class="space-y-5">
                     @csrf
 
