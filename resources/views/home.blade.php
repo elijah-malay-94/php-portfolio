@@ -417,7 +417,7 @@
                 ['img' => 'betting.png',          'title' => 'Betting Management System',  'url' => 'https://github.com/elijah-malay-94/betting-managment-system-app','demo' => 'https://betting-managment-system.netlify.app/',                   'desc' => __('site.proj4_desc'), 'tags' => ['Angular','TypeScript','Unit Testing']],
                 ['img' => 'hotel.png',            'title' => 'Hotel Management App',       'url' => 'https://github.com/elijah-malay-94/edmalay-hotel-project',       'demo' => 'https://edmalay-hotel-management-app.netlify.app/',               'desc' => __('site.proj5_desc'), 'tags' => ['React','Vite','JavaScript']],
                 ['img' => 'clinic-management.png','title' => 'Clinic Management App',      'url' => 'https://github.com/elijah-malay-94/edmalay-clinic-app',          'demo' => 'https://malay-medical-website.netlify.app/',                      'desc' => __('site.proj6_desc'), 'tags' => ['React','Vite','JavaScript']],
-                ['img' => null,                  'title' => 'FamilyNest',                 'url' => null,                                                             'demo' => null,                                                              'desc' => __('site.proj7_desc'), 'tags' => ['React Native','Mobile','AI','Real-time','Firebase']],
+                ['img' => 'family-nest.png',     'title' => 'FamilyNest',                 'url' => null,                                                             'demo' => null,                                                              'desc' => __('site.proj7_desc'), 'tags' => ['React Native','Mobile','AI','Real-time','Firebase']],
             ];
             @endphp
 
