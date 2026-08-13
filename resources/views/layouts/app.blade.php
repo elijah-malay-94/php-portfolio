@@ -385,18 +385,17 @@
             z-index: 0;
             overflow: hidden;
         }
-        .cloud-puff {
+        .cloud-item {
             position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
             animation: cloudDrift linear infinite;
             opacity: 0;
+            filter: blur(0.5px);
         }
         @keyframes cloudDrift {
-            0%   { transform: translateX(-350px); opacity: 0; }
+            0%   { transform: translateX(-450px); opacity: 0; }
             8%   { opacity: 1; }
             92%  { opacity: 1; }
-            100% { transform: translateX(calc(100vw + 350px)); opacity: 0; }
+            100% { transform: translateX(calc(100vw + 450px)); opacity: 0; }
         }
     </style>
 </head>
@@ -703,13 +702,41 @@
 
         /* ── Moving clouds (all sections except hero) ─────────────── */
         (function() {
-            const CLOUD_COLORS = [
-                'rgba(56,189,248,0.055)',
-                'rgba(129,140,248,0.045)',
-                'rgba(255,255,255,0.035)',
-                'rgba(56,189,248,0.04)',
-                'rgba(236,72,153,0.03)',
+            const ns = 'http://www.w3.org/2000/svg';
+
+            const CLOUD_PATHS = [
+                'M30,72 Q5,72 5,55 Q5,40 22,38 Q16,10 46,10 Q60,-2 80,12 Q98,-5 120,12 Q144,4 158,22 Q180,18 186,38 Q200,38 200,56 Q200,72 174,72 Z',
+                'M28,68 Q6,68 6,53 Q6,37 24,35 Q18,8 48,8 Q64,-4 85,10 Q104,-6 126,10 Q150,2 162,20 Q183,15 189,36 Q200,36 200,54 Q200,68 176,68 Z',
+                'M35,75 Q8,75 8,58 Q8,42 26,40 Q18,12 50,12 Q65,0 86,14 Q106,-4 130,14 Q153,5 166,26 Q186,22 192,42 Q200,42 200,60 Q200,75 170,75 Z',
             ];
+
+            const CLOUD_FILLS = [
+                'rgba(148,216,255,0.13)',
+                'rgba(199,210,254,0.11)',
+                'rgba(255,255,255,0.09)',
+                'rgba(148,216,255,0.10)',
+                'rgba(165,180,252,0.12)',
+            ];
+
+            function makeCloud() {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'cloud-item';
+
+                const svg = document.createElementNS(ns, 'svg');
+                const w = 140 + Math.random() * 220;
+                svg.setAttribute('width', w);
+                svg.setAttribute('height', w * 0.4);
+                svg.setAttribute('viewBox', '0 0 200 75');
+                svg.style.display = 'block';
+
+                const path = document.createElementNS(ns, 'path');
+                path.setAttribute('d', CLOUD_PATHS[Math.floor(Math.random() * CLOUD_PATHS.length)]);
+                path.setAttribute('fill', CLOUD_FILLS[Math.floor(Math.random() * CLOUD_FILLS.length)]);
+                svg.appendChild(path);
+                wrapper.appendChild(svg);
+                return wrapper;
+            }
+
             const targets = [
                 ...document.querySelectorAll('section:not(#home)'),
                 document.querySelector('footer'),
@@ -722,21 +749,14 @@
                 const layer = document.createElement('div');
                 layer.className = 'cloud-layer';
 
-                const count = 4 + Math.floor(Math.random() * 3);
+                const count = 4 + Math.floor(Math.random() * 4);
                 for (let i = 0; i < count; i++) {
-                    const puff = document.createElement('div');
-                    puff.className = 'cloud-puff';
-                    const w = 180 + Math.random() * 280;
-                    const h = w * (0.35 + Math.random() * 0.3);
-                    puff.style.width  = w + 'px';
-                    puff.style.height = h + 'px';
-                    puff.style.top    = (5 + Math.random() * 88) + '%';
-                    puff.style.left   = '0';
-                    puff.style.background = CLOUD_COLORS[Math.floor(Math.random() * CLOUD_COLORS.length)];
-                    const dur = 55 + Math.random() * 55;
-                    puff.style.animationDuration  = dur + 's';
-                    puff.style.animationDelay     = (-Math.random() * dur) + 's';
-                    layer.appendChild(puff);
+                    const cloud = makeCloud();
+                    cloud.style.top = (5 + Math.random() * 82) + '%';
+                    const dur = 55 + Math.random() * 60;
+                    cloud.style.animationDuration = dur + 's';
+                    cloud.style.animationDelay    = (-Math.random() * dur) + 's';
+                    layer.appendChild(cloud);
                 }
 
                 section.insertBefore(layer, section.firstChild);
