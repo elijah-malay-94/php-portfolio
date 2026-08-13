@@ -99,7 +99,7 @@
         <div class="grid md:grid-cols-3 gap-10 md:gap-16 items-stretch mb-14">
 
             <div class="md:col-span-1 flex justify-center md:justify-start order-last md:order-first h-full">
-                <div class="about-flip w-full max-w-[200px] md:max-w-[210px] h-full">
+                <div class="about-flip w-full max-w-[280px] md:max-w-xs h-full">
                     <div class="about-flip-inner">
                         {{-- Front: photo --}}
                         <div class="about-flip-front">
