@@ -46,6 +46,9 @@
         .font-mono    { font-family: 'JetBrains Mono', monospace; }
         body          { font-family: 'Inter', sans-serif; }
 
+        /* Hide Porkbun live chat widget */
+        #porkbun-chat-widget, [id*="porkbun"], [class*="porkbun-chat"] { display: none !important; }
+
         /* Float animation */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
