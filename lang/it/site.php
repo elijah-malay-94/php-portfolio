@@ -62,7 +62,7 @@ return [
     'proj4_desc' => 'Piattaforma di gestione per operazioni di scommesse, sviluppata con Angular 17. Presenta un\'architettura a componenti strutturata, test unitari completi e un\'interfaccia amministrativa pulita.',
     'proj5_desc' => 'Applicazione per la gestione alberghiera e le prenotazioni, che copre camere, prenotazioni e un\'interfaccia utente curata. Sviluppata con React e Vite.',
     'proj6_desc' => 'Applicazione per la gestione di cliniche mediche: cartelle cliniche, appuntamenti e flussi di lavoro sanitari. Sviluppata con React e Vite con attenzione a un\'UI pulita e accessibile.',
-    'proj7_desc' => 'FamilyNest è una mia creazione — una piattaforma globale per famiglie, pensata per tenere vicini i propri cari ovunque si trovino. Chat in tempo reale, videochiamate, momenti di famiglia condivisi, SOS di emergenza e Malay AI, un assistente integrato che ho costruito io stesso — tutto in un unico posto. Ogni riga di codice, ogni scelta di design, ogni funzione: ideata, progettata e rilasciata da me.',
+    'proj7_desc' => 'FamilyNest è una mia creazione — una piattaforma globale per famiglie, pensata per tenere vicini i propri cari ovunque si trovino. Chat in tempo reale, videochiamate, momenti di famiglia condivisi, SOS di emergenza e Malay AI, un assistente integrato che ho costruito io stesso — tutto in un unico posto. Ogni riga di codice, ogni scelta di design, ogni funzione: ideata, progettata e rilasciata da me. In arrivo presto su App Store e Google Play.',
 
     // Contact
     'contact_badge'      => '$ contact --me',

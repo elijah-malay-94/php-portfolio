@@ -417,7 +417,7 @@
                 ['img' => 'betting.png',          'title' => 'Betting Management System',  'url' => 'https://github.com/elijah-malay-94/betting-managment-system-app','demo' => 'https://betting-managment-system.netlify.app/',                   'desc' => __('site.proj4_desc'), 'tags' => ['Angular','TypeScript','Unit Testing']],
                 ['img' => 'hotel.png',            'title' => 'Hotel Management App',       'url' => 'https://github.com/elijah-malay-94/edmalay-hotel-project',       'demo' => 'https://edmalay-hotel-management-app.netlify.app/',               'desc' => __('site.proj5_desc'), 'tags' => ['React','Vite','JavaScript']],
                 ['img' => 'clinic-management.png','title' => 'Clinic Management App',      'url' => 'https://github.com/elijah-malay-94/edmalay-clinic-app',          'demo' => 'https://malay-medical-website.netlify.app/',                      'desc' => __('site.proj6_desc'), 'tags' => ['React','Vite','JavaScript']],
-                ['img' => 'family-nest.png',     'title' => 'FamilyNest',                 'url' => null,                                                             'demo' => null,                                                              'desc' => __('site.proj7_desc'), 'tags' => ['React Native','Mobile','AI','Real-time','Firebase']],
+                ['img' => 'family-nest.png',     'title' => 'FamilyNest',                 'url' => null,                                                             'demo' => null,                                                              'desc' => __('site.proj7_desc'), 'tags' => ['React Native','Mobile','AI','Real-time','Firebase'], 'badge' => 'Coming soon on App Store &amp; Google Play'],
             ];
             @endphp
 
@@ -453,6 +453,12 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                             Live Demo
                         </a>
+                    @endif
+                    @if (!empty($project['badge']))
+                        <p class="inline-flex items-center gap-1.5 text-xs font-mono text-amber-400 border border-amber-400/30 rounded-lg px-3 py-1.5 w-fit">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            {!! $project['badge'] !!}
+                        </p>
                     @endif
                 </div>
             </div>

@@ -62,7 +62,7 @@ return [
     'proj4_desc' => 'Management platform for betting operations, built with Angular 17. Features a structured component architecture, comprehensive unit tests, and a clean administrative interface.',
     'proj5_desc' => 'Hotel management and booking application covering room management, reservations, and a clean user-facing interface. Built with React and Vite.',
     'proj6_desc' => 'Clinic management application for handling patient records, appointments, and healthcare workflows. Built with React and Vite with a focus on clean, accessible UI.',
-    'proj7_desc' => 'FamilyNest is my own creation — a global family platform built to keep loved ones close no matter the distance. Real-time chat, video calls, shared family moments, emergency SOS, and Malay AI, an embedded assistant I built myself, all living under one roof. Every line of code, every design decision, every feature: conceived, designed, and shipped by me.',
+    'proj7_desc' => 'FamilyNest is my own creation — a global family platform built to keep loved ones close no matter the distance. Real-time chat, video calls, shared family moments, emergency SOS, and Malay AI, an embedded assistant I built myself, all living under one roof. Every line of code, every design decision, every feature: conceived, designed, and shipped by me. Launching soon on the App Store and Google Play.',
 
     // Contact
     'contact_badge'      => '$ contact --me',
