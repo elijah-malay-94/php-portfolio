@@ -12,7 +12,7 @@ return [
 
     // Hero
     'hero_badge'         => '$ whoami',
-    'hero_subtitle'      => 'Sviluppatore Web Full Stack',
+    'hero_subtitle'      => 'Ingegnere Informatico & Sviluppatore Full Stack',
     'hero_typing'        => ['Applicazioni web sicure', 'Full stack, dall\'inizio alla fine', 'Studio AI e Machine Learning', 'Sviluppatore Laravel & PHP'],
     'hero_bio'           => 'Costruisco cose sul web — front-end, back-end, quello che il progetto richiede davvero. La sicurezza non è qualcosa che aggiungo alla fine; fa parte del modo in cui penso mentre scrivo il codice.',
     'hero_view_projects' => 'Vedi i miei progetti',
@@ -21,7 +21,7 @@ return [
     // About
     'about_badge' => '$ cat about.md',
     'about_title' => 'Chi Sono',
-    'about_p1'    => 'Sviluppatore full stack focalizzato sulla costruzione di applicazioni web sicure e complete — dall\'interfaccia al database fino al deployment.',
+    'about_p1'    => 'Ingegnere informatico e sviluppatore full stack focalizzato sulla costruzione di applicazioni web sicure e complete — dall\'interfaccia al database fino al deployment.',
     'about_p2'    => 'Sto espandendo le mie competenze nell\'AI e nel machine learning, per restare al passo con la direzione del settore.',
     'about_p3'    => 'Il mio percorso passa da ingegneria mineraria, vendite e rilievi geotecnici prima di entrare nel software — quella varietà plasma il mio approccio ai problemi.',
     'experience'  => 'Esperienza',
