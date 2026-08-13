@@ -309,7 +309,7 @@
             @php
                 $logo = str_contains($cert['issuer'], 'freeCodeCamp') ? 'freecodecamp.png' : 'ibm.png';
             @endphp
-            <div class="reveal-item cert-flip" style="height:200px">
+            <div class="reveal-item cert-flip relative" style="height:200px">
                 <div class="cert-flip-inner">
                     {{-- Front --}}
                     <div class="cert-flip-front bg-[#0F172A] border border-white/10 p-5 flex flex-col hover:border-[#38BDF8]/40">

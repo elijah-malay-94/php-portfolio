@@ -56,7 +56,29 @@
         }
 
         /* Flip card animation */
-        .cert-flip { perspective: 1000px; }
+        .cert-flip {
+            perspective: 1000px;
+            border-radius: 0.75rem;
+            transition: box-shadow 0.4s ease;
+        }
+        .cert-flip::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 0.85rem;
+            background: linear-gradient(135deg, #38BDF8, #818CF8, #38BDF8);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+            filter: blur(8px);
+        }
+        .cert-flip:hover::before { opacity: 1; }
+        .cert-flip:hover {
+            box-shadow:
+                0 0 18px rgba(56,189,248,0.5),
+                0 0 40px rgba(56,189,248,0.25),
+                0 0 80px rgba(56,189,248,0.12);
+        }
         .cert-flip-inner {
             position: relative;
             width: 100%; height: 100%;
