@@ -306,13 +306,28 @@
             @endphp
 
             @foreach ($certs as $cert)
-            <div class="bg-[#0F172A] border border-white/10 rounded-xl p-5 hover:border-[#38BDF8]/40 card-hover reveal-item flex flex-col">
-                <div class="text-[#38BDF8] mb-3">{!! $cert['icon'] !!}</div>
-                <h4 class="font-semibold text-sm leading-snug mb-2 flex-1">{{ $cert['title'] }}</h4>
-                <p class="font-mono text-xs text-[#38BDF8] mb-2">{{ $cert['issuer'] }}</p>
-                <div class="flex items-center gap-3">
-                    <span class="text-[#94A3B8] text-xs">{{ $cert['year'] }}</span>
-                    <a href="{{ $cert['verify'] }}" target="_blank" class="text-xs text-[#38BDF8]/60 hover:text-[#38BDF8] transition font-mono">Verify ↗</a>
+            @php
+                $logo = str_contains($cert['issuer'], 'freeCodeCamp') ? 'freecodecamp.png' : 'ibm.png';
+            @endphp
+            <div class="reveal-item cert-flip" style="height:200px">
+                <div class="cert-flip-inner">
+                    {{-- Front --}}
+                    <div class="cert-flip-front bg-[#0F172A] border border-white/10 p-5 flex flex-col hover:border-[#38BDF8]/40">
+                        <div class="text-[#38BDF8] mb-3">{!! $cert['icon'] !!}</div>
+                        <h4 class="font-semibold text-sm leading-snug mb-2 flex-1">{{ $cert['title'] }}</h4>
+                        <p class="font-mono text-xs text-[#38BDF8] mb-2">{{ $cert['issuer'] }}</p>
+                        <div class="flex items-center gap-3">
+                            <span class="text-[#94A3B8] text-xs">{{ $cert['year'] }}</span>
+                            <a href="{{ $cert['verify'] }}" target="_blank" class="text-xs text-[#38BDF8]/60 hover:text-[#38BDF8] transition font-mono">Verify ↗</a>
+                        </div>
+                    </div>
+                    {{-- Back --}}
+                    <div class="cert-flip-back bg-[#0F172A] border border-[#38BDF8]/30 p-5 flex flex-col items-center justify-center gap-3">
+                        <img src="{{ asset($logo) }}" alt="{{ $cert['issuer'] }}" class="w-20 h-20 object-contain">
+                        <h4 class="font-semibold text-xs leading-snug text-center text-[#E7E9F0]">{{ $cert['title'] }}</h4>
+                        <p class="font-mono text-xs text-[#38BDF8]">{{ $cert['year'] }}</p>
+                        <a href="{{ $cert['verify'] }}" target="_blank" class="text-xs text-[#38BDF8] border border-[#38BDF8]/30 rounded-lg px-3 py-1 font-mono hover:bg-[#38BDF8]/10 transition">Verify ↗</a>
+                    </div>
                 </div>
             </div>
             @endforeach

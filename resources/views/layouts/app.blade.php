@@ -55,6 +55,26 @@
             left: auto !important;
         }
 
+        /* Flip card animation */
+        .cert-flip { perspective: 1000px; }
+        .cert-flip-inner {
+            position: relative;
+            width: 100%; height: 100%;
+            transition: transform 0.65s cubic-bezier(0.4,0,0.2,1);
+            transform-style: preserve-3d;
+        }
+        .cert-flip:hover .cert-flip-inner { transform: rotateY(180deg); }
+        .cert-flip-front, .cert-flip-back {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        .cert-flip-back { transform: rotateY(180deg); }
+
         /* Float animation */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
