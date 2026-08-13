@@ -133,13 +133,16 @@
             perspective: 1000px;
             border-radius: 1.25rem;
             transition: box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
         }
         .about-flip:hover {
             box-shadow: 0 0 28px rgba(56,189,248,0.55), 0 0 80px rgba(56,189,248,0.2);
         }
         .about-flip-inner {
             position: relative;
-            width: 100%; height: 100%; min-height: inherit;
+            width: 100%;
+            flex: 1;
             transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
             transform-style: preserve-3d;
         }
