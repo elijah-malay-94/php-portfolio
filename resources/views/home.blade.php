@@ -94,11 +94,11 @@
 
 {{-- ============ ABOUT ============ --}}
 <section id="about" class="bg-[#1E293B] border-t border-white/10 scroll-mt-20">
-    <div class="max-w-6xl mx-auto px-6 md:px-12 py-20 md:py-28 reveal">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-20 reveal">
 
-        <div class="grid md:grid-cols-3 gap-10 md:gap-16 mb-14" style="align-items:stretch">
+        <div class="grid md:grid-cols-3 gap-6 md:gap-12 mb-8 md:mb-12" style="align-items:stretch">
 
-            <div class="md:col-span-1 order-last md:order-first" style="align-self:stretch;display:flex;flex-direction:column">
+            <div class="about-img-col md:col-span-1 order-last md:order-first" style="align-self:stretch;display:flex;flex-direction:column;align-items:center">
                 <div class="about-flip w-full" style="flex:1;min-height:300px">
                     <div class="about-flip-inner">
                         {{-- Front: photo --}}
@@ -203,11 +203,11 @@
 
 {{-- ============ EDUCATION ============ --}}
 <section id="education" class="border-t border-white/10 scroll-mt-20">
-    <div class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-28 reveal">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 py-10 md:py-20 reveal">
 
         <span class="font-mono text-base text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-4 py-1.5 inline-block mb-6">{{ __('site.education_badge') }}</span>
 
-        <h2 class="font-display font-bold text-3xl md:text-5xl mb-14">{{ __('site.education_title') }}</h2>
+        <h2 class="font-display font-bold text-3xl md:text-5xl mb-8 md:mb-12">{{ __('site.education_title') }}</h2>
 
         <div class="space-y-8 border-l border-white/10 pl-8 stagger-container">
 
@@ -298,13 +298,13 @@
 
 {{-- ============ CERTIFICATIONS ============ --}}
 <section id="certifications" class="bg-[#1E293B] border-t border-white/10 scroll-mt-20">
-    <div class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-28 reveal">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 py-10 md:py-20 reveal">
 
         <span class="font-mono text-base text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-4 py-1.5 inline-block mb-6">{{ __('site.cert_badge') }}</span>
 
-        <h2 class="font-display font-bold text-3xl md:text-5xl mb-14">{{ __('site.cert_title') }}</h2>
+        <h2 class="font-display font-bold text-3xl md:text-5xl mb-8 md:mb-12">{{ __('site.cert_title') }}</h2>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 stagger-container">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 stagger-container">
             @php
             $certs = [
                 [
@@ -398,13 +398,13 @@
 
 {{-- ============ SKILLS ============ --}}
 <section id="skills" class="bg-[#1E293B] border-t border-white/10 scroll-mt-20">
-    <div class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-28 reveal">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 py-10 md:py-20 reveal">
 
         <span class="font-mono text-base text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-4 py-1.5 inline-block mb-6">{{ __('site.skills_badge') }}</span>
 
-        <h2 class="font-display font-bold text-3xl md:text-5xl mb-14">{{ __('site.skills_title') }}</h2>
+        <h2 class="font-display font-bold text-3xl md:text-5xl mb-8 md:mb-12">{{ __('site.skills_title') }}</h2>
 
-        <div class="grid sm:grid-cols-2 gap-10">
+        <div class="grid sm:grid-cols-2 gap-6 md:gap-10">
 
             <div>
                 <h4 class="font-mono text-base text-[#38BDF8] mb-4 uppercase tracking-wide flex items-center gap-2">
@@ -476,11 +476,11 @@
 
 {{-- ============ PROJECTS ============ --}}
 <section id="projects" class="border-t border-white/10 scroll-mt-20">
-    <div class="max-w-6xl mx-auto px-6 md:px-12 py-20 md:py-28 reveal">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-20 reveal">
 
         <span class="font-mono text-base text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-4 py-1.5 inline-block mb-6">{{ __('site.projects_badge') }}</span>
 
-        <h2 class="font-display font-bold text-3xl md:text-5xl mb-14">{{ __('site.projects_title') }}</h2>
+        <h2 class="font-display font-bold text-3xl md:text-5xl mb-8 md:mb-12">{{ __('site.projects_title') }}</h2>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-container">
 
@@ -562,7 +562,7 @@
 
 {{-- ============ CONTACT ============ --}}
 <section id="contact" class="bg-[#1E293B] border-t border-white/10 scroll-mt-20">
-    <div class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-28 reveal">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 py-10 md:py-20 reveal">
 
         <div class="text-center mb-12">
             <span class="font-mono text-base text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-4 py-1.5 inline-block mb-6">{{ __('site.contact_badge') }}</span>
@@ -570,7 +570,7 @@
             <p class="text-[#94A3B8] text-base md:text-xl">{{ __('site.contact_tagline') }}</p>
         </div>
 
-        <div class="grid md:grid-cols-5 gap-12">
+        <div class="grid md:grid-cols-5 gap-8">
 
             {{-- Form --}}
             <div class="md:col-span-3">

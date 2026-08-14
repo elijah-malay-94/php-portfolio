@@ -160,6 +160,23 @@
         }
         .about-flip-back { transform: rotateY(180deg); }
 
+        /* ── About image: mobile circular style ────────────────────── */
+        @media (max-width: 767px) {
+            .about-img-col { align-self: auto !important; }
+            .about-flip {
+                width: 180px !important;
+                height: 180px !important;
+                min-height: 0 !important;
+                flex: none !important;
+                border-radius: 50% !important;
+            }
+            .about-flip-inner { border-radius: 50% !important; }
+            .about-flip-front,
+            .about-flip-back  { border-radius: 50% !important; }
+            /* Cert cards: allow natural height on mobile */
+            .cert-flip { height: auto !important; min-height: 200px; }
+        }
+
         /* ── Scroll progress bar ──────────────────────────────────── */
         #scroll-progress {
             position: fixed; top: 0; left: 0; right: 0; height: 3px;
