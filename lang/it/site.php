@@ -25,9 +25,9 @@ return [
     'about_p2'    => 'Sto espandendo le mie competenze nell\'AI e nel machine learning, per restare al passo con la direzione del settore.',
     'about_p3'    => 'Il mio percorso passa da ingegneria mineraria, vendite e rilievi geotecnici prima di entrare nel software — quella varietà plasma il mio approccio ai problemi.',
 
-    'about_alt_p1' => 'Creatore di FamilyNest — una piattaforma globale per famiglie pensata per tenere vicini i propri cari ovunque si trovino. Ogni funzione, ogni scelta di design, ogni riga di codice: ideata, progettata e rilasciata da me.',
-    'about_alt_p2' => 'Credo che la tecnologia debba risolvere problemi reali per persone reali. Che si tratti di hardware IoT, una piattaforma web o un\'app mobile — mi concentro sempre su ciò di cui l\'utente finale ha davvero bisogno.',
-    'about_alt_p3' => 'Nato in Liberia, costruisco in Italia — il mio background interculturale mi dà una prospettiva che la maggior parte degli sviluppatori non ha. Ho visto come la tecnologia può trasformare le comunità, e questo guida tutto ciò che realizzo.',
+    'about_alt_p1' => 'Creatore di FamilyNest — una piattaforma globale per famiglie per tenere vicini i propri cari, ovunque. Ogni riga di codice: ideata e rilasciata da me.',
+    'about_alt_p2' => 'La tecnologia deve risolvere problemi reali — IoT, web o mobile. Mi concentro sempre su ciò di cui l\'utente finale ha davvero bisogno.',
+    'about_alt_p3' => 'Nato in Liberia, costruisco in Italia. Il mio background interculturale mi dà una prospettiva che la maggior parte degli sviluppatori non ha.',
 
     'experience'  => 'Esperienza',
 

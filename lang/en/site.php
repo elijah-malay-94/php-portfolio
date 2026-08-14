@@ -25,9 +25,9 @@ return [
     'about_p2'    => 'I\'m currently expanding into AI and machine learning alongside my web work, because I want to stay ahead of where the industry is heading.',
     'about_p3'    => 'My background spans mining engineering, sales, and geotechnical work before I moved fully into software — that range shapes how I approach problems.',
 
-    'about_alt_p1' => 'Creator of FamilyNest — a global family platform built to keep loved ones close across any distance. Every feature, every design decision, every line of code: conceived, designed, and shipped by me.',
-    'about_alt_p2' => 'I believe technology should solve real problems for real people. Whether it\'s IoT hardware, a web platform, or a mobile app — my focus is always on what the end user actually needs.',
-    'about_alt_p3' => 'Born in Liberia, building in Italy — my cross-cultural background gives me a perspective most developers don\'t have. I\'ve seen how technology can transform communities, and that drives everything I build.',
+    'about_alt_p1' => 'Creator of FamilyNest — a global family platform to keep loved ones close, no matter the distance. Every line of code: conceived and shipped by me.',
+    'about_alt_p2' => 'Technology should solve real problems for real people — IoT, web, or mobile. My focus is always on what the end user actually needs.',
+    'about_alt_p3' => 'Born in Liberia, building in Italy. My cross-cultural background gives me a perspective most developers don\'t have.',
 
     'experience'  => 'Experience',
 
