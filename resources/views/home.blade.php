@@ -370,24 +370,29 @@
             @php
                 $logo = str_contains($cert['issuer'], 'freeCodeCamp') ? 'freecodecamp.png' : 'ibm.png';
             @endphp
-            <div class="reveal-item cert-flip relative" style="height:200px">
+            <div class="reveal-item cert-flip relative" style="height:240px">
                 <div class="cert-flip-inner">
-                    {{-- Front --}}
-                    <div class="cert-flip-front bg-[#0F172A] border border-white/10 p-5 flex flex-col hover:border-[#38BDF8]/40">
-                        <div class="text-[#38BDF8] mb-3">{!! $cert['icon'] !!}</div>
-                        <h4 class="font-semibold text-sm leading-snug mb-2 flex-1">{{ $cert['title'] }}</h4>
-                        <p class="font-mono text-xs text-[#38BDF8] mb-2">{{ $cert['issuer'] }}</p>
-                        <div class="flex items-center gap-3">
-                            <span class="text-[#94A3B8] text-xs">{{ $cert['year'] }}</span>
-                            <a href="{{ $cert['verify'] }}" target="_blank" class="text-xs text-[#38BDF8]/60 hover:text-[#38BDF8] transition font-mono">Verify ↗</a>
+                    {{-- FRONT: logo centred + title at bottom --}}
+                    <div class="cert-flip-front bg-[#0F172A] border border-white/10">
+                        <div class="absolute inset-0 flex items-center justify-center" style="padding-bottom:4rem">
+                            <img src="{{ asset($logo) }}" alt="{{ $cert['issuer'] }}" class="w-20 h-20 object-contain">
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4" style="background:linear-gradient(to top,rgba(8,14,26,0.97) 0%,rgba(8,14,26,0.55) 50%,transparent 100%)">
+                            <h4 class="font-semibold text-xs leading-snug text-white mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">{{ $cert['title'] }}</h4>
+                            <p class="flip-hint font-mono text-xs text-[#38BDF8]/70">hover for details ↺</p>
                         </div>
                     </div>
-                    {{-- Back --}}
-                    <div class="cert-flip-back bg-[#0F172A] border border-[#38BDF8]/30 p-5 flex flex-col items-center justify-center gap-3">
-                        <img src="{{ asset($logo) }}" alt="{{ $cert['issuer'] }}" class="w-20 h-20 object-contain">
-                        <h4 class="font-semibold text-xs leading-snug text-center text-[#E7E9F0]">{{ $cert['title'] }}</h4>
-                        <p class="font-mono text-xs text-[#38BDF8]">{{ $cert['year'] }}</p>
-                        <a href="{{ $cert['verify'] }}" target="_blank" class="text-xs text-[#38BDF8] border border-[#38BDF8]/30 rounded-lg px-3 py-1 font-mono hover:bg-[#38BDF8]/10 transition">Verify ↗</a>
+                    {{-- BACK: logo centred + issuer/year/verify at bottom --}}
+                    <div class="cert-flip-back bg-[#0F172A] border border-[#38BDF8]/30">
+                        <div class="absolute inset-0 flex items-center justify-center" style="padding-bottom:4.5rem">
+                            <img src="{{ asset($logo) }}" alt="{{ $cert['issuer'] }}" class="w-20 h-20 object-contain opacity-50">
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4" style="background:linear-gradient(to top,rgba(8,14,26,0.97) 0%,rgba(8,14,26,0.55) 50%,transparent 100%)">
+                            <p class="font-mono text-xs text-[#38BDF8] mb-0.5">{{ $cert['issuer'] }}</p>
+                            <p class="text-[#94A3B8] text-xs mb-2">{{ $cert['year'] }}</p>
+                            <a href="{{ $cert['verify'] }}" target="_blank"
+                               class="self-start text-xs text-[#38BDF8] border border-[#38BDF8]/30 rounded-lg px-3 py-1 font-mono hover:bg-[#38BDF8]/10 transition">Verify ↗</a>
+                        </div>
                     </div>
                 </div>
             </div>
