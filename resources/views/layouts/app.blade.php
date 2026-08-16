@@ -70,6 +70,11 @@
     ];
     @endphp
     <script type="application/ld+json">{!! json_encode($schemaOrg) !!}</script>
+
+    {{-- hreflang for SEO --}}
+    <link rel="alternate" hreflang="en" href="{{ url('/en') }}">
+    <link rel="alternate" hreflang="it" href="{{ url('/it') }}">
+    <link rel="alternate" hreflang="x-default" href="{{ url('/en') }}">
     <style>
         .font-display { font-family: 'Space Grotesk', sans-serif; }
         .font-mono    { font-family: 'JetBrains Mono', monospace; }
@@ -697,9 +702,9 @@
 
                 {{-- Language switcher --}}
                 <div class="flex items-center gap-1 font-mono text-xs border border-white/15 rounded-full px-3 py-1">
-                    <a href="/lang/en" class="{{ app()->getLocale() === 'en' ? 'text-[#38BDF8]' : 'hover:text-[#E7E9F0] transition' }}">EN</a>
+                    <a href="/en" class="{{ app()->getLocale() === 'en' ? 'text-[#38BDF8]' : 'hover:text-[#E7E9F0] transition' }}">EN</a>
                     <span class="text-white/20">|</span>
-                    <a href="/lang/it" class="{{ app()->getLocale() === 'it' ? 'text-[#38BDF8]' : 'hover:text-[#E7E9F0] transition' }}">IT</a>
+                    <a href="/it" class="{{ app()->getLocale() === 'it' ? 'text-[#38BDF8]' : 'hover:text-[#E7E9F0] transition' }}">IT</a>
                 </div>
 
                 {{-- Dark/light toggle --}}
@@ -731,9 +736,9 @@
                 <a href="#contact"   class="mobile-link hover:text-[#38BDF8] transition">{{ __('site.nav_contact') }}</a>
                 <div class="flex items-center gap-3 pt-1">
                     <div class="flex items-center gap-2 font-mono text-xs">
-                        <a href="/lang/en" class="{{ app()->getLocale() === 'en' ? 'text-[#38BDF8]' : 'text-[#94A3B8]' }}">EN</a>
+                        <a href="/en" class="{{ app()->getLocale() === 'en' ? 'text-[#38BDF8]' : 'text-[#94A3B8]' }}">EN</a>
                         <span class="text-white/20">|</span>
-                        <a href="/lang/it" class="{{ app()->getLocale() === 'it' ? 'text-[#38BDF8]' : 'text-[#94A3B8]' }}">IT</a>
+                        <a href="/it" class="{{ app()->getLocale() === 'it' ? 'text-[#38BDF8]' : 'text-[#94A3B8]' }}">IT</a>
                     </div>
                     <button id="theme-toggle-mobile" aria-label="Toggle theme" class="text-[#94A3B8] hover:text-[#38BDF8] transition">
                         <svg id="icon-moon-m" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -1254,7 +1259,7 @@
             showTyping();
 
             try {
-                const res = await fetch('/chat', {
+                const res = await fetch('/{{ app()->getLocale() }}/chat', {
                     method:  'POST',
                     headers: {
                         'Content-Type':  'application/json',

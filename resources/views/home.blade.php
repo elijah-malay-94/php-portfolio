@@ -703,7 +703,7 @@
             {{-- Form --}}
             <div class="md:col-span-3">
 
-                <form action="/contact" method="POST" class="space-y-5">
+                <form action="/{{ app()->getLocale() }}/contact" method="POST" class="space-y-5">
                     @csrf
 
                     <div class="grid sm:grid-cols-2 gap-5">
