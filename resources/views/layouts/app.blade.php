@@ -337,9 +337,7 @@
         /* ── Testimonial cards ──────────────────────────────────────── */
         .testi-card {
             position: relative;
-            background: rgba(15, 23, 42, 0.55);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            background: #0C1524;
             transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.25s ease;
         }
         .testi-card::before {
@@ -439,18 +437,15 @@
             border-color: rgba(255,255,255,0.22) !important;
         }
 
-        /* ── Wrapper glow — box-shadow on plain wrapper (no backdrop-filter) ── */
-        .testi-glow-wrap, .blog-glow-wrap {
-            position: relative;
-            border-radius: 1rem; /* match card rounded-2xl */
-        }
-        /* Per-colour keyframes so each card glows its own hue */
-        @keyframes haloBlue   { 0%,100% { box-shadow: 0 0 4px rgba(56,189,248,0.05); }  50% { box-shadow: 0 0 35px rgba(56,189,248,0.70),  0 0 70px rgba(56,189,248,0.28); } }
-        @keyframes haloPurple { 0%,100% { box-shadow: 0 0 4px rgba(129,140,248,0.05); } 50% { box-shadow: 0 0 35px rgba(129,140,248,0.70), 0 0 70px rgba(129,140,248,0.28); } }
-        @keyframes haloGreen  { 0%,100% { box-shadow: 0 0 4px rgba(52,211,153,0.05); }  50% { box-shadow: 0 0 35px rgba(52,211,153,0.70),  0 0 70px rgba(52,211,153,0.28); } }
-        @keyframes haloAmber  { 0%,100% { box-shadow: 0 0 4px rgba(245,158,11,0.05); }  50% { box-shadow: 0 0 35px rgba(245,158,11,0.70),  0 0 70px rgba(245,158,11,0.28); } }
-        @keyframes haloViolet { 0%,100% { box-shadow: 0 0 4px rgba(129,140,248,0.05); } 50% { box-shadow: 0 0 35px rgba(129,140,248,0.70), 0 0 70px rgba(129,140,248,0.28); } }
-        @keyframes haloPink   { 0%,100% { box-shadow: 0 0 4px rgba(236,72,153,0.05); }  50% { box-shadow: 0 0 35px rgba(236,72,153,0.70),  0 0 70px rgba(236,72,153,0.28); } }
+        /* ── Pulsing glow — filter:drop-shadow on the card itself ──── */
+        /* drop-shadow wraps the card's full rendered shape and cannot
+           be clipped or hidden by overflow/backdrop-filter. */
+        @keyframes haloBlue   { 0%,100% { filter: drop-shadow(0 0 2px rgba(56,189,248,0.10)); }  50% { filter: drop-shadow(0 0 18px rgba(56,189,248,0.90)) drop-shadow(0 0 40px rgba(56,189,248,0.45)); } }
+        @keyframes haloPurple { 0%,100% { filter: drop-shadow(0 0 2px rgba(129,140,248,0.10)); } 50% { filter: drop-shadow(0 0 18px rgba(129,140,248,0.90)) drop-shadow(0 0 40px rgba(129,140,248,0.45)); } }
+        @keyframes haloGreen  { 0%,100% { filter: drop-shadow(0 0 2px rgba(52,211,153,0.10)); }  50% { filter: drop-shadow(0 0 18px rgba(52,211,153,0.90)) drop-shadow(0 0 40px rgba(52,211,153,0.45)); } }
+        @keyframes haloAmber  { 0%,100% { filter: drop-shadow(0 0 2px rgba(245,158,11,0.10)); }  50% { filter: drop-shadow(0 0 18px rgba(245,158,11,0.90)) drop-shadow(0 0 40px rgba(245,158,11,0.45)); } }
+        @keyframes haloViolet { 0%,100% { filter: drop-shadow(0 0 2px rgba(129,140,248,0.10)); } 50% { filter: drop-shadow(0 0 18px rgba(129,140,248,0.90)) drop-shadow(0 0 40px rgba(129,140,248,0.45)); } }
+        @keyframes haloPink   { 0%,100% { filter: drop-shadow(0 0 2px rgba(236,72,153,0.10)); }  50% { filter: drop-shadow(0 0 18px rgba(236,72,153,0.90)) drop-shadow(0 0 40px rgba(236,72,153,0.45)); } }
 
         .testi-glow-blue   { animation: haloBlue   3.2s ease-in-out infinite; }
         .testi-glow-purple { animation: haloPurple 3.8s ease-in-out infinite 0.7s; }
@@ -461,11 +456,12 @@
         .blog-glow-pink    { animation: haloPink   3.2s ease-in-out infinite 1.8s; }
 
         @media (prefers-reduced-motion: reduce) {
-            .testi-card, .blog-card { transition: none !important; }
+            .testi-card, .blog-card { transition: none !important; animation: none !important; }
+            .testi-glow-blue, .testi-glow-purple, .testi-glow-green, .testi-glow-amber,
+            .blog-glow-blue, .blog-glow-violet, .blog-glow-pink { animation: none !important; }
             .testi-card::before, .blog-card::before { transition: none !important; }
             .blog-card::after, .blog-icon { display: none; }
             .testi-card.is-active, .blog-card.is-active { transform: none !important; }
-            .testi-glow-wrap, .blog-glow-wrap { animation: none !important; }
         }
 
         /* Timeline slide-in from left */

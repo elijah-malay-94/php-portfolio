@@ -619,18 +619,16 @@
 
         <div class="grid sm:grid-cols-2 gap-6 stagger-container">
             @foreach ($testimonials as $t)
-            <div class="testi-glow-wrap {{ $t['glow'] }}" style="--glow-color: {{ $t['color'] }}">
-                <div class="testi-card reveal-item border border-white/10 rounded-2xl p-6 flex flex-col gap-4"
-                     style="--card-color: {{ $t['color'] }}">
-                    <svg class="text-[#38BDF8]/40 flex-shrink-0" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                    <p class="text-[#E7E9F0] text-sm leading-relaxed flex-1">{{ $t['quote'] }}</p>
-                    <div class="flex items-center gap-3 pt-2 border-t border-white/10">
-                        <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-[#0F172A] flex-shrink-0"
-                             style="background:{{ $t['color'] }}">{{ $t['initial'] }}</div>
-                        <div>
-                            <p class="text-sm font-semibold text-[#E7E9F0]">{{ $t['name'] }}</p>
-                            <p class="text-xs text-[#94A3B8]">{{ $t['role'] }}</p>
-                        </div>
+            <div class="testi-card {{ $t['glow'] }} reveal-item border border-white/10 rounded-2xl p-6 flex flex-col gap-4"
+                 style="--card-color: {{ $t['color'] }}">
+                <svg class="text-[#38BDF8]/40 flex-shrink-0" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                <p class="text-[#E7E9F0] text-sm leading-relaxed flex-1">{{ $t['quote'] }}</p>
+                <div class="flex items-center gap-3 pt-2 border-t border-white/10">
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-[#0F172A] flex-shrink-0"
+                         style="background:{{ $t['color'] }}">{{ $t['initial'] }}</div>
+                    <div>
+                        <p class="text-sm font-semibold text-[#E7E9F0]">{{ $t['name'] }}</p>
+                        <p class="text-xs text-[#94A3B8]">{{ $t['role'] }}</p>
                     </div>
                 </div>
             </div>
@@ -666,13 +664,11 @@
             ];
             @endphp
             @foreach ($blogTopics as $topic)
-            <div class="blog-glow-wrap {{ $topic['glow'] }}" style="--glow-color: {{ $topic['glow_color'] }}">
-                <div class="blog-card bg-[#1E293B] border border-white/10 rounded-2xl p-6">
-                    <span class="blog-icon text-2xl mb-3 block">{{ $topic['icon'] }}</span>
-                    <h4 class="font-semibold text-[#E7E9F0] mb-2 text-sm">{{ $topic['title'] }}</h4>
-                    <p class="text-[#94A3B8] text-xs leading-relaxed">{{ $topic['desc'] }}</p>
-                    <span class="inline-block mt-3 font-mono text-xs text-[#38BDF8]/60">Coming soon</span>
-                </div>
+            <div class="blog-card {{ $topic['glow'] }} bg-[#1E293B] border border-white/10 rounded-2xl p-6">
+                <span class="blog-icon text-2xl mb-3 block">{{ $topic['icon'] }}</span>
+                <h4 class="font-semibold text-[#E7E9F0] mb-2 text-sm">{{ $topic['title'] }}</h4>
+                <p class="text-[#94A3B8] text-xs leading-relaxed">{{ $topic['desc'] }}</p>
+                <span class="inline-block mt-3 font-mono text-xs text-[#38BDF8]/60">Coming soon</span>
             </div>
             @endforeach
         </div>
