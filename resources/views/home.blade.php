@@ -24,11 +24,7 @@
         <h3 class="text-base md:text-lg text-[#94A3B8] mb-4">{{ __('site.hero_subtitle') }}</h3>
 
         <div class="flex items-center gap-2 mb-5">
-            <span class="relative flex h-2.5 w-2.5">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
-            </span>
-            <span class="text-sm font-medium text-green-400">{{ __('site.open_to_work') }}</span>
+            <span class="text-sm font-medium" style="color:#F59E0B">{{ __('site.open_to_work') }}</span>
         </div>
 
         <p class="font-mono text-[#38BDF8] text-base md:text-xl mb-6 h-8">
