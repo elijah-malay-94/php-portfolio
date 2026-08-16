@@ -503,13 +503,13 @@
         /* Project cards — outer wrapper only; flip faces keep dark gradient */
         html[data-theme="light"] #projects .proj-flip { background-color: transparent !important; border: none !important; }
 
-        /* Cert cards — keep dark bg on flip faces (gradient overlay text must stay light) */
+        /* Cert cards — light bg in light mode; gradient overlay keeps bottom text white */
         html[data-theme="light"] .cert-flip-front,
-        html[data-theme="light"] .cert-flip-back { background-color: #0F172A !important; }
+        html[data-theme="light"] .cert-flip-back { background-color: #EFF6FF !important; border-color: rgba(0,0,0,0.08) !important; }
         html[data-theme="light"] .cert-flip-front p,
         html[data-theme="light"] .cert-flip-front span,
         html[data-theme="light"] .cert-flip-back  p,
-        html[data-theme="light"] .cert-flip-back  span { color: #E7E9F0 !important; }
+        html[data-theme="light"] .cert-flip-back  span { color: #FFFFFF !important; }
 
         /* Project card flip faces — text sits on dark gradient, must stay white */
         html[data-theme="light"] .proj-flip-front h3,
