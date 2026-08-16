@@ -433,10 +433,29 @@
         }
         #writing > * { position: relative; z-index: 1; }
 
+        /* ── Tap-active states (mirrors hover, for touch devices) ───── */
+        .blog-card.is-active {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(56,189,248,0.12), 0 4px 18px rgba(0,0,0,0.28);
+            border-color: rgba(56,189,248,0.22) !important;
+        }
+        .blog-card.is-active::before { opacity: 1; }
+        .blog-card.is-active .blog-icon { transform: translateY(-5px) scale(1.18); }
+
+        .testi-card.is-active {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.22) !important;
+        }
+        .testi-glow-blue.is-active   { box-shadow: 0 20px 40px rgba(56,189,248,0.18),  0 6px 18px rgba(56,189,248,0.10); }
+        .testi-glow-purple.is-active { box-shadow: 0 20px 40px rgba(129,140,248,0.18), 0 6px 18px rgba(129,140,248,0.10); }
+        .testi-glow-green.is-active  { box-shadow: 0 20px 40px rgba(52,211,153,0.18),  0 6px 18px rgba(52,211,153,0.10); }
+        .testi-glow-amber.is-active  { box-shadow: 0 20px 40px rgba(245,158,11,0.18),  0 6px 18px rgba(245,158,11,0.10); }
+
         @media (prefers-reduced-motion: reduce) {
             .testi-card, .blog-card { transition: none !important; }
             .testi-card::before, .blog-card::before { transition: none !important; }
             .blog-card::after, .blog-icon { display: none; }
+            .testi-card.is-active, .blog-card.is-active { transform: none !important; }
         }
 
         /* Timeline slide-in from left */
@@ -892,6 +911,13 @@
             // Change "hover for details" hint to "tap" on mobile
             document.querySelectorAll('.flip-hint').forEach(el => {
                 el.textContent = el.textContent.replace('hover', 'tap');
+            });
+            // Blog & testimonial cards: tap-bounce animation
+            document.querySelectorAll('.blog-card, .testi-card').forEach(card => {
+                card.addEventListener('touchend', () => {
+                    card.classList.add('is-active');
+                    setTimeout(() => card.classList.remove('is-active'), 650);
+                }, { passive: true });
             });
         }
 
