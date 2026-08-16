@@ -505,7 +505,7 @@
 
         /* Cert cards — intentionally stay dark (terminal aesthetic); blue border makes it look deliberate */
         html[data-theme="light"] .cert-flip-front,
-        html[data-theme="light"] .cert-flip-back { background-color: #0F172A !important; border-color: rgba(56,189,248,0.28) !important; }
+        html[data-theme="light"] .cert-flip-back { background-color: #0F172A !important; border-color: rgba(148,163,184,0.25) !important; }
         html[data-theme="light"] .cert-flip-front h4,
         html[data-theme="light"] .cert-flip-front p,
         html[data-theme="light"] .cert-flip-front span,
