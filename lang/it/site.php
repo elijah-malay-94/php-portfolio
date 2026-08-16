@@ -95,9 +95,9 @@ return [
     'testimonials_badge'       => '$ cat testimonials/',
     'testimonials_title'       => 'Cosa Dicono',
     'testimonials_subtitle'    => 'Feedback da colleghi, docenti e clienti con cui ho avuto il piacere di lavorare.',
-    'testi1_quote'             => 'Elijah si è distinto per la sua determinazione e la capacità di tradurre concetti complessi in software funzionante. Ha assimilato i principi full-stack più velocemente della maggior parte degli studenti.',
-    'testi2_quote'             => 'Lavorare con Elijah durante il ciclo del progetto è stata un\'ottima esperienza. Fa le domande giuste, porta a termine i deliverable e integra il pensiero sulla sicurezza in ogni discussione.',
-    'testi3_quote'             => 'Elijah ha affrontato la nostra sfida di integrazione firmware senza alcuna esperienza IoT pregressa e ha consegnato una soluzione funzionante. Questo tipo di adattabilità è raro.',
+    'testi1_quote'             => 'Elijah ha dimostrato buone capacità di apprendimento, precisione e una genuina attenzione alla qualità. Ha affrontato ogni compito con professionalità e senso di responsabilità. Ha un forte potenziale professionale e sarebbe un\'aggiunta preziosa per qualsiasi organizzazione.',
+    'testi2_quote'             => 'Elijah è stato un collega eccellente — preparato, gentile e pieno di idee. Porta sia competenza tecnica che una vera empatia in ogni team di cui fa parte.',
+    'testi3_quote'             => 'È stato un vero piacere lavorare con Elijah. Ha portato grande energia e professionalità al team. Spero che avremo l\'opportunità di collaborare di nuovo.',
     'testimonials_invite'      => 'Hai lavorato con me? Mi farebbe piacere una tua raccomandazione.',
     'testimonials_linkedin_cta'=> 'Lascia una raccomandazione su LinkedIn ↗',
 

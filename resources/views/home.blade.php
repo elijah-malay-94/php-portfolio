@@ -580,28 +580,27 @@
         <h2 class="font-display font-bold text-3xl md:text-5xl mb-4">{{ __('site.testimonials_title') }}</h2>
         <p class="text-[#94A3B8] text-base mb-10">{{ __('site.testimonials_subtitle') }}</p>
 
-        {{-- TODO: Replace with real testimonials from actual colleagues --}}
         @php
         $testimonials = [
             [
                 'quote'   => __('site.testi1_quote'),
-                'name'    => 'Prof. Marco Esposito',
-                'role'    => 'Lead Instructor, ITS DEMOS Academy',
-                'initial' => 'ME',
+                'name'    => 'Ing. Fabrizio Mainella',
+                'role'    => 'CEO, MAE Advanced Geophysics Instruments',
+                'initial' => 'FM',
                 'color'   => '#38BDF8',
             ],
             [
                 'quote'   => __('site.testi2_quote'),
-                'name'    => 'Sara Conti',
-                'role'    => 'Senior Software Analyst, Accenture',
-                'initial' => 'SC',
+                'name'    => 'Claudio',
+                'role'    => 'Colleague, MAE Advanced Geophysics Instruments',
+                'initial' => 'C',
                 'color'   => '#818CF8',
             ],
             [
                 'quote'   => __('site.testi3_quote'),
-                'name'    => 'Ing. Luca Ferretti',
-                'role'    => 'CTO, M.A.E. SRL',
-                'initial' => 'LF',
+                'name'    => 'Marco',
+                'role'    => 'Colleague, MAE Advanced Geophysics Instruments',
+                'initial' => 'M',
                 'color'   => '#34D399',
             ],
         ];
