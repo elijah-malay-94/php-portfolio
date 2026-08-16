@@ -43,32 +43,33 @@
     @endif
 
     {{-- Schema.org structured data --}}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Elijah Malay Dovelee",
-      "jobTitle": "Software Engineer & Full Stack Developer",
-      "url": "{{ url('/') }}",
-      "image": "{{ asset('elijah.png') }}",
-      "email": "mailto:malaydovelee94@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Campobasso",
-        "addressRegion": "Molise",
-        "addressCountry": "IT"
-      },
-      "sameAs": [
-        "https://github.com/elijah-malay-94",
-        "https://www.linkedin.com/in/elijah-malay-dovelee-465ab9260/"
-      ],
-      "knowsAbout": ["Laravel", "PHP", "React", "JavaScript", ".NET", "Docker", "IoT", "Machine Learning", "Web Security", "Full Stack Development"],
-      "alumniOf": [
-        {"@type": "CollegeOrUniversity", "name": "University of Liberia"},
-        {"@type": "EducationalOrganization", "name": "ITS DEMOS Academy, Campobasso"}
-      ]
-    }
-    </script>
+    @php
+    $schemaOrg = [
+        '@context' => 'https://schema.org',
+        '@type'    => 'Person',
+        'name'     => 'Elijah Malay Dovelee',
+        'jobTitle' => 'Software Engineer & Full Stack Developer',
+        'url'      => url('/'),
+        'image'    => asset('elijah.png'),
+        'email'    => 'mailto:malaydovelee94@gmail.com',
+        'address'  => [
+            '@type'           => 'PostalAddress',
+            'addressLocality' => 'Campobasso',
+            'addressRegion'   => 'Molise',
+            'addressCountry'  => 'IT',
+        ],
+        'sameAs' => [
+            'https://github.com/elijah-malay-94',
+            'https://www.linkedin.com/in/elijah-malay-dovelee-465ab9260/',
+        ],
+        'knowsAbout' => ['Laravel', 'PHP', 'React', 'JavaScript', '.NET', 'Docker', 'IoT', 'Machine Learning', 'Web Security', 'Full Stack Development'],
+        'alumniOf'   => [
+            ['@type' => 'CollegeOrUniversity',       'name' => 'University of Liberia'],
+            ['@type' => 'EducationalOrganization',   'name' => 'ITS DEMOS Academy, Campobasso'],
+        ],
+    ];
+    @endphp
+    <script type="application/ld+json">{!! json_encode($schemaOrg) !!}</script>
     <style>
         .font-display { font-family: 'Space Grotesk', sans-serif; }
         .font-mono    { font-family: 'JetBrains Mono', monospace; }
