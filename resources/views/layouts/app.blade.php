@@ -437,28 +437,8 @@
             border-color: rgba(255,255,255,0.22) !important;
         }
 
-        /* ── Pulsing glow — filter:drop-shadow on the card itself ──── */
-        /* drop-shadow wraps the card's full rendered shape and cannot
-           be clipped or hidden by overflow/backdrop-filter. */
-        @keyframes haloBlue   { 0%,100% { filter: drop-shadow(0 0 2px rgba(56,189,248,0.10)); }  50% { filter: drop-shadow(0 0 18px rgba(56,189,248,0.90)) drop-shadow(0 0 40px rgba(56,189,248,0.45)); } }
-        @keyframes haloPurple { 0%,100% { filter: drop-shadow(0 0 2px rgba(129,140,248,0.10)); } 50% { filter: drop-shadow(0 0 18px rgba(129,140,248,0.90)) drop-shadow(0 0 40px rgba(129,140,248,0.45)); } }
-        @keyframes haloGreen  { 0%,100% { filter: drop-shadow(0 0 2px rgba(52,211,153,0.10)); }  50% { filter: drop-shadow(0 0 18px rgba(52,211,153,0.90)) drop-shadow(0 0 40px rgba(52,211,153,0.45)); } }
-        @keyframes haloAmber  { 0%,100% { filter: drop-shadow(0 0 2px rgba(245,158,11,0.10)); }  50% { filter: drop-shadow(0 0 18px rgba(245,158,11,0.90)) drop-shadow(0 0 40px rgba(245,158,11,0.45)); } }
-        @keyframes haloViolet { 0%,100% { filter: drop-shadow(0 0 2px rgba(129,140,248,0.10)); } 50% { filter: drop-shadow(0 0 18px rgba(129,140,248,0.90)) drop-shadow(0 0 40px rgba(129,140,248,0.45)); } }
-        @keyframes haloPink   { 0%,100% { filter: drop-shadow(0 0 2px rgba(236,72,153,0.10)); }  50% { filter: drop-shadow(0 0 18px rgba(236,72,153,0.90)) drop-shadow(0 0 40px rgba(236,72,153,0.45)); } }
-
-        .testi-glow-blue   { animation: haloBlue   3.2s ease-in-out infinite; }
-        .testi-glow-purple { animation: haloPurple 3.8s ease-in-out infinite 0.7s; }
-        .testi-glow-green  { animation: haloGreen  3.5s ease-in-out infinite 1.4s; }
-        .testi-glow-amber  { animation: haloAmber  3.0s ease-in-out infinite 2.1s; }
-        .blog-glow-blue    { animation: haloBlue   3.5s ease-in-out infinite; }
-        .blog-glow-violet  { animation: haloViolet 4.0s ease-in-out infinite 0.9s; }
-        .blog-glow-pink    { animation: haloPink   3.2s ease-in-out infinite 1.8s; }
-
         @media (prefers-reduced-motion: reduce) {
-            .testi-card, .blog-card { transition: none !important; animation: none !important; }
-            .testi-glow-blue, .testi-glow-purple, .testi-glow-green, .testi-glow-amber,
-            .blog-glow-blue, .blog-glow-violet, .blog-glow-pink { animation: none !important; }
+            .testi-card, .blog-card { transition: none !important; }
             .testi-card::before, .blog-card::before { transition: none !important; }
             .blog-card::after, .blog-icon { display: none; }
             .testi-card.is-active, .blog-card.is-active { transform: none !important; }
@@ -926,6 +906,36 @@
                 }, { passive: true });
             });
         }
+
+        // ── Card pulsing glow (RAF loop — works regardless of CSS cascade) ──
+        (function () {
+            const glowTargets = [
+                { selector: '.testi-glow-blue',   rgb: '56,189,248',   speed: 3200, phase: 0    },
+                { selector: '.testi-glow-purple',  rgb: '129,140,248',  speed: 3800, phase: 700  },
+                { selector: '.testi-glow-green',   rgb: '52,211,153',   speed: 3500, phase: 1400 },
+                { selector: '.testi-glow-amber',   rgb: '245,158,11',   speed: 3000, phase: 2100 },
+                { selector: '.blog-glow-blue',     rgb: '56,189,248',   speed: 3500, phase: 0    },
+                { selector: '.blog-glow-violet',   rgb: '129,140,248',  speed: 4000, phase: 900  },
+                { selector: '.blog-glow-pink',     rgb: '236,72,153',   speed: 3200, phase: 1800 },
+            ];
+            const cards = glowTargets.flatMap(t =>
+                Array.from(document.querySelectorAll(t.selector)).map(el => ({ el, ...t }))
+            );
+            if (!cards.length) return;
+            function loop(ts) {
+                cards.forEach(({ el, rgb, speed, phase }) => {
+                    const t   = ((ts + phase) % speed) / speed;
+                    const val = (1 - Math.cos(t * Math.PI * 2)) / 2; // 0→1→0
+                    const a1  = (val * 0.75).toFixed(2);
+                    const a2  = (val * 0.30).toFixed(2);
+                    const b1  = Math.round(val * 32);
+                    const b2  = Math.round(val * 65);
+                    el.style.boxShadow = `0 0 ${b1}px rgba(${rgb},${a1}), 0 0 ${b2}px rgba(${rgb},${a2})`;
+                });
+                requestAnimationFrame(loop);
+            }
+            requestAnimationFrame(loop);
+        })();
 
         // ── Tilt effect on project cards ──────────────────────────────
         document.querySelectorAll('.tilt-card').forEach(card => {
