@@ -500,11 +500,37 @@
         html[data-theme="light"] .border-t  { border-color: rgba(0,0,0,0.08) !important; }
         html[data-theme="light"] .border-b  { border-color: rgba(0,0,0,0.08) !important; }
 
-        /* Project cards */
-        html[data-theme="light"] #projects .rounded-2xl { background-color: #FFFFFF !important; border-color: rgba(0,0,0,0.08) !important; }
+        /* Project cards — outer wrapper only; flip faces keep dark gradient */
+        html[data-theme="light"] #projects .proj-flip { background-color: transparent !important; border: none !important; }
 
-        /* Certification cards */
-        html[data-theme="light"] #certifications .rounded-xl { background-color: #FFFFFF !important; border-color: rgba(0,0,0,0.08) !important; }
+        /* Cert cards — keep dark bg on flip faces (gradient overlay text must stay light) */
+        html[data-theme="light"] .cert-flip-front,
+        html[data-theme="light"] .cert-flip-back { background-color: #0F172A !important; }
+        html[data-theme="light"] .cert-flip-front p,
+        html[data-theme="light"] .cert-flip-front span,
+        html[data-theme="light"] .cert-flip-back  p,
+        html[data-theme="light"] .cert-flip-back  span { color: #E7E9F0 !important; }
+
+        /* Project card flip faces — text sits on dark gradient, must stay white */
+        html[data-theme="light"] .proj-flip-front h3,
+        html[data-theme="light"] .proj-flip-back  h3 { color: #FFFFFF !important; }
+        html[data-theme="light"] .proj-flip-front p,
+        html[data-theme="light"] .proj-flip-front span,
+        html[data-theme="light"] .proj-flip-back  p,
+        html[data-theme="light"] .proj-flip-back  span { color: rgba(255,255,255,0.85) !important; }
+        html[data-theme="light"] .proj-flip-front .text-\[\#38BDF8\],
+        html[data-theme="light"] .proj-flip-back  .text-\[\#38BDF8\] { color: #7DD3FC !important; }
+
+        /* About flip back — dark background, keep text light */
+        html[data-theme="light"] .about-flip-back p { color: #E7E9F0 !important; }
+
+        /* Testimonials section + cards */
+        html[data-theme="light"] #testimonials { background-color: #F1F5F9 !important; }
+        html[data-theme="light"] .testi-card   { background: #FFFFFF !important; border-color: rgba(0,0,0,0.10) !important; }
+
+        /* Writing / blog section + cards */
+        html[data-theme="light"] #writing    { background-color: #F8FAFC !important; }
+        html[data-theme="light"] .blog-card  { background-color: #FFFFFF !important; border-color: rgba(0,0,0,0.08) !important; }
 
         /* Timeline dots: bg-white/20 is invisible on light */
         html[data-theme="light"] .bg-white\/20 { background-color: rgba(15,23,42,0.15) !important; }
