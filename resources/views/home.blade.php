@@ -603,10 +603,17 @@
                 'initial' => 'M',
                 'color'   => '#34D399',
             ],
+            [
+                'quote'   => __('site.testi4_quote'),
+                'name'    => 'Giulia Romano',
+                'role'    => 'Senior Consultant, Accenture Technology Solutions',
+                'initial' => 'GR',
+                'color'   => '#F59E0B',
+            ],
         ];
         @endphp
 
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 stagger-container">
+        <div class="grid sm:grid-cols-2 gap-6 stagger-container">
             @foreach ($testimonials as $t)
             <div class="reveal-item bg-[#0F172A] border border-white/10 rounded-2xl p-6 flex flex-col gap-4 hover:border-white/20 transition-colors">
                 <svg class="text-[#38BDF8]/40 flex-shrink-0" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>

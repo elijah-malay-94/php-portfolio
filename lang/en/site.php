@@ -98,6 +98,7 @@ return [
     'testi1_quote'             => 'Elijah demonstrated good learning abilities, accuracy and a genuine attention to quality. He approached every task with professionalism and a strong sense of responsibility. He has strong professional potential and would be a valuable addition to any organisation.',
     'testi2_quote'             => 'Elijah was an excellent colleague — knowledgeable, kind, and full of ideas. He brings both technical ability and a genuine warmth to every team he\'s part of.',
     'testi3_quote'             => 'It was a real pleasure working with Elijah. He brought great energy and professionalism to the team. I hope we get the chance to collaborate again.',
+    'testi4_quote'             => 'Elijah engaged directly with clients to define real requirements and followed through on every phase of delivery — analysis, build, testing, and documentation. He brings a structured mindset and genuine reliability to complex project environments.',
     'testimonials_invite'      => 'Worked with me? I\'d love a recommendation.',
     'testimonials_linkedin_cta'=> 'Leave a recommendation on LinkedIn ↗',
 
