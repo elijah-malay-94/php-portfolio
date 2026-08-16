@@ -334,6 +334,111 @@
         }
         .reveal-item.visible { opacity: 1; transform: translateY(0); }
 
+        /* ── Testimonial cards ──────────────────────────────────────── */
+        .testi-card {
+            position: relative;
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.35s ease,
+                        border-color 0.25s ease;
+        }
+        .testi-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--card-color, #38BDF8);
+            border-radius: 0.75rem 0.75rem 0 0;
+            opacity: 0.85;
+        }
+        .testi-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.22) !important;
+        }
+        .testi-glow-blue:hover   { box-shadow: 0 20px 40px rgba(56,189,248,0.18),  0 6px 18px rgba(56,189,248,0.10); }
+        .testi-glow-purple:hover { box-shadow: 0 20px 40px rgba(129,140,248,0.18), 0 6px 18px rgba(129,140,248,0.10); }
+        .testi-glow-green:hover  { box-shadow: 0 20px 40px rgba(52,211,153,0.18),  0 6px 18px rgba(52,211,153,0.10); }
+        .testi-glow-amber:hover  { box-shadow: 0 20px 40px rgba(245,158,11,0.18),  0 6px 18px rgba(245,158,11,0.10); }
+
+        /* Dot-grid background on testimonials section */
+        #testimonials {
+            background-image: radial-gradient(rgba(56,189,248,0.10) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        /* ── Blog topic cards ───────────────────────────────────────── */
+        .blog-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.35s ease,
+                        border-color 0.25s ease;
+        }
+        /* Gradient top accent line — hidden until hover */
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #38BDF8, #818CF8, #EC4899);
+            border-radius: 0.75rem 0.75rem 0 0;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .blog-card:hover::before { opacity: 1; }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(56,189,248,0.12), 0 4px 18px rgba(0,0,0,0.28);
+            border-color: rgba(56,189,248,0.22) !important;
+        }
+        /* Shimmer sweep */
+        .blog-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 40%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.055), transparent);
+            transform: skewX(-20deg) translateX(-200%);
+        }
+        .blog-card:hover::after { animation: shimmerSweep 0.75s ease forwards; }
+
+        /* Blog icon float on hover */
+        .blog-icon {
+            display: inline-block;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .blog-card:hover .blog-icon { transform: translateY(-5px) scale(1.18); }
+
+        /* Writing section subtle aurora blobs */
+        #writing { position: relative; overflow: hidden; }
+        #writing::before {
+            content: '';
+            position: absolute;
+            width: 640px; height: 420px;
+            background: radial-gradient(ellipse, rgba(56,189,248,0.055) 0%, transparent 68%);
+            top: -120px; left: -180px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        #writing::after {
+            content: '';
+            position: absolute;
+            width: 520px; height: 400px;
+            background: radial-gradient(ellipse, rgba(129,140,248,0.055) 0%, transparent 68%);
+            bottom: -100px; right: -140px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        #writing > * { position: relative; z-index: 1; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .testi-card, .blog-card { transition: none !important; }
+            .testi-card::before, .blog-card::before { transition: none !important; }
+            .blog-card::after, .blog-icon { display: none; }
+        }
+
         /* Timeline slide-in from left */
         .timeline-reveal {
             opacity: 0;

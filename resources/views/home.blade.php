@@ -588,6 +588,7 @@
                 'role'    => 'CEO, MAE Advanced Geophysics Instruments',
                 'initial' => 'FM',
                 'color'   => '#38BDF8',
+                'glow'    => 'testi-glow-blue',
             ],
             [
                 'quote'   => __('site.testi2_quote'),
@@ -595,6 +596,7 @@
                 'role'    => 'Colleague, MAE Advanced Geophysics Instruments',
                 'initial' => 'C',
                 'color'   => '#818CF8',
+                'glow'    => 'testi-glow-purple',
             ],
             [
                 'quote'   => __('site.testi3_quote'),
@@ -602,6 +604,7 @@
                 'role'    => 'Colleague, MAE Advanced Geophysics Instruments',
                 'initial' => 'M',
                 'color'   => '#34D399',
+                'glow'    => 'testi-glow-green',
             ],
             [
                 'quote'   => __('site.testi4_quote'),
@@ -609,13 +612,15 @@
                 'role'    => 'Senior Consultant, Accenture Technology Solutions',
                 'initial' => 'GR',
                 'color'   => '#F59E0B',
+                'glow'    => 'testi-glow-amber',
             ],
         ];
         @endphp
 
         <div class="grid sm:grid-cols-2 gap-6 stagger-container">
             @foreach ($testimonials as $t)
-            <div class="reveal-item bg-[#0F172A] border border-white/10 rounded-2xl p-6 flex flex-col gap-4 hover:border-white/20 transition-colors">
+            <div class="testi-card {{ $t['glow'] }} reveal-item border border-white/10 rounded-2xl p-6 flex flex-col gap-4"
+                 style="--card-color: {{ $t['color'] }}">
                 <svg class="text-[#38BDF8]/40 flex-shrink-0" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
                 <p class="text-[#E7E9F0] text-sm leading-relaxed flex-1">{{ $t['quote'] }}</p>
                 <div class="flex items-center gap-3 pt-2 border-t border-white/10">
@@ -659,8 +664,8 @@
             ];
             @endphp
             @foreach ($blogTopics as $topic)
-            <div class="bg-[#1E293B] border border-white/10 rounded-2xl p-6 hover:border-[#38BDF8]/30 transition-colors">
-                <span class="text-2xl mb-3 block">{{ $topic['icon'] }}</span>
+            <div class="blog-card bg-[#1E293B] border border-white/10 rounded-2xl p-6">
+                <span class="blog-icon text-2xl mb-3 block">{{ $topic['icon'] }}</span>
                 <h4 class="font-semibold text-[#E7E9F0] mb-2 text-sm">{{ $topic['title'] }}</h4>
                 <p class="text-[#94A3B8] text-xs leading-relaxed">{{ $topic['desc'] }}</p>
                 <span class="inline-block mt-3 font-mono text-xs text-[#38BDF8]/60">Coming soon</span>
