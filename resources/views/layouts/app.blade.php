@@ -439,45 +439,33 @@
             border-color: rgba(255,255,255,0.22) !important;
         }
 
-        /* ── Wrapper glow system ─────────────────────────────────────── */
-        /* A blurred coloured blob behind each card breathes in and out.
-           Placed on a wrapper div so it sits outside any backdrop-filter
-           compositing layer and is always visible. */
+        /* ── Wrapper glow — box-shadow on plain wrapper (no backdrop-filter) ── */
         .testi-glow-wrap, .blog-glow-wrap {
             position: relative;
-            isolation: isolate; /* stacking context keeps z:-1 blob inside */
+            border-radius: 1rem; /* match card rounded-2xl */
         }
-        .testi-glow-wrap::before, .blog-glow-wrap::before {
-            content: '';
-            position: absolute;
-            inset: -14px;
-            border-radius: 1.75rem;
-            background: var(--glow-color, #38BDF8);
-            opacity: 0;
-            filter: blur(26px);
-            z-index: -1;
-            pointer-events: none;
-        }
-        @keyframes haloGlow {
-            0%, 100% { opacity: 0.04; }
-            50%       { opacity: 0.55; }
-        }
-        /* Testimonial cards — staggered so they breathe independently */
-        .testi-glow-blue::before   { animation: haloGlow 3.2s ease-in-out infinite; }
-        .testi-glow-purple::before { animation: haloGlow 3.8s ease-in-out infinite 0.7s; }
-        .testi-glow-green::before  { animation: haloGlow 3.5s ease-in-out infinite 1.4s; }
-        .testi-glow-amber::before  { animation: haloGlow 3.0s ease-in-out infinite 2.1s; }
-        /* Blog cards */
-        .blog-glow-blue::before    { animation: haloGlow 3.5s ease-in-out infinite; }
-        .blog-glow-violet::before  { animation: haloGlow 4.0s ease-in-out infinite 0.9s; }
-        .blog-glow-pink::before    { animation: haloGlow 3.2s ease-in-out infinite 1.8s; }
+        /* Per-colour keyframes so each card glows its own hue */
+        @keyframes haloBlue   { 0%,100% { box-shadow: 0 0 4px rgba(56,189,248,0.05); }  50% { box-shadow: 0 0 35px rgba(56,189,248,0.70),  0 0 70px rgba(56,189,248,0.28); } }
+        @keyframes haloPurple { 0%,100% { box-shadow: 0 0 4px rgba(129,140,248,0.05); } 50% { box-shadow: 0 0 35px rgba(129,140,248,0.70), 0 0 70px rgba(129,140,248,0.28); } }
+        @keyframes haloGreen  { 0%,100% { box-shadow: 0 0 4px rgba(52,211,153,0.05); }  50% { box-shadow: 0 0 35px rgba(52,211,153,0.70),  0 0 70px rgba(52,211,153,0.28); } }
+        @keyframes haloAmber  { 0%,100% { box-shadow: 0 0 4px rgba(245,158,11,0.05); }  50% { box-shadow: 0 0 35px rgba(245,158,11,0.70),  0 0 70px rgba(245,158,11,0.28); } }
+        @keyframes haloViolet { 0%,100% { box-shadow: 0 0 4px rgba(129,140,248,0.05); } 50% { box-shadow: 0 0 35px rgba(129,140,248,0.70), 0 0 70px rgba(129,140,248,0.28); } }
+        @keyframes haloPink   { 0%,100% { box-shadow: 0 0 4px rgba(236,72,153,0.05); }  50% { box-shadow: 0 0 35px rgba(236,72,153,0.70),  0 0 70px rgba(236,72,153,0.28); } }
+
+        .testi-glow-blue   { animation: haloBlue   3.2s ease-in-out infinite; }
+        .testi-glow-purple { animation: haloPurple 3.8s ease-in-out infinite 0.7s; }
+        .testi-glow-green  { animation: haloGreen  3.5s ease-in-out infinite 1.4s; }
+        .testi-glow-amber  { animation: haloAmber  3.0s ease-in-out infinite 2.1s; }
+        .blog-glow-blue    { animation: haloBlue   3.5s ease-in-out infinite; }
+        .blog-glow-violet  { animation: haloViolet 4.0s ease-in-out infinite 0.9s; }
+        .blog-glow-pink    { animation: haloPink   3.2s ease-in-out infinite 1.8s; }
 
         @media (prefers-reduced-motion: reduce) {
             .testi-card, .blog-card { transition: none !important; }
             .testi-card::before, .blog-card::before { transition: none !important; }
             .blog-card::after, .blog-icon { display: none; }
             .testi-card.is-active, .blog-card.is-active { transform: none !important; }
-            .testi-glow-wrap::before, .blog-glow-wrap::before { animation: none !important; }
+            .testi-glow-wrap, .blog-glow-wrap { animation: none !important; }
         }
 
         /* Timeline slide-in from left */
