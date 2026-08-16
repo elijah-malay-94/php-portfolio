@@ -56,10 +56,28 @@ return [
     'skills_databases'  => 'Databases & Tools',
     'skills_other'      => 'Other',
 
+    // Certifications — titles
+    'cert1_title' => 'Introduction to Web Development with HTML, CSS, JavaScript',
+    'cert2_title' => 'Getting Started with Git and GitHub',
+    'cert3_title' => 'Developing Front-End Apps with React',
+    'cert4_title' => 'Designing User Interfaces and Experiences (UI/UX)',
+    'cert5_title' => 'Intermediate Web and Front-End Development',
+    'cert6_title' => 'Developing Cloud Native Applications',
+    'cert7_title' => 'Responsive Web Design Certification',
+    'cert8_title' => 'JavaScript Algorithms & Data Structures',
+
     // Projects
     'projects_badge'    => '$ ls projects/',
     'projects_title'    => 'Projects',
     'projects_view_all' => 'View all repositories on GitHub',
+
+    'proj1_title' => 'MAEservice App',
+    'proj2_title' => 'MAE Live Dashboard',
+    'proj3_title' => 'EEVT002 Instrument Control',
+    'proj4_title' => 'Betting Management System',
+    'proj5_title' => 'Hotel Management App',
+    'proj6_title' => 'Clinic Management App',
+    'proj7_title' => 'FamilyNest',
 
     'proj1_desc' => 'Full-stack IoT service platform with a React frontend and .NET backend. Integrates MQTT for LoRaWAN device communication, uses SQL Server for data storage, and is fully containerised with Docker. Secured with JWT authentication.',
     'proj2_desc' => 'Real-time monitoring dashboard built for M.A.E. SRL, displaying live data streams from hardware acquisition terminals. Developed as part of my role as Programmer Technician.',

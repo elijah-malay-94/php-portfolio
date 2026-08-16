@@ -56,10 +56,28 @@ return [
     'skills_databases'  => 'Database e Strumenti',
     'skills_other'      => 'Altro',
 
+    // Certifications — titles
+    'cert1_title' => 'Introduzione allo Sviluppo Web con HTML, CSS, JavaScript',
+    'cert2_title' => 'Introduzione a Git e GitHub',
+    'cert3_title' => 'Sviluppo di App Front-End con React',
+    'cert4_title' => 'Progettazione di Interfacce Utente ed Esperienze (UI/UX)',
+    'cert5_title' => 'Sviluppo Web e Front-End Intermedio',
+    'cert6_title' => 'Sviluppo di Applicazioni Cloud Native',
+    'cert7_title' => 'Certificazione di Web Design Responsivo',
+    'cert8_title' => 'Algoritmi JavaScript e Strutture Dati',
+
     // Projects
     'projects_badge'    => '$ ls projects/',
     'projects_title'    => 'Progetti',
     'projects_view_all' => 'Vedi tutti i repository su GitHub',
+
+    'proj1_title' => 'MAEservice App',
+    'proj2_title' => 'MAE Live Dashboard',
+    'proj3_title' => 'EEVT002 Instrument Control',
+    'proj4_title' => 'Sistema di Gestione Scommesse',
+    'proj5_title' => 'App di Gestione Alberghiera',
+    'proj6_title' => 'App di Gestione Clinica',
+    'proj7_title' => 'FamilyNest',
 
     'proj1_desc' => 'Piattaforma IoT full-stack con frontend React e backend .NET. Integra MQTT per la comunicazione con dispositivi LoRaWAN, utilizza SQL Server per la memorizzazione dei dati ed è completamente containerizzata con Docker. Protetta con autenticazione JWT.',
     'proj2_desc' => 'Dashboard di monitoraggio in tempo reale sviluppata per M.A.E. SRL, che visualizza flussi di dati live dai terminali di acquisizione hardware. Sviluppata nell\'ambito del mio ruolo come Tecnico Programmatore.',

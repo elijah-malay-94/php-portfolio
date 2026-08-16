@@ -314,56 +314,56 @@
             @php
             $certs = [
                 [
-                    'title'  => 'Introduction to Web Development with HTML, CSS, JavaScript',
+                    'title'  => __('site.cert1_title'),
                     'issuer' => 'IBM — Coursera',
                     'year'   => 'Aug 2023',
                     'verify' => 'https://www.coursera.org/account/accomplishments/verify/G5J9GRPRFJM6',
                     'icon'   => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
                 ],
                 [
-                    'title'  => 'Getting Started with Git and GitHub',
+                    'title'  => __('site.cert2_title'),
                     'issuer' => 'IBM — Coursera',
                     'year'   => 'Aug 2023',
                     'verify' => 'https://www.coursera.org/account/accomplishments/verify/NDMNQAZW5WQ2',
                     'icon'   => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 01-9 9"/></svg>',
                 ],
                 [
-                    'title'  => 'Developing Front-End Apps with React',
+                    'title'  => __('site.cert3_title'),
                     'issuer' => 'IBM — Coursera',
                     'year'   => 'Sep 2023',
                     'verify' => 'https://www.coursera.org/account/accomplishments/verify/QRH2M8SGHY4B',
                     'icon'   => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
                 ],
                 [
-                    'title'  => 'Designing User Interfaces and Experiences (UI/UX)',
+                    'title'  => __('site.cert4_title'),
                     'issuer' => 'IBM — Coursera',
                     'year'   => 'Sep 2023',
                     'verify' => 'https://www.coursera.org/account/accomplishments/verify/9Z5Y6C9VKEQP',
                     'icon'   => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>',
                 ],
                 [
-                    'title'  => 'Intermediate Web and Front-End Development',
+                    'title'  => __('site.cert5_title'),
                     'issuer' => 'IBM — Coursera',
                     'year'   => 'Sep 2023',
                     'verify' => 'https://www.coursera.org/account/accomplishments/verify/BGPS55G5MQLQ',
                     'icon'   => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
                 ],
                 [
-                    'title'  => 'Developing Cloud Native Applications',
+                    'title'  => __('site.cert6_title'),
                     'issuer' => 'IBM — Coursera',
                     'year'   => '2023',
                     'verify' => 'https://www.coursera.org/account/accomplishments/verify/V46NMVM7H3VG',
                     'icon'   => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
                 ],
                 [
-                    'title'  => 'Responsive Web Design Certification',
+                    'title'  => __('site.cert7_title'),
                     'issuer' => 'freeCodeCamp',
                     'year'   => '2023',
                     'verify' => 'https://www.freecodecamp.org/certification/elijah-malay/responsive-web-design',
                     'icon'   => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',
                 ],
                 [
-                    'title'  => 'JavaScript Algorithms & Data Structures',
+                    'title'  => __('site.cert8_title'),
                     'issuer' => 'freeCodeCamp',
                     'year'   => '2023',
                     'verify' => 'https://www.freecodecamp.org/certification/elijah-malay/javascript-algorithms-and-data-structures',
@@ -498,13 +498,13 @@
             @php
             $ghIcon = '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>';
             $projects = [
-                ['glow'=>'blue',   'glowRgb'=>'56,189,248',  'img'=>'mqtt-maeservace.png',   'title'=>'MAEservice App',             'url'=>'https://github.com/elijah-malay-94/MAEservice-App',               'demo'=>'https://maeservice-app.netlify.app/',                           'desc'=>__('site.proj1_desc'), 'tags'=>['React','.NET','SQL Server','Docker','MQTT','JWT']],
-                ['glow'=>'purple', 'glowRgb'=>'129,140,248', 'img'=>'live-dashboard.png',    'title'=>'MAE Live Dashboard',         'url'=>'https://github.com/elijah-malay-94/MAE-Live-Dashboard-v3-main',  'demo'=>'https://www.maeservice.it/alfa/index.html?page=works',          'desc'=>__('site.proj2_desc'), 'tags'=>['JavaScript','Node.js','Real-time']],
-                ['glow'=>'green',  'glowRgb'=>'52,211,153',  'img'=>'eevt002_img.png',       'title'=>'EEVT002 Instrument Control', 'url'=>'https://github.com/elijah-malay-94/EEVT002-INSTRUMENT-CONTROL',  'demo'=>null,                                                            'desc'=>__('site.proj3_desc'), 'tags'=>['JavaScript','Node.js','Hardware','Firmware']],
-                ['glow'=>'orange', 'glowRgb'=>'251,146,60',  'img'=>'betting.png',           'title'=>'Betting Management System',  'url'=>'https://github.com/elijah-malay-94/betting-managment-system-app','demo'=>'https://betting-managment-system.netlify.app/',                 'desc'=>__('site.proj4_desc'), 'tags'=>['Angular','TypeScript','Unit Testing']],
-                ['glow'=>'pink',   'glowRgb'=>'244,114,182', 'img'=>'hotel.png',             'title'=>'Hotel Management App',       'url'=>'https://github.com/elijah-malay-94/edmalay-hotel-project',        'demo'=>'https://edmalay-hotel-management-app.netlify.app/',             'desc'=>__('site.proj5_desc'), 'tags'=>['React','Vite','JavaScript']],
-                ['glow'=>'teal',   'glowRgb'=>'45,212,191',  'img'=>'clinic-management.png', 'title'=>'Clinic Management App',      'url'=>'https://github.com/elijah-malay-94/edmalay-clinic-app',           'demo'=>'https://malay-medical-website.netlify.app/',                    'desc'=>__('site.proj6_desc'), 'tags'=>['React','Vite','JavaScript']],
-                ['glow'=>'amber',  'glowRgb'=>'251,191,36',  'img'=>'familynext2.png',       'title'=>'FamilyNest',                 'url'=>null,                                                              'demo'=>null,                                                            'desc'=>__('site.proj7_desc'), 'tags'=>['React Native','Mobile','AI','Real-time','Firebase'], 'badge'=>'Coming soon on App Store &amp; Google Play'],
+                ['glow'=>'blue',   'glowRgb'=>'56,189,248',  'img'=>'mqtt-maeservace.png',   'title'=>__('site.proj1_title'), 'url'=>'https://github.com/elijah-malay-94/MAEservice-App',               'demo'=>'https://maeservice-app.netlify.app/',                           'desc'=>__('site.proj1_desc'), 'tags'=>['React','.NET','SQL Server','Docker','MQTT','JWT']],
+                ['glow'=>'purple', 'glowRgb'=>'129,140,248', 'img'=>'live-dashboard.png',    'title'=>__('site.proj2_title'), 'url'=>'https://github.com/elijah-malay-94/MAE-Live-Dashboard-v3-main',  'demo'=>'https://www.maeservice.it/alfa/index.html?page=works',          'desc'=>__('site.proj2_desc'), 'tags'=>['JavaScript','Node.js','Real-time']],
+                ['glow'=>'green',  'glowRgb'=>'52,211,153',  'img'=>'eevt002_img.png',       'title'=>__('site.proj3_title'), 'url'=>'https://github.com/elijah-malay-94/EEVT002-INSTRUMENT-CONTROL',  'demo'=>null,                                                            'desc'=>__('site.proj3_desc'), 'tags'=>['JavaScript','Node.js','Hardware','Firmware']],
+                ['glow'=>'orange', 'glowRgb'=>'251,146,60',  'img'=>'betting.png',           'title'=>__('site.proj4_title'), 'url'=>'https://github.com/elijah-malay-94/betting-managment-system-app','demo'=>'https://betting-managment-system.netlify.app/',                 'desc'=>__('site.proj4_desc'), 'tags'=>['Angular','TypeScript','Unit Testing']],
+                ['glow'=>'pink',   'glowRgb'=>'244,114,182', 'img'=>'hotel.png',             'title'=>__('site.proj5_title'), 'url'=>'https://github.com/elijah-malay-94/edmalay-hotel-project',        'demo'=>'https://edmalay-hotel-management-app.netlify.app/',             'desc'=>__('site.proj5_desc'), 'tags'=>['React','Vite','JavaScript']],
+                ['glow'=>'teal',   'glowRgb'=>'45,212,191',  'img'=>'clinic-management.png', 'title'=>__('site.proj6_title'), 'url'=>'https://github.com/elijah-malay-94/edmalay-clinic-app',           'demo'=>'https://malay-medical-website.netlify.app/',                    'desc'=>__('site.proj6_desc'), 'tags'=>['React','Vite','JavaScript']],
+                ['glow'=>'amber',  'glowRgb'=>'251,191,36',  'img'=>'familynext2.png',       'title'=>__('site.proj7_title'), 'url'=>null,                                                              'demo'=>null,                                                            'desc'=>__('site.proj7_desc'), 'tags'=>['React Native','Mobile','AI','Real-time','Firebase'], 'badge'=>'Coming soon on App Store &amp; Google Play'],
             ];
             @endphp
 
