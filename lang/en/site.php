@@ -91,6 +91,29 @@ return [
     'cert_badge'  => '$ ls certs/',
     'cert_title'  => 'Certifications',
 
+    // Testimonials
+    'testimonials_badge'       => '$ cat testimonials/',
+    'testimonials_title'       => 'What People Say',
+    'testimonials_subtitle'    => 'Feedback from colleagues, instructors, and clients I\'ve had the pleasure of working with.',
+    'testi1_quote'             => 'Elijah stood out for his drive and ability to translate complex concepts into working software. He grasped full-stack principles faster than most students I\'ve taught.',
+    'testi2_quote'             => 'Working with Elijah during the project lifecycle was a great experience. He asks the right questions, owns his deliverables, and brings security thinking into every discussion.',
+    'testi3_quote'             => 'Elijah took on our firmware integration challenge with no prior IoT background and delivered a working solution. That kind of adaptability is rare.',
+    'testimonials_invite'      => 'Worked with me? I\'d love a recommendation.',
+    'testimonials_linkedin_cta'=> 'Leave a recommendation on LinkedIn ↗',
+
+    // Blog / Writing
+    'blog_badge'          => '$ ls articles/',
+    'blog_title'          => 'Writing & Insights',
+    'blog_desc'           => 'Technical articles and project write-ups on web security, full-stack architecture, and AI are on the way. Follow me to get notified.',
+    'blog_topic1'         => 'Web Security',
+    'blog_topic1_desc'    => 'Practical security patterns for Laravel & Node.js apps — JWT, CSRF, input validation, and beyond.',
+    'blog_topic2'         => 'Full Stack Architecture',
+    'blog_topic2_desc'    => 'Designing systems that scale — from IoT data pipelines to React frontends connected to .NET APIs.',
+    'blog_topic3'         => 'AI & Machine Learning',
+    'blog_topic3_desc'    => 'Notes from the frontline of learning — integrating AI into real products and studying ML fundamentals.',
+    'blog_follow_linkedin'=> 'Follow on LinkedIn',
+    'blog_follow_github'  => 'Follow on GitHub',
+
     // Footer
     'footer_rights' => 'All rights reserved.',
 ];

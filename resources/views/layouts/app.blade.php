@@ -10,6 +10,7 @@
     <meta name="description" content="Elijah Malay Dovelee — Software Engineer & Full Stack Developer based in Campobasso, Italy. Building secure web applications with React, .NET, Laravel, Node.js and more.">
     <meta name="author" content="Elijah Malay Dovelee">
     <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Software Engineer Italy, Full Stack Developer Campobasso, Laravel Developer, PHP Developer, React Developer, .NET Developer, IoT Developer, Web Developer Italy, Elijah Malay Dovelee">
 
     {{-- Open Graph --}}
     <meta property="og:type"        content="website">
@@ -41,6 +42,33 @@
     </script>
     @endif
 
+    {{-- Schema.org structured data --}}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Elijah Malay Dovelee",
+      "jobTitle": "Software Engineer & Full Stack Developer",
+      "url": "{{ url('/') }}",
+      "image": "{{ asset('elijah.png') }}",
+      "email": "mailto:malaydovelee94@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Campobasso",
+        "addressRegion": "Molise",
+        "addressCountry": "IT"
+      },
+      "sameAs": [
+        "https://github.com/elijah-malay-94",
+        "https://www.linkedin.com/in/elijah-malay-dovelee-465ab9260/"
+      ],
+      "knowsAbout": ["Laravel", "PHP", "React", "JavaScript", ".NET", "Docker", "IoT", "Machine Learning", "Web Security", "Full Stack Development"],
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "University of Liberia"},
+        {"@type": "EducationalOrganization", "name": "ITS DEMOS Academy, Campobasso"}
+      ]
+    }
+    </script>
     <style>
         .font-display { font-family: 'Space Grotesk', sans-serif; }
         .font-mono    { font-family: 'JetBrains Mono', monospace; }

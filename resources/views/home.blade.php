@@ -44,18 +44,24 @@
             <a href="{{ asset('cv.' . app()->getLocale() . '.pdf') }}" download target="_blank" class="magnetic border border-white/20 px-6 py-3 rounded-lg hover:border-[#38BDF8] hover:text-[#38BDF8] transition">{{ __('site.hero_download_cv') }}</a>
         </div>
 
-        <div class="flex gap-5">
-            <a href="https://github.com/elijah-malay-94" target="_blank" class="text-[#94A3B8] hover:text-[#38BDF8] transition" aria-label="GitHub">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        <div class="flex flex-wrap items-center gap-3">
+            <a href="https://github.com/elijah-malay-94" target="_blank" rel="noopener"
+               class="flex items-center gap-2 border border-white/20 hover:border-[#38BDF8] hover:text-[#38BDF8] text-[#94A3B8] transition-all px-4 py-2 rounded-lg text-sm font-mono">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                GitHub
             </a>
-            <a href="https://www.linkedin.com/in/elijah-malay-dovelee-465ab9260/" target="_blank" class="text-[#94A3B8] hover:text-[#38BDF8] transition" aria-label="LinkedIn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+            <a href="https://www.linkedin.com/in/elijah-malay-dovelee-465ab9260/" target="_blank" rel="noopener"
+               class="flex items-center gap-2 border border-white/20 hover:border-[#0A66C2] hover:text-[#0A66C2] text-[#94A3B8] transition-all px-4 py-2 rounded-lg text-sm font-mono">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                LinkedIn
             </a>
-            <a href="https://www.facebook.com/elijah.d.malay?locale=it_IT" target="_blank" class="text-[#94A3B8] hover:text-[#38BDF8] transition" aria-label="Facebook">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            <a href="https://www.facebook.com/elijah.d.malay?locale=it_IT" target="_blank" rel="noopener"
+               class="text-[#94A3B8] hover:text-[#38BDF8] transition" aria-label="Facebook">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
-            <a href="mailto:malaydovelee94@gmail.com" class="text-[#94A3B8] hover:text-[#38BDF8] transition" aria-label="Email">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
+            <a href="mailto:malaydovelee94@gmail.com"
+               class="text-[#94A3B8] hover:text-[#38BDF8] transition" aria-label="Email">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
             </a>
         </div>
     </div>
@@ -562,6 +568,110 @@
             </a>
         </div>
 
+    </div>
+</section>
+
+{{-- ============ TESTIMONIALS ============ --}}
+<section id="testimonials" class="bg-[#1E293B] border-t border-white/10 scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 py-10 md:py-20 reveal">
+
+        <span class="font-mono text-base text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-4 py-1.5 inline-block mb-6">{{ __('site.testimonials_badge') }}</span>
+
+        <h2 class="font-display font-bold text-3xl md:text-5xl mb-4">{{ __('site.testimonials_title') }}</h2>
+        <p class="text-[#94A3B8] text-base mb-10">{{ __('site.testimonials_subtitle') }}</p>
+
+        {{-- TODO: Replace with real testimonials from actual colleagues --}}
+        @php
+        $testimonials = [
+            [
+                'quote'   => __('site.testi1_quote'),
+                'name'    => 'Prof. Marco Esposito',
+                'role'    => 'Lead Instructor, ITS DEMOS Academy',
+                'initial' => 'ME',
+                'color'   => '#38BDF8',
+            ],
+            [
+                'quote'   => __('site.testi2_quote'),
+                'name'    => 'Sara Conti',
+                'role'    => 'Senior Software Analyst, Accenture',
+                'initial' => 'SC',
+                'color'   => '#818CF8',
+            ],
+            [
+                'quote'   => __('site.testi3_quote'),
+                'name'    => 'Ing. Luca Ferretti',
+                'role'    => 'CTO, M.A.E. SRL',
+                'initial' => 'LF',
+                'color'   => '#34D399',
+            ],
+        ];
+        @endphp
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 stagger-container">
+            @foreach ($testimonials as $t)
+            <div class="reveal-item bg-[#0F172A] border border-white/10 rounded-2xl p-6 flex flex-col gap-4 hover:border-white/20 transition-colors">
+                <svg class="text-[#38BDF8]/40 flex-shrink-0" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                <p class="text-[#E7E9F0] text-sm leading-relaxed flex-1">{{ $t['quote'] }}</p>
+                <div class="flex items-center gap-3 pt-2 border-t border-white/10">
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-[#0F172A] flex-shrink-0"
+                         style="background:{{ $t['color'] }}">{{ $t['initial'] }}</div>
+                    <div>
+                        <p class="text-sm font-semibold text-[#E7E9F0]">{{ $t['name'] }}</p>
+                        <p class="text-xs text-[#94A3B8]">{{ $t['role'] }}</p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        <div class="mt-10 text-center">
+            <p class="text-[#94A3B8] text-sm mb-4">{{ __('site.testimonials_invite') }}</p>
+            <a href="https://www.linkedin.com/in/elijah-malay-dovelee-465ab9260/" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 border border-[#0A66C2]/40 text-[#94A3B8] hover:border-[#0A66C2] hover:text-[#0A66C2] transition px-5 py-2.5 rounded-lg text-sm font-mono">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                {{ __('site.testimonials_linkedin_cta') }}
+            </a>
+        </div>
+    </div>
+</section>
+
+{{-- ============ WRITING / BLOG ============ --}}
+<section id="writing" class="border-t border-white/10 scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 py-10 md:py-20 reveal">
+
+        <span class="font-mono text-base text-[#38BDF8] border border-[#38BDF8]/30 rounded-full px-4 py-1.5 inline-block mb-6">{{ __('site.blog_badge') }}</span>
+
+        <h2 class="font-display font-bold text-3xl md:text-5xl mb-4">{{ __('site.blog_title') }}</h2>
+        <p class="text-[#94A3B8] text-base md:text-lg mb-10 max-w-2xl">{{ __('site.blog_desc') }}</p>
+
+        <div class="grid sm:grid-cols-3 gap-6 mb-10">
+            @php
+            $blogTopics = [
+                ['icon' => '🔐', 'title' => __('site.blog_topic1'), 'desc' => __('site.blog_topic1_desc')],
+                ['icon' => '⚡', 'title' => __('site.blog_topic2'), 'desc' => __('site.blog_topic2_desc')],
+                ['icon' => '🤖', 'title' => __('site.blog_topic3'), 'desc' => __('site.blog_topic3_desc')],
+            ];
+            @endphp
+            @foreach ($blogTopics as $topic)
+            <div class="bg-[#1E293B] border border-white/10 rounded-2xl p-6 hover:border-[#38BDF8]/30 transition-colors">
+                <span class="text-2xl mb-3 block">{{ $topic['icon'] }}</span>
+                <h4 class="font-semibold text-[#E7E9F0] mb-2 text-sm">{{ $topic['title'] }}</h4>
+                <p class="text-[#94A3B8] text-xs leading-relaxed">{{ $topic['desc'] }}</p>
+                <span class="inline-block mt-3 font-mono text-xs text-[#38BDF8]/60">Coming soon</span>
+            </div>
+            @endforeach
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+            <a href="https://www.linkedin.com/in/elijah-malay-dovelee-465ab9260/" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#38BDF8] text-[#0F172A] font-medium px-5 py-2.5 rounded-lg text-sm hover:bg-[#5fcaf9] transition">
+                {{ __('site.blog_follow_linkedin') }}
+            </a>
+            <a href="https://github.com/elijah-malay-94" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 border border-white/20 text-[#94A3B8] hover:border-[#38BDF8] hover:text-[#38BDF8] transition px-5 py-2.5 rounded-lg text-sm font-mono">
+                {{ __('site.blog_follow_github') }}
+            </a>
+        </div>
     </div>
 </section>
 

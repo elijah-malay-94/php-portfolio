@@ -91,6 +91,29 @@ return [
     'cert_badge'  => '$ ls certs/',
     'cert_title'  => 'Certificazioni',
 
+    // Testimonials
+    'testimonials_badge'       => '$ cat testimonials/',
+    'testimonials_title'       => 'Cosa Dicono',
+    'testimonials_subtitle'    => 'Feedback da colleghi, docenti e clienti con cui ho avuto il piacere di lavorare.',
+    'testi1_quote'             => 'Elijah si è distinto per la sua determinazione e la capacità di tradurre concetti complessi in software funzionante. Ha assimilato i principi full-stack più velocemente della maggior parte degli studenti.',
+    'testi2_quote'             => 'Lavorare con Elijah durante il ciclo del progetto è stata un\'ottima esperienza. Fa le domande giuste, porta a termine i deliverable e integra il pensiero sulla sicurezza in ogni discussione.',
+    'testi3_quote'             => 'Elijah ha affrontato la nostra sfida di integrazione firmware senza alcuna esperienza IoT pregressa e ha consegnato una soluzione funzionante. Questo tipo di adattabilità è raro.',
+    'testimonials_invite'      => 'Hai lavorato con me? Mi farebbe piacere una tua raccomandazione.',
+    'testimonials_linkedin_cta'=> 'Lascia una raccomandazione su LinkedIn ↗',
+
+    // Blog / Writing
+    'blog_badge'          => '$ ls articles/',
+    'blog_title'          => 'Articoli e Approfondimenti',
+    'blog_desc'           => 'Articoli tecnici e approfondimenti su sicurezza web, architettura full-stack e AI sono in arrivo. Seguimi per essere notificato.',
+    'blog_topic1'         => 'Sicurezza Web',
+    'blog_topic1_desc'    => 'Pattern di sicurezza pratici per app Laravel & Node.js — JWT, CSRF, validazione degli input e altro.',
+    'blog_topic2'         => 'Architettura Full Stack',
+    'blog_topic2_desc'    => 'Progettare sistemi scalabili — dai pipeline dati IoT ai frontend React collegati ad API .NET.',
+    'blog_topic3'         => 'AI & Machine Learning',
+    'blog_topic3_desc'    => 'Note dal campo — integrare l\'AI in prodotti reali e studiare i fondamenti del ML.',
+    'blog_follow_linkedin'=> 'Segui su LinkedIn',
+    'blog_follow_github'  => 'Segui su GitHub',
+
     // Footer
     'footer_rights' => 'Tutti i diritti riservati.',
 ];
