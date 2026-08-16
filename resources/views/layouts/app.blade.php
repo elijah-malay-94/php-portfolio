@@ -440,7 +440,8 @@
         @media (prefers-reduced-motion: reduce) {
             .testi-card, .blog-card { transition: none !important; }
             .testi-card::before, .blog-card::before { transition: none !important; }
-            .blog-card::after, .blog-icon { display: none; }
+            .blog-card::after { display: none; }
+            .blog-icon { transition: none !important; }
             .testi-card.is-active, .blog-card.is-active { transform: none !important; }
         }
 
