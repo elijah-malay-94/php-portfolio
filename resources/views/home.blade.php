@@ -658,13 +658,13 @@
         <div class="grid sm:grid-cols-3 gap-6 mb-10">
             @php
             $blogTopics = [
-                ['icon' => '🔐', 'title' => __('site.blog_topic1'), 'desc' => __('site.blog_topic1_desc')],
-                ['icon' => '⚡', 'title' => __('site.blog_topic2'), 'desc' => __('site.blog_topic2_desc')],
-                ['icon' => '🤖', 'title' => __('site.blog_topic3'), 'desc' => __('site.blog_topic3_desc')],
+                ['icon' => '🔐', 'title' => __('site.blog_topic1'), 'desc' => __('site.blog_topic1_desc'), 'glow' => 'blog-glow-blue'],
+                ['icon' => '⚡', 'title' => __('site.blog_topic2'), 'desc' => __('site.blog_topic2_desc'), 'glow' => 'blog-glow-violet'],
+                ['icon' => '🤖', 'title' => __('site.blog_topic3'), 'desc' => __('site.blog_topic3_desc'), 'glow' => 'blog-glow-pink'],
             ];
             @endphp
             @foreach ($blogTopics as $topic)
-            <div class="blog-card bg-[#1E293B] border border-white/10 rounded-2xl p-6">
+            <div class="blog-card {{ $topic['glow'] }} bg-[#1E293B] border border-white/10 rounded-2xl p-6">
                 <span class="blog-icon text-2xl mb-3 block">{{ $topic['icon'] }}</span>
                 <h4 class="font-semibold text-[#E7E9F0] mb-2 text-sm">{{ $topic['title'] }}</h4>
                 <p class="text-[#94A3B8] text-xs leading-relaxed">{{ $topic['desc'] }}</p>

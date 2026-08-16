@@ -340,9 +340,7 @@
             background: rgba(15, 23, 42, 0.55);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-                        box-shadow 0.35s ease,
-                        border-color 0.25s ease;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.25s ease;
         }
         .testi-card::before {
             content: '';
@@ -357,10 +355,11 @@
             transform: translateY(-5px);
             border-color: rgba(255,255,255,0.22) !important;
         }
-        .testi-glow-blue:hover   { box-shadow: 0 20px 40px rgba(56,189,248,0.18),  0 6px 18px rgba(56,189,248,0.10); }
-        .testi-glow-purple:hover { box-shadow: 0 20px 40px rgba(129,140,248,0.18), 0 6px 18px rgba(129,140,248,0.10); }
-        .testi-glow-green:hover  { box-shadow: 0 20px 40px rgba(52,211,153,0.18),  0 6px 18px rgba(52,211,153,0.10); }
-        .testi-glow-amber:hover  { box-shadow: 0 20px 40px rgba(245,158,11,0.18),  0 6px 18px rgba(245,158,11,0.10); }
+        /* Continuous ambient glow — staggered so they don't all pulse together */
+        .testi-glow-blue   { animation: glowPulseBlue   3.2s ease-in-out infinite; }
+        .testi-glow-purple { animation: glowPulsePurple 3.8s ease-in-out infinite 0.7s; }
+        .testi-glow-green  { animation: glowPulseGreen  3.5s ease-in-out infinite 1.4s; }
+        .testi-glow-amber  { animation: glowPulseAmber  3.0s ease-in-out infinite 2.1s; }
 
         /* Dot-grid background on testimonials section */
         #testimonials {
@@ -372,9 +371,7 @@
         .blog-card {
             position: relative;
             overflow: hidden;
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-                        box-shadow 0.35s ease,
-                        border-color 0.25s ease;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.25s ease;
         }
         /* Gradient top accent line — hidden until hover */
         .blog-card::before {
@@ -390,9 +387,12 @@
         .blog-card:hover::before { opacity: 1; }
         .blog-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(56,189,248,0.12), 0 4px 18px rgba(0,0,0,0.28);
             border-color: rgba(56,189,248,0.22) !important;
         }
+        /* Continuous ambient glow — different color per card */
+        .blog-glow-blue   { animation: glowPulseBlue   3.5s ease-in-out infinite; }
+        .blog-glow-violet { animation: glowPulseViolet 4.0s ease-in-out infinite 0.9s; }
+        .blog-glow-pink   { animation: glowPulsePink   3.2s ease-in-out infinite 1.8s; }
         /* Shimmer sweep */
         .blog-card::after {
             content: '';
@@ -436,7 +436,6 @@
         /* ── Tap-active states (mirrors hover, for touch devices) ───── */
         .blog-card.is-active {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(56,189,248,0.12), 0 4px 18px rgba(0,0,0,0.28);
             border-color: rgba(56,189,248,0.22) !important;
         }
         .blog-card.is-active::before { opacity: 1; }
@@ -446,13 +445,17 @@
             transform: translateY(-5px);
             border-color: rgba(255,255,255,0.22) !important;
         }
-        .testi-glow-blue.is-active   { box-shadow: 0 20px 40px rgba(56,189,248,0.18),  0 6px 18px rgba(56,189,248,0.10); }
-        .testi-glow-purple.is-active { box-shadow: 0 20px 40px rgba(129,140,248,0.18), 0 6px 18px rgba(129,140,248,0.10); }
-        .testi-glow-green.is-active  { box-shadow: 0 20px 40px rgba(52,211,153,0.18),  0 6px 18px rgba(52,211,153,0.10); }
-        .testi-glow-amber.is-active  { box-shadow: 0 20px 40px rgba(245,158,11,0.18),  0 6px 18px rgba(245,158,11,0.10); }
+
+        /* ── Ambient glow pulse keyframes ──────────────────────────── */
+        @keyframes glowPulseBlue   { 0%,100% { box-shadow: 0 0 6px rgba(56,189,248,0.04); }  50% { box-shadow: 0 0 32px rgba(56,189,248,0.50),  0 0 72px rgba(56,189,248,0.18); } }
+        @keyframes glowPulsePurple { 0%,100% { box-shadow: 0 0 6px rgba(129,140,248,0.04); } 50% { box-shadow: 0 0 32px rgba(129,140,248,0.50), 0 0 72px rgba(129,140,248,0.18); } }
+        @keyframes glowPulseGreen  { 0%,100% { box-shadow: 0 0 6px rgba(52,211,153,0.04); }  50% { box-shadow: 0 0 32px rgba(52,211,153,0.50),  0 0 72px rgba(52,211,153,0.18); } }
+        @keyframes glowPulseAmber  { 0%,100% { box-shadow: 0 0 6px rgba(245,158,11,0.04); }  50% { box-shadow: 0 0 32px rgba(245,158,11,0.50),  0 0 72px rgba(245,158,11,0.18); } }
+        @keyframes glowPulseViolet { 0%,100% { box-shadow: 0 0 6px rgba(167,139,250,0.04); } 50% { box-shadow: 0 0 32px rgba(167,139,250,0.50), 0 0 72px rgba(167,139,250,0.18); } }
+        @keyframes glowPulsePink   { 0%,100% { box-shadow: 0 0 6px rgba(236,72,153,0.04); }  50% { box-shadow: 0 0 32px rgba(236,72,153,0.50),  0 0 72px rgba(236,72,153,0.18); } }
 
         @media (prefers-reduced-motion: reduce) {
-            .testi-card, .blog-card { transition: none !important; }
+            .testi-card, .blog-card { transition: none !important; animation: none !important; }
             .testi-card::before, .blog-card::before { transition: none !important; }
             .blog-card::after, .blog-icon { display: none; }
             .testi-card.is-active, .blog-card.is-active { transform: none !important; }
